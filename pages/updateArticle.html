@@ -1,0 +1,63 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cập Nhật Bài Viết</title>
+    <link rel="stylesheet" href="../assets/css/updateArticle.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="top">
+        <div class="logo-title">
+          <img src="../assets/logo.png" alt="Book Store Logo" />
+          <span class="title">Book Store</span>
+        </div>
+        <div class="right">
+          <span class="username">Anh Hải</span>
+          <img src="../assets/facebook.png" alt="Admin Avatar" class="avatar" />
+        </div>
+      </div>
+      <!-- Menu -->
+      <div id="menu"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <h2>Cập nhật bài viết</h2>
+        <form class="formaddArticle">
+          <label>Mã bài viết</label>
+          <input
+            type="text"
+            placeholder="Mã bài viết sẽ được tự động tạo"
+            disabled
+          />
+
+          <label for="title">Tên bài viết</label>
+          <input
+            type="text"
+            id="title"
+            placeholder="Nhập tên bài viết"
+            required
+          />
+
+          <label for="content">Nội dung</label>
+          <textarea
+            id="content"
+            rows="5"
+            placeholder="Nhập nội dung"
+            required
+            class="describe"
+          ></textarea>
+
+          <button type="submit" class="btn-green">Cập nhật bài viết</button>
+        </form>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script src="../assets/js/homeAdmin.js"></script>
+  </body>
+</html>
