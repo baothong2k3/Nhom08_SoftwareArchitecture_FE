@@ -17,6 +17,10 @@ document.addEventListener(
   { passive: false }
 );
 
+function goBack() {
+    window.history.back();
+}
+
 fetch("../components/footer.html")
   .then((response) => response.text())
   .then((data) => {

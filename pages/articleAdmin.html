@@ -2,8 +2,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Danh Sách Sản Phẩm</title>
-    <link rel="stylesheet" href="../assets//css/productAdmin.css" />
+    <title>Danh Sách Bài Viết</title>
+    <link rel="stylesheet" href="../assets/css/articleAdmin.css" />
   </head>
   <body>
     <!-- Header -->
@@ -25,35 +25,29 @@
     <!-- Main Content -->
     <main class="main">
       <div class="container">
-        <h2>Danh sách sản phẩm</h2>
+        <h2>Danh sách bài viết</h2>
         <div class="search-bar">
-          <input type="text" placeholder="Nhập tên, mã sản phẩm cần tìm..." />
+          <input type="text" placeholder="Nhập tên, mã bài viết cần tìm..." />
           <button class="btn btn-blue">Tìm kiếm</button>
           <button
             class="btn btn-green"
             onclick="window.location.href='../pages/addProduct.html'"
           >
-            Thêm sản phẩm
+            Thêm bài viết
           </button>
         </div>
         <table>
           <thead>
             <tr>
-              <th>Mã</th>
-              <th>Ảnh</th>
-              <th>Tên</th>
-              <th>Giá</th>
-              <th>Số Lượng Tồn</th>
+              <th>Mã Bài Viết</th>
+              <th>Tên Bài Viết</th>
               <th>Chức Năng</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>SP001</td>
-              <td><img src="../assets/sachMau.png" alt="Sách A" /></td>
-              <td>Sách A</td>
-              <td>100,000 VND</td>
-              <td>50</td>
+              <td>BV001</td>
+              <td>Bài viết A</td>
               <td>
                 <button
                   class="btn btn-blue"
@@ -65,11 +59,8 @@
               </td>
             </tr>
             <tr>
-              <td>SP002</td>
-              <td><img src="../assets/sachMau.png" alt="Sách B" /></td>
-              <td>Sách B</td>
-              <td>150,000 VND</td>
-              <td>30</td>
+              <td>BV002</td>
+              <td>Bài viết B</td>
               <td>
                 <button
                   class="btn btn-blue"
@@ -81,11 +72,8 @@
               </td>
             </tr>
             <tr>
-              <td>SP003</td>
-              <td><img src="../assets/sachMau.png" alt="Sách C" /></td>
-              <td>Sách C</td>
-              <td>200,000 VND</td>
-              <td>20</td>
+              <td>BV003</td>
+              <td>Bài viết C</td>
               <td>
                 <button
                   class="btn btn-blue"
@@ -97,11 +85,8 @@
               </td>
             </tr>
             <tr>
-              <td>SP004</td>
-              <td><img src="../assets/sachMau.png" alt="Sách C" /></td>
-              <td>Sách D</td>
-              <td>200,000 VND</td>
-              <td>20</td>
+              <td>BV004</td>
+              <td>Bài viết D</td>
               <td>
                 <button
                   class="btn btn-blue"
@@ -113,11 +98,47 @@
               </td>
             </tr>
             <tr>
-              <td>SP005</td>
-              <td><img src="../assets/sachMau.png" alt="Sách C" /></td>
-              <td>Sách E</td>
-              <td>200,000 VND</td>
-              <td>20</td>
+              <td>BV005</td>
+              <td>Bài viết E</td>
+              <td>
+                <button
+                  class="btn btn-blue"
+                  onclick="window.location.href='../pages/updateProduct.html'"
+                >
+                  Cập nhật
+                </button>
+                <button class="btn btn-red">Xóa</button>
+              </td>
+            </tr>
+            <tr>
+              <td>BV006</td>
+              <td>Bài viết G</td>
+              <td>
+                <button
+                  class="btn btn-blue"
+                  onclick="window.location.href='../pages/updateProduct.html'"
+                >
+                  Cập nhật
+                </button>
+                <button class="btn btn-red">Xóa</button>
+              </td>
+            </tr>
+            <tr>
+              <td>BV007</td>
+              <td>Bài viết H</td>
+              <td>
+                <button
+                  class="btn btn-blue"
+                  onclick="window.location.href='../pages/updateProduct.html'"
+                >
+                  Cập nhật
+                </button>
+                <button class="btn btn-red">Xóa</button>
+              </td>
+            </tr>
+            <tr>
+              <td>BV008</td>
+              <td>Bài viết I</td>
               <td>
                 <button
                   class="btn btn-blue"
