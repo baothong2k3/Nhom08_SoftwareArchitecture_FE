@@ -60,20 +60,16 @@ body {
   padding: 10px 50px;
 }
 
-/* Khung đăng nhập */
-.login-container {
+/* Form */
+.register-container {
   background-color: white;
-  padding: 40px;
-  margin: 40px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   width: 500px;
-  height: 550px;
-}
-
-/* Tiêu đề */
-.login-form {
-  margin-top: 15px;
+  height: 700px;
+  text-align: left;
+  margin: 40px;
 }
 
 h2 {
@@ -82,15 +78,13 @@ h2 {
   text-align: center;
 }
 
-/* lable */
-.login-container label {
+label {
   font-size: 16px;
   font-weight: bold;
   display: block;
   margin: 10px 0 5px;
 }
 
-/* input */
 input {
   width: 100%;
   padding: 15px;
@@ -100,56 +94,43 @@ input {
   border-radius: 5px;
 }
 
-/* Nút gửi lại mã */
-.otp-container {
-  display: flex;
-  gap: 15px;
-  width: 100%;
-}
-
-.resend-btn {
-  background-color: #3b82f6;
-  color: white;
-  border: none;
-  padding: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  height: 45px;
-  margin-top: 10px;
-}
-
-.resend-btn:hover {
-  background-color: #2563eb;
-}
-
-/* Nút đăng nhập */
-.login-btn {
+.register-btn {
   width: 100%;
   background-color: rgb(16, 185, 129);
   color: white;
-  padding: 10px;
+  padding: 12px;
   border: none;
   border-radius: 5px;
-  margin-top: 15px;
   cursor: pointer;
-  text-align: center;
-  font-size: 20px;
-}
-
-.login-btn:hover {
-  background-color: #2563eb;
-}
-
-/* Quên mật khẩu */
-.forgot-password {
-  display: block;
-  text-align: right;
-  margin-top: 10px;
-  color: #3b82f6;
-  text-decoration: none;
   font-size: 18px;
 }
 
-.forgot-password:hover {
-  text-decoration: underline;
+.register-btn:hover {
+  background-color: #2563eb;
+}
+
+.register-with {
+  text-align: center;
+  font-size: 16px;
+  font-weight: inherit;
+  margin: 20px 0 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-icons img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.social-icons .icon {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
 }
