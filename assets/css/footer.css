@@ -1,0 +1,34 @@
+.footer {
+  display: flex;
+  background-color: #1f2937;
+  color: white;
+  padding: 20px 0;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+.footer-content {
+  display: flex;
+  width: 100%;
+  margin: 0 50px;
+}
+
+.contact-info {
+  margin-left: 350px;
+}
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer h3 {
+  font-size: 23px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.footer p {
+  margin: 10px 0;
+  font-size: 17px;
+}
