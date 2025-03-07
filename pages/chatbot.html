@@ -1,0 +1,54 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store</title>
+    <link rel="stylesheet" href="../assets/css/chatbot.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="top">
+        <div class="logo-title">
+          <img src="../assets/logo.png" alt="Book Store Logo" />
+          <span class="title">Book Store</span>
+        </div>
+        <div class="buttons">
+          <button onclick="window.location.href='../pages/login.html'">
+            Đăng nhập
+          </button>
+          <button
+            class="register"
+            onclick="window.location.href='../pages/login.html'"
+          >
+            Đăng ký
+          </button>
+        </div>
+      </div>
+      <!-- Menu -->
+      <div id="menu"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="chat-container">
+        <div class="chat-header">ChatBot</div>
+        <div class="chat-box">
+          <div class="chat-messages">
+            Chào Mừng Bạn Đến Với Cửa Hàng Của Chúng Tôi, Tôi Sẽ Giúp Bạn Đưa Ra
+            Sự Lựa Chọn Sản Phẩm Phù Hợp Nhất. Cho Tôi Biết Sở Thích Của Bạn Là
+            Gì?
+          </div>
+        </div>
+        <div class="chat-input">
+          <input type="text" placeholder="Nhập tin nhắn..." />
+          <button>Gửi</button>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script src="../assets/js/home.js"></script>
+  </body>
+</html>
