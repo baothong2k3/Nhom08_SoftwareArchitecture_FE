@@ -1,0 +1,56 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store</title>
+    <link rel="stylesheet" href="../assets//css/login.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="top">
+        <div class="logo-title">
+          <img src="../assets/logo.png" alt="Book Store Logo" />
+          <span class="title">Book Store</span>
+        </div>
+        <div class="buttons">
+          <button>Đăng nhập</button>
+          <button class="register">Đăng ký</button>
+        </div>
+      </div>
+      <!-- Menu -->
+      <div id="menu"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="login-container">
+        <h2>Đăng nhập</h2>
+        <form class="login-form">
+          <label for="username">Tài khoản</label>
+          <input
+            type="text"
+            id="username"
+            placeholder="Số điện thoại or Facebook or Zalo or Google"
+          />
+
+          <label for="password">Mật khẩu</label>
+          <input type="password" id="password" placeholder="Mật khẩu" />
+
+          <label for="otp">Mã xác thực</label>
+          <div class="otp-container">
+            <input type="text" id="otp" placeholder="Mã xác thực" />
+            <button type="button" class="resend-btn">Gửi lại mã</button>
+          </div>
+
+          <button type="submit" class="login-btn">Đăng nhập</button>
+        </form>
+        <a href="#" class="forgot-password">Quên mật khẩu?</a>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script src="../assets/js/home.js"></script>
+  </body>
+</html>
