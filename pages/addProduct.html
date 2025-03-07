@@ -1,0 +1,79 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danh Sách Sản Phẩm</title>
+    <link rel="stylesheet" href="../assets//css/addproduct.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="top">
+        <div class="logo-title">
+          <img src="../assets/logo.png" alt="Book Store Logo" />
+          <span class="title">Book Store</span>
+        </div>
+        <div class="right">
+          <span class="username">Anh Hải</span>
+          <img src="../assets/facebook.png" alt="Admin Avatar" class="avatar" />
+        </div>
+      </div>
+      <!-- Menu -->
+      <div id="menu"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <h2>Thêm sản phẩm mới</h2>
+        <form>
+          <label>Mã sản phẩm</label>
+          <input
+            type="text"
+            placeholder="Mã sản phẩm sẽ được tự động tạo"
+            disabled
+          />
+
+          <label>Tên sản phẩm</label>
+          <input type="text" placeholder="Nhập tên sản phẩm" />
+
+          <label>Giá</label>
+          <input type="number" placeholder="Nhập giá sản phẩm" />
+
+          <label>Giảm giá (%)</label>
+          <input type="number" placeholder="Nhập phần trăm giảm giá" />
+
+          <label>Số lượng tồn</label>
+          <input type="number" placeholder="Nhập số lượng tồn" />
+
+          <label>Nhà xuất bản</label>
+          <input type="text" placeholder="Nhập nhà xuất bản" />
+
+          <label>Tác giả</label>
+          <input type="text" placeholder="Nhập tên tác giả" />
+
+          <label>Mô tả</label>
+          <textarea placeholder="Nhập mô tả sản phẩm"></textarea>
+
+          <label>Ảnh sản phẩm</label>
+          <input type="file" />
+
+          <label>Trạng thái</label>
+          <select>
+            <option>Đang bán</option>
+            <option>Ngừng bán</option>
+          </select>
+
+          <div class="buttons">
+            <button type="submit" class="btn btn-green">Thêm sản phẩm</button>
+            <button type="reset" class="btn btn-blue">Hủy bỏ</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script src="../assets/js/homeAdmin.js"></script>
+  </body>
+</html>
