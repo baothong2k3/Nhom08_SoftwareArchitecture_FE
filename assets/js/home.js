@@ -17,6 +17,11 @@ document.addEventListener(
   { passive: false }
 );
 
+function handleLogin(event) {
+  event.preventDefault(); // Ngăn chặn hành vi submit mặc định
+  window.location.href = '../pages/homeAdmin.html';
+}
+
 function goBack() {
     window.history.back();
 }
