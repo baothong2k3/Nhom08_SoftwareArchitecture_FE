@@ -46,3 +46,9 @@ fetch("../components/menu.html")
     currentPage = Math.min(Math.max(1, currentPage + step), totalPages);
     displayBooks();
 }
+
+//lay lai mat khau
+function handleLogin(event) {
+  event.preventDefault(); // Ngăn chặn form submit mặc định
+  window.location.href = "../pages/login.html"; // Chuyển hướng về trang login
+}
