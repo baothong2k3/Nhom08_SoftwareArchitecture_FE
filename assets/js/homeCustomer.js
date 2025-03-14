@@ -39,3 +39,59 @@ fetch("../components/menuCustomer.html")
     document.getElementById("menu").innerHTML = data;
   })
   .catch((error) => console.error("Error loading footer:", error));
+
+  // Gio hang
+
+  let cartItems = [
+    { id: 1, name: "The Great Gatsby", author: "F. Scott Fitzgerald", price: 150000, quantity: 1, image: "/assets/sachMau.png", selected: false },
+    { id: 2, name: "To Kill a Mockingbird", author: "Harper Lee", price: 120000, quantity: 1, image: "/assets/sachMau.png", selected: false }
+];
+
+function updateCart() {
+    const cartContainer = document.getElementById("cart-items");
+    cartContainer.innerHTML = "";
+    let total = 0;
+    cartItems.forEach(item => {
+        const itemElement = document.createElement("div");
+        itemElement.classList.add("cart-item");
+        itemElement.innerHTML = `
+            <input type="checkbox" onchange="toggleSelect(${item.id})" ${item.selected ? "checked" : ""} />
+            <img src="${item.image}" alt="${item.name}">
+            <div>
+                <h3>${item.name}</h3>
+                <p>Tác giả: ${item.author}</p>
+                <p>Giá: ${item.price.toLocaleString("vi-VN")} VND</p>
+            </div>
+            <div class="quantity-control">
+                <button onclick="updateQuantity(${item.id}, -1)">-</button>
+                <span>${item.quantity}</span>
+                <button onclick="updateQuantity(${item.id}, 1)">+</button>
+            </div>
+            <button class="remove" onclick="removeItem(${item.id})">Xóa</button>
+        `;
+        cartContainer.appendChild(itemElement);
+        if (item.selected) total += item.price * item.quantity;
+    });
+    document.getElementById("total-price").innerText = total.toLocaleString("vi-VN");
+}
+
+function updateQuantity(id, delta) {
+    cartItems = cartItems.map(item => 
+        item.id === id ? { ...item, quantity: Math.max(1, item.quantity + delta) } : item
+    );
+    updateCart();
+}
+
+function removeItem(id) {
+    cartItems = cartItems.filter(item => item.id !== id);
+    updateCart();
+}
+
+function toggleSelect(id) {
+    cartItems = cartItems.map(item => 
+        item.id === id ? { ...item, selected: !item.selected } : item
+    );
+    updateCart();
+}
+
+updateCart();

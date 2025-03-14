@@ -1,0 +1,50 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store</title>
+    <link rel="stylesheet" href="../assets//css/cartCustomer.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="top">
+        <div class="logo-title">
+          <img src="../assets/logo.png" alt="Book Store Logo" />
+          <span class="title">Book Store</span>
+        </div>
+        <div class="buttons">
+          <button onclick="window.location.href='../pages/login.html'">
+            Đăng nhập
+          </button>
+          <button
+            class="register"
+            onclick="window.location.href='../pages/login.html'"
+          >
+            Đăng ký
+          </button>
+        </div>
+      </div>
+      <!-- Menu -->
+      <div id="menu"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <h2>Giỏ hàng của bạn</h2>
+        <div id="cart-items"></div>
+        <div class="checkout">
+          <p>
+            <strong>Tổng cộng: <span id="total-price">0</span> VND</strong>
+          </p>
+          <button>Thanh toán</button>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script src="../assets/js/homeCustomer.js"></script>
+  </body>
+</html>
