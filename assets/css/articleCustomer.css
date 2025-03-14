@@ -80,50 +80,44 @@ body {
 }
 
 .container {
-  background: white;
-  padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
   width: 100%;
-  height: 700px;
+  height: 1350px;
 }
-
 h2 {
+  margin: 20px 0px;
   font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 25px;
 }
 
-.order-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #ddd;
-  padding: 10px 0;
-}
-.order-info {
-  flex-grow: 1;
-}
-.order-title {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-.order-status {
-  color: gray;
-}
-.cancel-btn {
-  padding: 8px 12px;
-  border: none;
+.article {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
   border-radius: 5px;
+}
+.article img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button,
+.pagination span button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin: 3px;
   cursor: pointer;
-  font-size: 14px;
+  border-radius: 5px;
+  font-size: 16px;
 }
-.cancel-btn.enabled {
-  background-color: red;
-  color: white;
-}
-.cancel-btn.disabled {
-  background-color: gray;
-  color: white;
-  cursor: not-allowed;
+
+.pagination span .active {
+  background-color: #0056b3;
 }

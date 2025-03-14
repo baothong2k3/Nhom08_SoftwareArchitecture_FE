@@ -79,51 +79,69 @@ body {
   padding: 10px 50px;
 }
 
-.container {
-  background: white;
-  padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+.contact-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 700px;
+  text-align: left;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 40px;
   font-weight: bold;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 }
 
-.order-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #ddd;
-  padding: 10px 0;
-}
-.order-info {
-  flex-grow: 1;
-}
-.order-title {
+h5 {
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 5px;
-}
-.order-status {
+  font-style: italic;
   color: gray;
 }
-.cancel-btn {
-  padding: 8px 12px;
-  border: none;
-  border-radius: 5px;
+
+.contact-container h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+p {
+  font-size: 18px;
+  margin-left: 30px;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
   cursor: pointer;
-  font-size: 14px;
 }
-.cancel-btn.enabled {
-  background-color: red;
-  color: white;
+
+.social-icons {
+  display: flex;
+  gap: 15px;
 }
-.cancel-btn.disabled {
-  background-color: gray;
-  color: white;
-  cursor: not-allowed;
+
+.social-icons img {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.social-icons .icon {
+  width: 65px;
+  height: 65px;
+  cursor: pointer;
 }

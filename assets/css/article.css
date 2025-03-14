@@ -80,18 +80,25 @@ h2 {
   height: auto;
   border-radius: 5px;
 }
+
 .pagination {
-  text-align: center;
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
-.pagination button {
-  padding: 5px 10px;
-  margin: 0 5px;
+
+.pagination button,
+.pagination span button {
+  background-color: #007bff;
+  color: white;
   border: none;
-  background-color: #ccc;
+  padding: 8px 15px;
+  margin: 3px;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 5px;
+  font-size: 16px;
 }
-.pagination button:hover {
-  background-color: #999;
+
+.pagination span .active {
+  background-color: #0056b3;
 }

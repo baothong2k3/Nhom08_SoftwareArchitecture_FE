@@ -119,3 +119,10 @@ function calculateTotal() {
 
 // Tính ngay khi trang tải xong
 window.onload = calculateTotal;
+
+//phan trang
+function changePage(step) {
+  const totalPages = Math.ceil(books.length / itemsPerPage);
+  currentPage = Math.min(Math.max(1, currentPage + step), totalPages);
+  displayBooks();
+}

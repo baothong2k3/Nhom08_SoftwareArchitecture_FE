@@ -117,12 +117,11 @@
             </tr>
           </tbody>
         </table>
-        <div class="pagination">
-          <button class="btn btn-grey">Trước</button>
-          <button class="btn btn-active">1</button>
-          <button class="btn btn-grey">2</button>
-          <button class="btn btn-grey">3</button>
-          <button class="btn btn-grey">Sau</button>
+        <!-- Thanh phân trang -->
+        <div class="pagination" id="pagination">
+          <button onclick="changePage(-1)">Trước</button>
+          <span id="page-numbers"></span>
+          <button onclick="changePage(1)">Sau</button>
         </div>
       </div>
     </main>

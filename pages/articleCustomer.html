@@ -3,7 +3,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Store</title>
-    <link rel="stylesheet" href="../assets//css/article.css" />
+    <link rel="stylesheet" href="../assets//css/articleCustomer.css" />
   </head>
   <body>
     <!-- Header -->
@@ -13,17 +13,11 @@
           <img src="../assets/logo.png" alt="Book Store Logo" />
           <span class="title">Book Store</span>
         </div>
-        <div class="buttons">
-          <button onclick="window.location.href='../pages/login.html'">
-            Đăng nhập
-          </button>
-          <button
-            class="register"
-            onclick="window.location.href='../pages/login.html'"
-          >
-            Đăng ký
-          </button>
+        <div class="right">
+          <span class="username">Anh Hải</span>
+          <img src="../assets/facebook.png" alt="Admin Avatar" class="avatar" />
         </div>
+      </div>
       </div>
       <!-- Menu -->
       <div id="menu"></div>
@@ -55,11 +49,11 @@
           </p>
         </div>
 
-        <div class="pagination">
-          <button>&lt;</button>
-          <button>1</button>
-          <button>2</button>
-          <button>&gt;</button>
+        <!-- Thanh phân trang -->
+        <div class="pagination" id="pagination">
+          <button onclick="changePage(-1)">Trước</button>
+          <span id="page-numbers"></span>
+          <button onclick="changePage(1)">Sau</button>
         </div>
       </div>
     </main>

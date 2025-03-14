@@ -39,3 +39,10 @@ fetch("../components/menu.html")
     document.getElementById("menu").innerHTML = data;
   })
   .catch((error) => console.error("Error loading footer:", error));
+
+  //phan trang
+  function changePage(step) {
+    const totalPages = Math.ceil(books.length / itemsPerPage);
+    currentPage = Math.min(Math.max(1, currentPage + step), totalPages);
+    displayBooks();
+}

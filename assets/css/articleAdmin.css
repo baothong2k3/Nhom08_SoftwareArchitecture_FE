@@ -155,8 +155,23 @@ img {
 }
 
 .pagination {
-  margin-top: 15px;
   display: flex;
   justify-content: center;
-  gap: 5px;
+  margin-top: 20px;
+}
+
+.pagination button,
+.pagination span button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin: 3px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.pagination span .active {
+  background-color: #0056b3;
 }
