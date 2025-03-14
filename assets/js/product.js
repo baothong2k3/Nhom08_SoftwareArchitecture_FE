@@ -40,6 +40,12 @@ function displayBooks() {
     updatePagination();
 }
 
+// Xem chi tiết sách
+function viewDetails(bookIndex) {
+    const book = books[bookIndex]; // Lấy thông tin sách theo chỉ mục
+    window.location.href = `/pages/productDetails.html?id=${book.id}`;
+}
+
 // Cập nhật phân trang
 function updatePagination() {
     const pageNumbers = document.getElementById("page-numbers");
