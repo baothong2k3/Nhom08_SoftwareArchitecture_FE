@@ -1,0 +1,77 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thêm Liên Hệ</title>
+    <link rel="stylesheet" href="../assets//css/accountAdmin.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="top">
+        <div class="logo-title">
+          <img src="../assets/logo.png" alt="Book Store Logo" />
+          <span class="title">Book Store</span>
+        </div>
+        <div class="right">
+          <span class="username">Anh Hải</span>
+          <img src="../assets/facebook.png" alt="Admin Avatar" class="avatar" />
+        </div>
+      </div>
+      <!-- Menu -->
+      <div id="menu"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <h2>Thông tin tài khoản</h2>
+        <form>
+          <label>Tên tài khoản</label>
+          <input type="text" placeholder="Anh Hải" />
+
+          <label>Số điện thoại</label>
+          <input type="text" placeholder="0975246856" />
+
+          <label>Email</label>
+          <input type="text" placeholder="Cập nhật (nếu muốn)..." />
+
+          <label>Facebook</label>
+          <input type="text" placeholder="Cập nhật (nếu muốn)..." />
+
+          <label>Zalo</label>
+          <input type="text" placeholder="Cập nhật (nếu muốn)..." />
+
+          <label>Địa chỉ</label>
+          <input type="text" placeholder="06 Nguyễn Văn Bảo, Phường 14, Quận Gò Vấp, Tp.HCM" />
+
+          <label>Ngân hàng liên kết</label>
+          <input type="text" placeholder="986754321093 (TMCP)" />
+
+          <h5>---- Đặt lại mật khẩu (nếu muốn) ----</h5> <br
+
+          <label>Nhập mật khẩu</label>
+          <input type="password" placeholder="Nhập mật khẩu" />
+          <label>Nhập lại mật khẩu</label>
+          <input type="password" placeholder="Nhập lại mật khẩu" />
+          <label>Trạng thái</label>
+          <select>
+            <option value="active">Hoạt động</option>
+            <option value="inactive">Không hoạt động</option>
+          </select>
+
+          <div class="buttons">
+            <button type="submit" class="btn btn-green">Lưu</button>
+            <button type="reset" class="btn btn-blue" onclick="goBack()">
+              Hủy bỏ
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script src="../assets/js/homeCustomer.js"></script>
+  </body>
+</html>
