@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 1px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.nav {
+  background-color: #5371c3;
+  padding: 12px 0;
+  border-radius: 5px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav ul li a {
+  font-size: 25px;
+  font-weight: initial;
+  color: white;
+  text-decoration: none;
+  padding: 10px 35px;
+}
+
+.nav ul li a:hover {
+  background-color: #2b6cb0;
+  border-radius: 5px;
+}
+
+/* 
+
+/*header */
+.container {
+  width: 90%;
+  margin: auto;
+}
