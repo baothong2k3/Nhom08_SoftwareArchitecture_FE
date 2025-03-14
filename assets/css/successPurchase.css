@@ -63,83 +63,41 @@ body {
 .container {
   margin: 0 auto;
   width: 100%;
-  height: 900px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 h2 {
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 25px;
 }
-
-.product-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.container img {
+  width: 120px;
+  height: auto;
+  margin: 10px 0;
 }
-
-.product-info img {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 25px;
+.container h2 {
+  margin-bottom: 10px;
 }
-
-input,
-select {
-  width: 100%;
-  padding: 8px;
+.container p {
   margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 25px;
-  font-size: 16px;
 }
-
-.hidden {
-  display: none;
-}
-
-label {
-  font-size: 20px;
-}
-
-.confirm-btn {
-  background: green;
-  color: white;
-  cursor: pointer;
-}
-
-.buttons {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 20px;
-}
-
-button:hover {
-  background-color: #10b981;
-}
-
-.confirm-btn01 {
-  background-color: red;
-}
-
-.confirm-btn {
-  background-color: blueviolet;
-}
-
-strong {
-  font-size: 20px;
+.total {
   font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
 }
-
-button {
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007bff;
   color: white;
-  padding: 10px;
-  border: none;
-  margin-left: 10px;
-  font-size: 22px;
+  text-decoration: none;
   border-radius: 5px;
-  height: 45px;
+}
+.btn:hover {
+  background-color: #0056b3;
 }

@@ -66,10 +66,37 @@
           <input type="text" id="bank" placeholder="Nhập tên ngân hàng" />
         </div>
 
+        <div class="input-group">
+          <label>Thuế (VND)</label>
+          <input
+            type="number"
+            id="tax"
+            value="3.000"
+            oninput="calculateTotal()"
+            readonly
+          />
+        </div>
+
+        <div class="input-group">
+          <label>Phí vận chuyển (VND)</label>
+          <input
+            type="number"
+            id="shipping"
+            value="20.000"
+            oninput="calculateTotal()"
+            readonly
+          />
+        </div>
+
         <div class="buttons">
-          <strong>Tổng tiền: 300,000 VND</strong>
-          <button class="confirm-btn">Xác nhận mua</button>
-          <button class="confirm-btn01">Hủy</button>
+          <h3 id="total-price">Tổng tiền: 323.000 VND</h3>
+          <button
+            class="confirm-btn"
+            onclick="window.location.href='../pages/successPurchase.html'"
+          >
+            Xác nhận mua
+          </button>
+          <button class="confirm-btn01" onclick="goBack()">Hủy</button>
         </div>
       </div>
     </main>

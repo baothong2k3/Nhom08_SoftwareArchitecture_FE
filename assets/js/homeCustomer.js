@@ -102,3 +102,20 @@ function toggleBankField() {
   const bankField = document.getElementById("bank-field");
   bankField.classList.toggle("hidden", paymentMethod !== "bank");
 }
+
+
+//Tong tien
+
+function calculateTotal() {
+  let quantity = parseInt(document.getElementById("quantity").value);
+  let productPrice = parseInt(document.getElementById("product-price").value);
+  let tax = parseInt(document.getElementById("tax").value);
+  let shipping = parseInt(document.getElementById("shipping").value);
+  
+  let total = (productPrice * quantity) + tax + shipping;
+  
+  document.getElementById("total-price").innerText = `Tổng tiền: ${total.toLocaleString()} VND`;
+}
+
+// Tính ngay khi trang tải xong
+window.onload = calculateTotal;
