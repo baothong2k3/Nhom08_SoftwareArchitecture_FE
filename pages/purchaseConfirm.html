@@ -1,0 +1,81 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store</title>
+    <link rel="stylesheet" href="../assets//css/purchaseConfirm.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="top">
+        <div class="logo-title">
+          <img src="../assets/logo.png" alt="Book Store Logo" />
+          <span class="title">Book Store</span>
+        </div>
+        <div class="buttons">
+          <button onclick="window.location.href='../pages/login.html'">
+            Đăng nhập
+          </button>
+          <button
+            class="register"
+            onclick="window.location.href='../pages/login.html'"
+          >
+            Đăng ký
+          </button>
+        </div>
+      </div>
+      <!-- Menu -->
+      <div id="menu"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <h2>Xác nhận mua hàng</h2>
+        <div class="product-info">
+          <img src="../assets/sachMau.png" alt="The Great Gatsby" />
+          <div>
+            <strong>The Great Gatsby</strong>
+            <p>Số lượng: 2</p>
+            <p>Giá: 150,000 VND</p>
+          </div>
+        </div>
+
+        <label for="voucher">Mã giảm giá</label>
+        <input type="text" id="voucher" placeholder="Add voucher" />
+
+        <label for="shipping">Đơn vị vận chuyển</label>
+        <input type="text" id="shipping" value="Nhanh" />
+
+        <label for="address">Địa chỉ nhận hàng</label>
+        <input
+          type="text"
+          id="address"
+          value="234 đường số 2, phường 11, Gò Vấp"
+        />
+
+        <label for="payment">Lựa chọn thanh toán</label>
+        <select id="payment" onchange="toggleBankField()">
+          <option value="cod">Thanh toán khi nhận hàng</option>
+          <option value="bank">Chuyển khoản</option>
+        </select>
+
+        <div id="bank-field" class="hidden">
+          <label for="bank">Ngân hàng</label>
+          <input type="text" id="bank" placeholder="Nhập tên ngân hàng" />
+        </div>
+
+        <div class="buttons">
+          <strong>Tổng tiền: 300,000 VND</strong>
+          <button class="confirm-btn">Xác nhận mua</button>
+          <button class="confirm-btn01">Hủy</button>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script src="../assets/js/homeCustomer.js"></script>
+  </body>
+</html>

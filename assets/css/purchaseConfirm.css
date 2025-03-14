@@ -1,0 +1,145 @@
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  touch-action: none;
+}
+
+/*header */
+.header {
+  display: flex;
+  flex-direction: column;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 13px 25px;
+}
+/*logo*/
+.logo-title {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+.header img {
+  height: 80px;
+  width: 80px;
+}
+.header .title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/*button*/
+.header .buttons button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.header .buttons button.register {
+  background-color: #10b981;
+}
+
+/*Content*/
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px 50px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  height: 750px;
+}
+h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-info img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 25px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  font-size: 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+label {
+  font-size: 20px;
+}
+
+.confirm-btn {
+  background: green;
+  color: white;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #10b981;
+}
+
+.confirm-btn01 {
+  background-color: red;
+}
+
+.confirm-btn {
+  background-color: blueviolet;
+}
+
+strong {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+button {
+  color: white;
+  padding: 10px;
+  border: none;
+  margin-left: 10px;
+  font-size: 22px;
+  border-radius: 5px;
+  height: 45px;
+}

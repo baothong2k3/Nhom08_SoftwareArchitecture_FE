@@ -95,3 +95,10 @@ function toggleSelect(id) {
 }
 
 updateCart();
+
+// chuyen khoan
+function toggleBankField() {
+  const paymentMethod = document.getElementById("payment").value;
+  const bankField = document.getElementById("bank-field");
+  bankField.classList.toggle("hidden", paymentMethod !== "bank");
+}
