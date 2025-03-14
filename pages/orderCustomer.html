@@ -1,0 +1,76 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store</title>
+    <link rel="stylesheet" href="../assets//css/orderCustomer.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="top">
+        <div class="logo-title">
+          <img src="../assets/logo.png" alt="Book Store Logo" />
+          <span class="title">Book Store</span>
+        </div>
+        <div class="buttons">
+          <button onclick="window.location.href='../pages/login.html'">
+            Đăng nhập
+          </button>
+          <button
+            class="register"
+            onclick="window.location.href='../pages/login.html'"
+          >
+            Đăng ký
+          </button>
+        </div>
+      </div>
+      <!-- Menu -->
+      <div id="menu"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <h2>Đơn hàng của bạn</h2>
+
+        <div class="order-item">
+          <div class="order-info">
+            <p class="order-title">Đơn hàng #12345</p>
+            <p class="order-status">Tình trạng đơn hàng: Đang xử lý</p>
+            <p class="order-status">
+              Tình trạng thanh toán: <strong>Chưa thanh toán</strong>
+            </p>
+          </div>
+          <button class="cancel-btn enabled">Hủy đơn</button>
+        </div>
+
+        <div class="order-item">
+          <div class="order-info">
+            <p class="order-title">Đơn hàng #12346</p>
+            <p class="order-status">Tình trạng đơn hàng: Đang vận chuyển</p>
+            <p class="order-status">
+              Tình trạng thanh toán: <strong>Đã thanh toán</strong>
+            </p>
+          </div>
+          <button class="cancel-btn disabled" disabled>Hủy đơn</button>
+        </div>
+
+        <div class="order-item">
+          <div class="order-info">
+            <p class="order-title">Đơn hàng #12347</p>
+            <p class="order-status">Tình trạng đơn hàng: Đã giao</p>
+            <p class="order-status">
+              Tình trạng thanh toán: <strong>Đã thanh toán</strong>
+            </p>
+          </div>
+          <button class="cancel-btn disabled" disabled>Hủy đơn</button>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script src="../assets/js/homeCustomer.js"></script>
+  </body>
+</html>
