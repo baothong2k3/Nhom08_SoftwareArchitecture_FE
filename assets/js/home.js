@@ -50,5 +50,5 @@ fetch("../components/menu.html")
 //lay lai mat khau
 function handleLogin(event) {
   event.preventDefault(); // Ngăn chặn form submit mặc định
-  window.location.href = "../pages/login.html"; // Chuyển hướng về trang login
+  window.location.href = "../pages/homeCustomer.html"; // Chuyển hướng về trang login
 }
