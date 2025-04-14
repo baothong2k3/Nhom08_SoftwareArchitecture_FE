@@ -17,10 +17,10 @@ document.addEventListener(
   { passive: false }
 );
 
-function handleLogin(event) {
-  event.preventDefault(); // Ngăn chặn hành vi submit mặc định
-  window.location.href = '../pages/homeAdmin.html';
-}
+// function handleLogin(event) {
+//   event.preventDefault(); // Ngăn chặn hành vi submit mặc định
+//   window.location.href = '../pages/homeAdmin.html';
+// }
 
 function goBack() {
     window.history.back();
@@ -47,8 +47,8 @@ fetch("../components/menu.html")
     displayBooks();
 }
 
-//lay lai mat khau
-function handleLogin(event) {
-  event.preventDefault(); // Ngăn chặn form submit mặc định
-  window.location.href = "../pages/homeCustomer.html"; // Chuyển hướng về trang login
-}
+// //lay lai mat khau
+// function handleLogin(event) {
+//   event.preventDefault(); // Ngăn chặn form submit mặc định
+//   window.location.href = "../pages/homeCustomer.html"; // Chuyển hướng về trang login
+// }

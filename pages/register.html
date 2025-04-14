@@ -34,14 +34,29 @@
       <div class="register-container">
         <h2>Đăng ký</h2>
 
-        <label for="username">Tên tài khoản</label>
-        <input type="text" id="username" placeholder="Tên tài khoản" />
-
         <label for="phone">Số điện thoại</label>
         <input type="text" id="phone" placeholder="Số điện thoại" />
+        <span
+          id="phone-error"
+          class="error-message"
+          style="color: red; display: block"
+        ></span>
+
+        <label for="otp">Mã xác thực</label>
+        <input type="text" id="otp" placeholder="OTP" />
+        <span
+          id="otp-error"
+          class="error-message"
+          style="color: red; display: block"
+        ></span>
 
         <label for="password">Mật khẩu</label>
         <input type="password" id="password" placeholder="Mật khẩu" />
+        <span
+          id="password-error"
+          class="error-message"
+          style="color: red; display: block"
+        ></span>
 
         <label for="confirm-password">Nhập lại mật khẩu</label>
         <input
@@ -49,13 +64,13 @@
           id="confirm-password"
           placeholder="Nhập lại mật khẩu"
         />
+        <span
+          id="confirm-password-error"
+          class="error-message"
+          style="color: red; display: block"
+        ></span>
 
-        <button
-          class="register-btn"
-          onclick="window.location.href='../pages/homeAdmin.html'"
-        >
-          Đăng ký
-        </button>
+        <button class="register-btn" id="register-btn">Đăng ký</button>
 
         <p class="register-with">---- Đăng ký bằng ----</p>
         <div class="social-icons">
@@ -69,5 +84,6 @@
     <footer id="footer"></footer>
 
     <script src="../assets/js/home.js"></script>
+    <script src="../service//signup.js"></script>
   </body>
 </html>

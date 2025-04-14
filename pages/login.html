@@ -38,17 +38,21 @@
           <input
             type="text"
             id="username"
-            placeholder="Số điện thoại or Facebook or Zalo or Google"
+            placeholder="Số điện thoại or Email"
           />
+          <span
+            id="username-error"
+            class="error-message"
+            style="color: red; display: block"
+          ></span>
 
           <label for="password">Mật khẩu</label>
           <input type="password" id="password" placeholder="Mật khẩu" />
-
-          <label for="otp">Mã xác thực</label>
-          <div class="otp-container">
-            <input type="text" id="otp" placeholder="Mã xác thực" />
-            <button type="button" class="resend-btn">Gửi lại mã</button>
-          </div>
+          <span
+            id="password-error"
+            class="error-message"
+            style="color: red; display: block"
+          ></span>
 
           <button type="submit" class="login-btn">Đăng nhập</button>
         </form>
@@ -61,5 +65,6 @@
     <footer id="footer"></footer>
 
     <script src="../assets/js/home.js"></script>
+    <script src="../service/login.js"></script>
   </body>
 </html>
