@@ -3,14 +3,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Store</title>
-    <link rel="stylesheet" href="../assets//css/register.css" />
+    <link rel="stylesheet" href="../assets/css/register.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
   <body>
     <!-- Header -->
     <header class="header">
       <div class="top">
         <div class="logo-title">
-          <img src="../assets/logo.png" alt="Book Store Logo" />
+          <img src="../assets/img/logo.png" alt="Book Store Logo" />
           <span class="title">Book Store</span>
         </div>
         <div class="buttons">
@@ -19,10 +23,13 @@
           </button>
           <button
             class="register"
-            onclick="window.location.href='../pages/login.html'"
+            onclick="window.location.href='../pages/register.html'"
           >
             Đăng ký
           </button>
+          <a href="../pages/cart.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
         </div>
       </div>
       <!-- Menu -->
@@ -35,15 +42,18 @@
         <h2>Đăng ký</h2>
 
         <label for="phone">Số điện thoại</label>
-        <input type="text" id="phone" placeholder="Số điện thoại" />
+        <input type="tel" id="phone" placeholder="Số điện thoại" />
         <span
           id="phone-error"
           class="error-message"
           style="color: red; display: block"
         ></span>
 
-        <label for="otp">Mã xác thực</label>
-        <input type="text" id="otp" placeholder="OTP" />
+        <label for="otp"> Mã xác thực <span id="countdown"></span> </label>
+        <div class="otp-container">
+          <input type="number" id="otp" placeholder="OTP" />
+          <button id="send-btn" disabled>Gửi mã</button>
+        </div>
         <span
           id="otp-error"
           class="error-message"
@@ -74,9 +84,9 @@
 
         <p class="register-with">---- Đăng ký bằng ----</p>
         <div class="social-icons">
-          <img src="../assets/facebook.png" alt="Facebook" />
-          <img src="../assets/zalo.png" alt="Zalo" class="icon" />
-          <img src="../assets/google.png" alt="Google" />
+          <img src="../assets/img/facebook.png" alt="Facebook" />
+          <img src="../assets/img/zalo.png" alt="Zalo" class="icon" />
+          <img src="../assets/img/google.png" alt="Google" />
         </div>
       </div>
     </main>
@@ -85,5 +95,6 @@
 
     <script src="../assets/js/home.js"></script>
     <script src="../service//signup.js"></script>
+    <script src="../assets/js/register/register.js"></script>
   </body>
 </html>

@@ -4,18 +4,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Store</title>
     <link rel="stylesheet" href="../assets//css/contactCustomer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
   <body>
     <!-- Header -->
     <header class="header">
       <div class="top">
         <div class="logo-title">
-          <img src="../assets/logo.png" alt="Book Store Logo" />
+          <img src="../assets/img/logo.png" alt="Book Store Logo" />
           <span class="title">Book Store</span>
         </div>
         <div class="right">
           <span class="username">Anh Hải</span>
-          <img src="../assets/facebook.png" alt="Admin Avatar" class="avatar" />
+          <img
+            src="../assets/img/avata.png"
+            alt="Admin Avatar"
+            class="avatar"
+          />
+          <a href="../pages/cartCustomer.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="total-quantity"></span>
+            <!-- Thêm số lượng sản phẩm ở đây -->
+          </a>
         </div>
       </div>
       <!-- Menu -->
@@ -42,14 +55,15 @@
 
         <h3>Kết Nối Với Chúng Tôi</h3>
         <div class="social-icons">
-          <img src="../assets/facebook.png" alt="Facebook" />
-          <img src="../assets/zalo.png" alt="Zalo" class="icon" />
+          <img src="../assets/img/facebook.png" alt="Facebook" />
+          <img src="../assets/img/zalo.png" alt="Zalo" class="icon" />
         </div>
       </div>
     </main>
     <!-- Footer -->
     <footer id="footer"></footer>
 
+    <script src="../service/totalCart.js"></script>
     <script src="../assets/js/homeCustomer.js"></script>
   </body>
 </html>

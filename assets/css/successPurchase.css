@@ -4,12 +4,14 @@ body {
   width: 100%;
   height: auto;
   touch-action: none;
+  background-color: #f0f3f7; /* nền chung */
 }
 
 /*header */
 .header {
   display: flex;
   flex-direction: column;
+  background-color: #bde5f2; /* nền nhạt */
 }
 .top {
   display: flex;
@@ -33,6 +35,25 @@ body {
   font-size: 30px;
   font-weight: bold;
   margin-left: 10px;
+}
+
+/*right*/
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.username {
+  margin-right: 8px;
+  font-size: 20px;
+  color: #555;
+  font-weight: bold;
+}
+
+.avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
 }
 
 /*button*/
@@ -68,6 +89,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #f0f3f7; /* nền chung */
 }
 h2 {
   font-size: 32px;
@@ -100,4 +122,31 @@ h2 {
 }
 .btn:hover {
   background-color: #0056b3;
+}
+
+/*gio hang*/
+.cart-icon {
+  font-size: 30px;
+  color: black; /* Màu xanh sáng hiện đại */
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 50%;
+  position: relative; /* Để cho phần tử số lượng có thể được định vị */
+  transition: background-color 0.3s;
+}
+
+.cart-icon:hover {
+  background-color: rgba(79, 195, 247, 0.2); /* Hover nhẹ */
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  left: 28px;
+  background-color: red;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
 }

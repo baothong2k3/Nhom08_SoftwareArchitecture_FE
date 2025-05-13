@@ -4,18 +4,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Store (Admin)</title>
     <link rel="stylesheet" href="../assets//css/homeAdmin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Font đẹp hơn -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <!-- Header -->
     <header class="header">
       <div class="top">
         <div class="logo-title">
-          <img src="../assets/logo.png" alt="Book Store Logo" />
+          <img src="../assets/img/logo.png" alt="Book Store Logo" />
           <span class="title">Book Store</span>
         </div>
         <div class="right">
           <span class="username">Anh Hải</span>
-          <img src="../assets/facebook.png" alt="Admin Avatar" class="avatar" />
+          <img src="../assets/img/avata.png" alt="Admin Avatar" class="avatar" />
         </div>
       </div>
       <!-- Menu -->
@@ -32,14 +46,34 @@
         </p>
       </div>
 
-      <img
-        src="../assets/bookstoreHome.png"
-        alt="Bookshelf with various books"
-      />
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="../assets/img/bookstoreHome.jpg"
+              alt="Bookshelf with various books"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="../assets/img/bookstoreHome02.png"
+              alt="Bookshelf with various books"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="../assets/img/bookstoreHome03.jpg"
+              alt="Bookshelf with various books"
+            />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
     </main>
     <!-- Footer -->
     <footer id="footer"></footer>
 
     <script src="../assets/js/homeAdmin.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   </body>
 </html>

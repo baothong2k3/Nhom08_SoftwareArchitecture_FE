@@ -4,12 +4,14 @@ body {
   width: 100%;
   height: auto;
   touch-action: none;
+  background-color: #f0f3f7; /* nền chung */
 }
 
 /*header */
 .header {
   display: flex;
   flex-direction: column;
+  background-color: #bde5f2; /* nền nhạt */
 }
 .top {
   display: flex;
@@ -69,6 +71,7 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
   width: 500px;
   height: 700px;
+  background-color: #f0f3f7; /* nền chung */
 }
 
 /* Tiêu đề */
@@ -152,4 +155,18 @@ input {
 
 .forgot-password:hover {
   text-decoration: underline;
+}
+
+/*gio hang*/
+.cart-icon {
+  font-size: 30px;
+  color: black;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.cart-icon:hover {
+  background-color: rgba(79, 195, 247, 0.2); /* Hover nhẹ */
 }

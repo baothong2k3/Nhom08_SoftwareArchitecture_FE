@@ -3,14 +3,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Store</title>
-    <link rel="stylesheet" href="../assets//css/product.css" />
+    <link rel="stylesheet" href="../assets/css/product.css" />
+    <!-- Thêm SweetAlert2 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
   <body>
     <!-- Header -->
     <header class="header">
       <div class="top">
         <div class="logo-title">
-          <img src="../assets/logo.png" alt="Book Store Logo" />
+          <img src="../assets/img/logo.png" alt="Book Store Logo" />
           <span class="title">Book Store</span>
         </div>
         <div class="buttons">
@@ -23,6 +33,10 @@
           >
             Đăng ký
           </button>
+
+          <a href="../pages/cart.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
         </div>
       </div>
       <!-- Menu -->
@@ -33,10 +47,10 @@
     <main class="main">
       <div class="container">
         <div class="search-bar">
-          <select>
-            <option>Tất cả</option>
-            <option>Sách Giáo Khoa</option>
-            <option>Truyện Cổ Tích</option>
+          <select id="categoryFilter">
+            <option value="all">Tất cả</option>
+            <option value="schoolBooks">Sách Giáo Khoa</option>
+            <option value="fairyTales">Truyện Cổ Tích</option>
           </select>
           <input
             type="text"
@@ -44,12 +58,10 @@
             placeholder="Tìm kiếm sản phẩm..."
             onkeyup="searchBooks()"
           />
-          <button onclick="searchBooks()">Tìm kiếm</button>
+          <button onclick="searchBooks()" class="btn-search">Tìm kiếm</button>
         </div>
 
-        <div id="product-list" class="product-list">
-          <!-- Danh sách sách sẽ được thêm bằng JavaScript -->
-        </div>
+        <div id="product-list" class="product-list"></div>
 
         <!-- Thanh phân trang -->
         <div class="pagination" id="pagination">
@@ -58,13 +70,22 @@
           <button onclick="changePage(1)">Sau</button>
         </div>
       </div>
-
-      <script src="script.js"></script>
     </main>
+
     <!-- Footer -->
     <footer id="footer"></footer>
 
+    <!-- Scripts -->
     <script src="../assets/js/home.js"></script>
-    <script src="../assets/js/product.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+      defer
+    ></script>
+    <script src="../service/api/apiClient.js" defer></script>
+    <script src="../service/product.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.js"
+      defer
+    ></script>
   </body>
 </html>

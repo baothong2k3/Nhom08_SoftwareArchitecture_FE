@@ -6,7 +6,7 @@
 }
 
 .nav {
-  background-color: #5371c3;
+  background-color: #a9c4f2; /* Xanh rất nhạt - hiện đại, dễ nhìn */
   padding: 12px 0;
   border-radius: 5px;
 }
@@ -20,14 +20,15 @@
 
 .nav ul li a {
   font-size: 25px;
-  font-weight: initial;
-  color: white;
+  font-weight: 650;
+  font-family: "Nunito", sans-serif;
+  color: #1e40af;
   text-decoration: none;
   padding: 10px 35px;
 }
 
 .nav ul li a:hover {
-  background-color: #2b6cb0;
+  background-color: #bbdefb; /* Hover nhẹ hơn, đồng bộ */
   border-radius: 5px;
 }
 

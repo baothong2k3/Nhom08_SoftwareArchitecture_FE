@@ -34,7 +34,7 @@ document.getElementById("register-btn").addEventListener("click", async function
 
     if (response.ok) {
       alert("Đăng ký thành công!"); // Có thể thay alert bằng redirect trực tiếp nếu muốn
-      window.location.href = "../pages/homeCustomer.html";
+      window.location.href = "../pages/home.html";
     } else {
       // Xử lý lỗi từ backend
       if (data.errors) {

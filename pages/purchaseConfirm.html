@@ -3,26 +3,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Store</title>
-    <link rel="stylesheet" href="../assets//css/purchaseConfirm.css" />
+    <link rel="stylesheet" href="../assets/css/purchaseConfirm.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
   <body>
     <!-- Header -->
     <header class="header">
       <div class="top">
         <div class="logo-title">
-          <img src="../assets/logo.png" alt="Book Store Logo" />
+          <img src="../assets/img/logo.png" alt="Book Store Logo" />
           <span class="title">Book Store</span>
         </div>
-        <div class="buttons">
-          <button onclick="window.location.href='../pages/login.html'">
-            Đăng nhập
-          </button>
-          <button
-            class="register"
-            onclick="window.location.href='../pages/login.html'"
-          >
-            Đăng ký
-          </button>
+        <div class="right">
+          <span class="username">Anh Hải</span>
+          <img
+            src="../assets/img/avata.png"
+            alt="Admin Avatar"
+            class="avatar"
+          />
+          <a href="../pages/cartCustomer.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="total-quantity"></span>
+            <!-- Thêm số lượng sản phẩm ở đây -->
+          </a>
         </div>
       </div>
       <!-- Menu -->
@@ -34,19 +45,42 @@
       <div class="container">
         <h2>Xác nhận mua hàng</h2>
         <div class="product-info">
-          <img src="../assets/sachMau.png" alt="The Great Gatsby" />
-          <div>
-            <strong>The Great Gatsby</strong>
-            <p>Số lượng: 2</p>
-            <p>Giá: 150,000 VND</p>
-          </div>
         </div>
 
-        <label for="voucher">Mã giảm giá</label>
-        <input type="text" id="voucher" placeholder="Add voucher" />
+        <label for="address">Tên người nhận</label>
+        <input
+          type="text"
+          id="address"
+          value="Anh Hải"
+        />
 
-        <label for="shipping">Đơn vị vận chuyển</label>
-        <input type="text" id="shipping" value="Nhanh" />
+        <label for="address">Số điện thoại</label>
+        <input
+          type="text"
+          id="address"
+          value="0936190642"
+        />
+
+        <label for="address">Email</label>
+        <input
+          type="text"
+          id="address"
+          value="bac1234@gmail.com"
+        />
+
+        <label for="payment">Tỉnh/ Thành phố</label>
+        <select id="payment">
+          <option>Chọn</option>
+          <option>Hồ Chí Minh</option>
+          <option>Hà Nội</option>
+        </select>
+
+        <label for="payment">Huyện</label>
+        <select id="payment"">
+          <option>Chọn</option>
+          <option>Gò Vấp</option>
+          <option>Quận 1</option>
+        </select>
 
         <label for="address">Địa chỉ nhận hàng</label>
         <input
@@ -54,8 +88,9 @@
           id="address"
           value="234 đường số 2, phường 11, Gò Vấp"
         />
+  
 
-        <label for="payment">Lựa chọn thanh toán</label>
+        <label for="payment">Phương thức thanh toán</label>
         <select id="payment" onchange="toggleBankField()">
           <option value="cod">Thanh toán khi nhận hàng</option>
           <option value="bank">Chuyển khoản</option>
@@ -64,17 +99,6 @@
         <div id="bank-field" class="hidden">
           <label for="bank">Ngân hàng</label>
           <input type="text" id="bank" placeholder="Nhập tên ngân hàng" />
-        </div>
-
-        <div class="input-group">
-          <label>Thuế (VND)</label>
-          <input
-            type="number"
-            id="tax"
-            value="3.000"
-            oninput="calculateTotal()"
-            readonly
-          />
         </div>
 
         <div class="input-group">
@@ -89,7 +113,7 @@
         </div>
 
         <div class="buttons">
-          <h3 id="total-price">Tổng tiền: 323.000 VND</h3>
+          <h3 id="total-price"></h3>
           <button
             class="confirm-btn"
             onclick="window.location.href='../pages/successPurchase.html'"
@@ -104,5 +128,7 @@
     <footer id="footer"></footer>
 
     <script src="../assets/js/homeCustomer.js"></script>
+    <script src="../service/totalCart.js"></script>
+    <script src="../service/purchaseConfirm.js"></script>
   </body>
 </html>

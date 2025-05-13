@@ -1,0 +1,70 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store</title>
+    <link rel="stylesheet" href="../assets/css/productDetails.css" />
+    <!-- Thêm SweetAlert2 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="top">
+        <div class="logo-title">
+          <img src="../assets/img/logo.png" alt="Book Store Logo" />
+          <span class="title">Book Store</span>
+        </div>
+        <div class="buttons">
+          <button onclick="window.location.href='../pages/login.html'">
+            Đăng nhập
+          </button>
+          <button
+            class="register"
+            onclick="window.location.href='../pages/login.html'"
+          >
+            Đăng ký
+          </button>
+          <a href="../pages/cart.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Menu -->
+      <div id="menu"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <div class="product-detail">
+          <div class="product-image">
+            <img src="../assets/sachMau.png" alt="The Great Gatsby" />
+          </div>
+          <div class="product-info">
+            <!-- Các thông tin sách sẽ được cập nhật qua JS -->
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script src="../assets/js/home.js"></script>
+    <script src="../service/productDetails.js"></script>
+
+    <!-- Thêm SweetAlert2 JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.js"
+      defer
+    ></script>
+  </body>
+</html>

@@ -3,19 +3,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Danh Sách Sản Phẩm</title>
-    <link rel="stylesheet" href="../assets//css/productAdmin.css" />
+    <link rel="stylesheet" href="../assets/css/admin/productAdmin.css" />
   </head>
   <body>
     <!-- Header -->
     <header class="header">
       <div class="top">
         <div class="logo-title">
-          <img src="../assets/logo.png" alt="Book Store Logo" />
+          <img src="../assets/img/logo.png" alt="Book Store Logo" />
           <span class="title">Book Store</span>
         </div>
         <div class="right">
           <span class="username">Anh Hải</span>
-          <img src="../assets/facebook.png" alt="Admin Avatar" class="avatar" />
+          <img src="../assets/img/avata.png" alt="Admin Avatar" class="avatar" />
         </div>
       </div>
       <!-- Menu -->
@@ -44,103 +44,32 @@
               <th>Tên</th>
               <th>Giá</th>
               <th>Số Lượng Tồn</th>
+              <th>Danh Mục</th>
+              <th>Trạng Thái</th>
               <th>Chức Năng</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>SP001</td>
-              <td><img src="../assets/sachMau.png" alt="Sách A" /></td>
-              <td>Sách A</td>
-              <td>100,000 VND</td>
-              <td>50</td>
-              <td>
-                <button
-                  class="btn btn-blue"
-                  onclick="window.location.href='../pages/updateProduct.html'"
-                >
-                  Cập nhật
-                </button>
-                <button class="btn btn-red">Xóa</button>
-              </td>
-            </tr>
-            <tr>
-              <td>SP002</td>
-              <td><img src="../assets/sachMau.png" alt="Sách B" /></td>
-              <td>Sách B</td>
-              <td>150,000 VND</td>
-              <td>30</td>
-              <td>
-                <button
-                  class="btn btn-blue"
-                  onclick="window.location.href='../pages/updateProduct.html'"
-                >
-                  Cập nhật
-                </button>
-                <button class="btn btn-red">Xóa</button>
-              </td>
-            </tr>
-            <tr>
-              <td>SP003</td>
-              <td><img src="../assets/sachMau.png" alt="Sách C" /></td>
-              <td>Sách C</td>
-              <td>200,000 VND</td>
-              <td>20</td>
-              <td>
-                <button
-                  class="btn btn-blue"
-                  onclick="window.location.href='../pages/updateProduct.html'"
-                >
-                  Cập nhật
-                </button>
-                <button class="btn btn-red">Xóa</button>
-              </td>
-            </tr>
-            <tr>
-              <td>SP004</td>
-              <td><img src="../assets/sachMau.png" alt="Sách C" /></td>
-              <td>Sách D</td>
-              <td>200,000 VND</td>
-              <td>20</td>
-              <td>
-                <button
-                  class="btn btn-blue"
-                  onclick="window.location.href='../pages/updateProduct.html'"
-                >
-                  Cập nhật
-                </button>
-                <button class="btn btn-red">Xóa</button>
-              </td>
-            </tr>
-            <tr>
-              <td>SP005</td>
-              <td><img src="../assets/sachMau.png" alt="Sách C" /></td>
-              <td>Sách E</td>
-              <td>200,000 VND</td>
-              <td>20</td>
-              <td>
-                <button
-                  class="btn btn-blue"
-                  onclick="window.location.href='../pages/updateProduct.html'"
-                >
-                  Cập nhật
-                </button>
-                <button class="btn btn-red">Xóa</button>
-              </td>
-            </tr>
+          <tbody id="product-list">
           </tbody>
         </table>
         <!-- Thanh phân trang -->
         <div class="pagination" id="pagination">
-          <button onclick="changePage(-1)">Trước</button>
+          <button onclick="changePage(-1)" class="active">Trước</button>
           <span id="page-numbers"></span>
-          <button onclick="changePage(1)">Sau</button>
+          <button onclick="changePage(1)" class="active">Sau</button>
         </div>
       </div>
     </main>
     <!-- Footer -->
     <footer id="footer"></footer>
 
+
+     <script
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+      defer
+    ></script>
+    <script src="../service/api/apiClient.js" defer></script>
     <script src="../assets/js/homeAdmin.js"></script>
+    <script src="../service/admin/product.js"></script>
   </body>
 </html>

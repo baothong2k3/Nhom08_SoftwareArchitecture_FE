@@ -1,24 +1,35 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Store</title>
-    <link rel="stylesheet" href="../assets//css/cartCustomer.css" />
+    <link rel="stylesheet" href="../assets/css/cartCustomer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
   <body>
     <!-- Header -->
     <header class="header">
       <div class="top">
         <div class="logo-title">
-          <img src="../assets/logo.png" alt="Book Store Logo" />
+          <img src="../assets/img/logo.png" alt="Book Store Logo" />
           <span class="title">Book Store</span>
         </div>
         <div class="right">
           <span class="username">Anh Hải</span>
-          <img src="../assets/facebook.png" alt="Admin Avatar" class="avatar" />
+          <img src="../assets/img/avata.png" alt="User Avatar" class="avatar" />
+          <a href="../pages/cartCustomer.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="total-quantity">0</span>
+            <!-- Thêm số lượng sản phẩm ở đây -->
+          </a>
         </div>
       </div>
-      <!-- Menu -->
+
+      <!-- Menu (nạp động bằng JS) -->
       <div id="menu"></div>
     </header>
 
@@ -26,22 +37,30 @@
     <main class="main">
       <div class="container">
         <h2>Giỏ hàng của bạn</h2>
+
+        <!-- Danh sách sản phẩm -->
         <div id="cart-items"></div>
+
+        <!-- Phần thanh toán -->
         <div class="checkout">
           <p>
             <strong>Tổng cộng: <span id="total-price">0</span> VND</strong>
           </p>
           <button
-            onclick="window.location.href='../pages/purchaseConfirm.html'"
+            onclick="saveSelectedItemsToLocalStorage()"
           >
             Thanh toán
           </button>
         </div>
       </div>
     </main>
+
     <!-- Footer -->
     <footer id="footer"></footer>
 
+    <!-- Scripts -->
     <script src="../assets/js/homeCustomer.js"></script>
+    <script src="../service/totalCart.js"></script>
+    <script src="../service/cartCustomer.js"></script>
   </body>
 </html>

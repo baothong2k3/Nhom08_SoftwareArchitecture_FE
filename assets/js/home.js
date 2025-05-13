@@ -23,9 +23,10 @@ document.addEventListener(
 // }
 
 function goBack() {
-    window.history.back();
+  window.history.back();
 }
 
+//Gắn footer
 fetch("../components/footer.html")
   .then((response) => response.text())
   .then((data) => {
@@ -33,22 +34,34 @@ fetch("../components/footer.html")
   })
   .catch((error) => console.error("Error loading footer:", error));
 
+//Gắn menu
 fetch("../components/menu.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("menu").innerHTML = data;
   })
-  .catch((error) => console.error("Error loading footer:", error));
+  .catch((error) => console.error("Error loading menu:", error));
 
-  //phan trang
-  function changePage(step) {
-    const totalPages = Math.ceil(books.length / itemsPerPage);
-    currentPage = Math.min(Math.max(1, currentPage + step), totalPages);
-    displayBooks();
+//phan trang
+function changePage(step) {
+  const totalPages = Math.ceil(books.length / itemsPerPage);
+  currentPage = Math.min(Math.max(1, currentPage + step), totalPages);
+  displayBooks();
 }
 
-// //lay lai mat khau
-// function handleLogin(event) {
-//   event.preventDefault(); // Ngăn chặn form submit mặc định
-//   window.location.href = "../pages/homeCustomer.html"; // Chuyển hướng về trang login
-// }
+//chuyen banner
+document.addEventListener("DOMContentLoaded", function () {
+  var swiper = new Swiper(".swiper-container", {
+    loop: true,
+    slidesPerView: 1,
+    centeredSlides: false,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+});

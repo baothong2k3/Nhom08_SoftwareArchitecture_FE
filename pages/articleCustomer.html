@@ -4,18 +4,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Store</title>
     <link rel="stylesheet" href="../assets//css/articleCustomer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
   <body>
     <!-- Header -->
     <header class="header">
       <div class="top">
         <div class="logo-title">
-          <img src="../assets/logo.png" alt="Book Store Logo" />
+          <img src="../assets/img/logo.png" alt="Book Store Logo" />
           <span class="title">Book Store</span>
         </div>
         <div class="right">
           <span class="username">Anh Hải</span>
-          <img src="../assets/facebook.png" alt="Admin Avatar" class="avatar" />
+          <img src="../assets/img/avata.png" alt="Admin Avatar" class="avatar" />
+          <a href="../pages/cartCustomer.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="total-quantity"></span>
+            <!-- Thêm số lượng sản phẩm ở đây -->
+          </a>
         </div>
       </div>
       </div>
@@ -30,22 +39,10 @@
 
         <div class="article">
           <h3>Giới thiệu và sản phẩm sách vừa ra mắt</h3>
-          <img src="../assets/bookstoreHome.png" alt="Bìa sách The New Dawn" />
+          <img src="../assets/img/bookstoreHome.jpg" alt="Bìa sách The New Dawn" />
           <p>
             Chúng tôi vui mừng giới thiệu đến bạn đọc cuốn sách mới nhất
             <strong>"The New Dawn"</strong> của tác giả nổi tiếng John Doe...
-          </p>
-        </div>
-
-        <div class="article">
-          <h3>Bộ sưu tập mới nhất của tác giả Jane Smith</h3>
-          <img
-            src="../assets/bookstoreHome.png"
-            alt="Bộ sưu tập sách của Jane Smith"
-          />
-          <p>
-            Jane Smith, một trong những tác giả xuất sắc nhất hiện nay, đã cho
-            ra mắt bộ sưu tập sách mới nhất của mình...
           </p>
         </div>
 
@@ -60,6 +57,7 @@
     <!-- Footer -->
     <footer id="footer"></footer>
 
+    <script src="../service/totalCart.js"></script>
     <script src="../assets/js/homeCustomer.js"></script>
   </body>
 </html>

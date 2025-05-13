@@ -23,7 +23,7 @@ function handleLogin(event) {
 }
 
 function goBack() {
-    window.history.back();
+  window.history.back();
 }
 
 fetch("../components/footer.html")
@@ -40,9 +40,25 @@ fetch("../components/menuAdmin.html")
   })
   .catch((error) => console.error("Error loading footer:", error));
 
-  //phan trang
-  function changePage(step) {
-    const totalPages = Math.ceil(books.length / itemsPerPage);
-    currentPage = Math.min(Math.max(1, currentPage + step), totalPages);
-    displayBooks();
+//phan trang
+function changePage(step) {
+  const totalPages = Math.ceil(books.length / itemsPerPage);
+  currentPage = Math.min(Math.max(1, currentPage + step), totalPages);
+  displayBooks();
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  var swiper = new Swiper(".swiper-container", {
+    loop: true,
+    slidesPerView: 1,
+    centeredSlides: false,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+});
