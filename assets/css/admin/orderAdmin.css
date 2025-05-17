@@ -4,15 +4,18 @@ body {
   width: 100%;
   height: auto;
   touch-action: none;
-  background-color: #f0f3f7; /* nền chung */
+  background-color: #f0f3f7;
+  /* nền chung */
 }
 
 /*header */
 .header {
   display: flex;
   flex-direction: column;
-  background-color: #bde5f2; /* nền nhạt */
+  background-color: #bde5f2;
+  /* nền nhạt */
 }
+
 .top {
   display: flex;
   justify-content: space-between;
@@ -20,41 +23,7 @@ body {
   width: 100%;
   padding: 13px 25px;
 }
-/*logo*/
-.logo-title {
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  font-weight: bold;
-}
-.header img {
-  height: 80px;
-  width: 80px;
-}
-.header .title {
-  font-size: 30px;
-  font-weight: bold;
-  margin-left: 10px;
-}
 
-/*right*/
-.right {
-  display: flex;
-  align-items: center;
-}
-
-.username {
-  margin-right: 8px;
-  font-size: 20px;
-  color: #555;
-  font-weight: bold;
-}
-
-.avatar {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-}
 /*Content*/
 .main {
   width: 100%;
@@ -70,18 +39,29 @@ body {
 
 /**/
 .container {
+  display: flex;
+  flex-direction: column;
   background: white;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  height: 800px;
-  background-color: #f0f3f7; /* nền chung */
+  height: 100%;
+  background-color: #f0f3f7;
+  /* nền chung */
 }
 
 h2 {
   margin-bottom: 15px;
   font-size: 30px;
+}
+
+select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 2px solid #b0bec5;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
 .search-bar {
@@ -95,7 +75,16 @@ h2 {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 3px;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
+
+
+.search-bar input:focus {
+  border-color: #4a90e2;
+}
+
 
 .btn {
   padding: 8px 12px;
@@ -120,6 +109,10 @@ h2 {
   padding: 10px;
 }
 
+.btn-green:hover {
+  background-color: #218838;
+}
+
 .btn-red {
   background-color: #dc3545;
   color: white;
@@ -138,6 +131,7 @@ h2 {
 table {
   width: 100%;
   border-collapse: collapse;
+  height: 700px;
 }
 
 th,
@@ -151,15 +145,36 @@ th {
   background-color: #f1f1f1;
 }
 
-img {
-  width: 75px;
-  height: 75px;
-  border-radius: 3px;
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  min-width: 120px;
+  /* đảm bảo cùng chiều rộng tối thiểu */
+  text-align: center;
 }
+
+.btn-blue {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.btn-green {
+  background-color: #10b981;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
 
 .pagination {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 20px;
 }
 

@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/menuCustomer.css" />
-  </head>
 
-  <body>
-    <nav class="nav">
-      <div class="menu">
-        <ul>
-          <li><a href="../pages/homeCustomer.html">Trang Chủ</a></li>
-          <li><a href="../pages/productCustomer.html">Sản Phẩm</a></li>
-          <li><a href="../pages/chatbotCustomer.html">Chatbot</a></li>
-          <li><a href="../pages/articleCustomer.html">Bài Viết</a></li>
-          <li><a href="../pages/orderCustomer.html">Đơn Hàng</a></li>
-          <li><a href="../pages/contactCustomer.html">Liên Hệ</a></li>
-          <li><a href="../pages/accountCustomer.html">Tài Khoản</a></li>
-          <li><a href="../pages/home.html" id="logout-link">Đăng Xuất</a></li>
-        </ul>
-      </div>
-    </nav>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const logoutLink = document.getElementById("logout-link");
-        if (logoutLink) {
-          logoutLink.addEventListener("click", function (e) {
-            localStorage.removeItem("token");
-            localStorage.removeItem("role");
-          });
-        }
-      });
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="../assets/css/menuCustomer.css" />
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="menu">
+      <ul>
+        <li><a href="../pages/homeCustomer.html">Trang Chủ</a></li>
+        <li><a href="../pages/productCustomer.html">Sản Phẩm</a></li>
+        <li><a href="../pages/chatbotCustomer.html">Chatbot</a></li>
+        <li><a href="../pages/articleCustomer.html">Bài Viết</a></li>
+        <li><a href="../pages/orderCustomer.html">Đơn Hàng</a></li>
+        <li><a href="../pages/contactCustomer.html">Liên Hệ</a></li>
+        <li><a href="../pages/home.html" id="logout-link">Đăng Xuất</a></li>
+      </ul>
+    </div>
+  </nav>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const logoutLink = document.getElementById("logout-link");
+      if (logoutLink) {
+        logoutLink.addEventListener("click", function (e) {
+          localStorage.removeItem("token");
+          localStorage.removeItem("role");
+        });
+      }
+    });
+  </script>
+</body>
+
 </html>

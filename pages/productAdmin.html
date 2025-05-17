@@ -1,75 +1,70 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Danh Sách Sản Phẩm</title>
-    <link rel="stylesheet" href="../assets/css/admin/productAdmin.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="top">
-        <div class="logo-title">
-          <img src="../assets/img/logo.png" alt="Book Store Logo" />
-          <span class="title">Book Store</span>
-        </div>
-        <div class="right">
-          <span class="username">Anh Hải</span>
-          <img src="../assets/img/avata.png" alt="Admin Avatar" class="avatar" />
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danh Sách Sản Phẩm</title>
+  <link rel="stylesheet" href="../assets/css/admin/productAdmin.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="top" id="top">
+
+    </div>
+    <!-- Menu -->
+    <div id="menu"></div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container">
+      <h2>Danh sách sản phẩm</h2>
+      <div class="search-bar">
+        <select id="categoryFilter">
+          <option value="all">Tất cả</option>
+          <option value="schoolBooks">Sách Giáo Khoa</option>
+          <option value="fairyTales">Truyện Cổ Tích</option>
+        </select>
+        <input type="text" placeholder="Nhập tên, mã sản phẩm cần tìm..." />
+        <button class="btn btn-blue">Tìm kiếm</button>
+        <button class="btn btn-green" onclick="window.location.href='../pages/addProduct.html'">
+          Thêm sản phẩm
+        </button>
       </div>
-      <!-- Menu -->
-      <div id="menu"></div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main">
-      <div class="container">
-        <h2>Danh sách sản phẩm</h2>
-        <div class="search-bar">
-          <input type="text" placeholder="Nhập tên, mã sản phẩm cần tìm..." />
-          <button class="btn btn-blue">Tìm kiếm</button>
-          <button
-            class="btn btn-green"
-            onclick="window.location.href='../pages/addProduct.html'"
-          >
-            Thêm sản phẩm
-          </button>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Mã</th>
-              <th>Ảnh</th>
-              <th>Tên</th>
-              <th>Giá</th>
-              <th>Số Lượng Tồn</th>
-              <th>Danh Mục</th>
-              <th>Trạng Thái</th>
-              <th>Chức Năng</th>
-            </tr>
-          </thead>
-          <tbody id="product-list">
-          </tbody>
-        </table>
-        <!-- Thanh phân trang -->
-        <div class="pagination" id="pagination">
-          <button onclick="changePage(-1)" class="active">Trước</button>
-          <span id="page-numbers"></span>
-          <button onclick="changePage(1)" class="active">Sau</button>
-        </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Mã</th>
+            <th>Ảnh</th>
+            <th>Tên</th>
+            <th>Giá</th>
+            <th>Số Lượng Tồn</th>
+            <th>Danh Mục</th>
+            <th>Trạng Thái</th>
+            <th>Chức Năng</th>
+          </tr>
+        </thead>
+        <tbody id="product-list">
+        </tbody>
+      </table>
+      <!-- Thanh phân trang -->
+      <div class="pagination">
+        <button>Trước</button>
+        <span id="page-numbers"></span>
+        <button>Sau</button>
       </div>
-    </main>
-    <!-- Footer -->
-    <footer id="footer"></footer>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer id="footer"></footer>
 
 
-     <script
-      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
-      defer
-    ></script>
-    <script src="../service/api/apiClient.js" defer></script>
-    <script src="../assets/js/homeAdmin.js"></script>
-    <script src="../service/admin/product.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+  <script src="../service/api/apiClient.js" defer></script>
+  <script src="../assets/js/homeAdmin.js"></script>
+  <script src="../service/admin/product.js"></script>
+</body>
+
 </html>

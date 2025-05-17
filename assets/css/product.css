@@ -4,19 +4,23 @@ body {
   width: 100%;
   height: auto;
   touch-action: none;
-  background-color: #f0f3f7; /* nền chung */
+  background-color: #f0f3f7;
+  /* nền chung */
 }
 
 /*header */
 .header {
   display: flex;
   flex-direction: column;
-  background-color: #bde5f2; /* nền nhạt */
+  background-color: #bde5f2;
+  /* nền nhạt */
 }
+
 .top {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Căn giữa theo chiều dọc */
+  align-items: center;
+  /* Căn giữa theo chiều dọc */
   width: 100%;
   padding: 13px 25px;
 }
@@ -34,10 +38,12 @@ h1 {
   font-size: 24px;
   font-weight: bold;
 }
+
 .header img {
   height: 80px;
   width: 80px;
 }
+
 .header .title {
   font-size: 30px;
   font-weight: bold;
@@ -47,7 +53,8 @@ h1 {
 /*button*/
 .header .buttons {
   display: flex;
-  align-items: center; /* Căn giữa các nút và icon */
+  align-items: center;
+  /* Căn giữa các nút và icon */
 }
 
 .header .buttons button {
@@ -86,7 +93,8 @@ h1 {
   background: white;
   padding: 20px;
   border-radius: 10px;
-  background-color: #f0f3f7; /* nền chung */
+  background-color: #f0f3f7;
+  /* nền chung */
 }
 
 select {
@@ -174,14 +182,22 @@ button:hover {
   display: block;
   border: 1px solid whitesmoke;
 }
+
 .product-list .product-title {
-  display: -webkit-box; /* Hiển thị phần tử dưới dạng box */
-  -webkit-box-orient: vertical; /* Xếp các phần tử theo chiều dọc */
-  -webkit-line-clamp: 2; /* Giới hạn tối đa 2 dòng */
-  overflow: hidden; /* Ẩn phần văn bản thừa */
-  text-overflow: ellipsis; /* Thêm "..." khi văn bản vượt quá */
-  height: 60px; /* Đảm bảo chiều cao cho 2 dòng */
-  line-height: 30px; /* Căn chỉnh chiều cao dòng */
+  display: -webkit-box;
+  /* Hiển thị phần tử dưới dạng box */
+  -webkit-box-orient: vertical;
+  /* Xếp các phần tử theo chiều dọc */
+  -webkit-line-clamp: 2;
+  /* Giới hạn tối đa 2 dòng */
+  overflow: hidden;
+  /* Ẩn phần văn bản thừa */
+  text-overflow: ellipsis;
+  /* Thêm "..." khi văn bản vượt quá */
+  height: 60px;
+  /* Đảm bảo chiều cao cho 2 dòng */
+  line-height: 30px;
+  /* Căn chỉnh chiều cao dòng */
 }
 
 .product-list .product-item {
@@ -286,5 +302,6 @@ button:focus {
 }
 
 .cart-icon:hover {
-  background-color: rgba(79, 195, 247, 0.2); /* Hover nhẹ */
+  background-color: rgba(79, 195, 247, 0.2);
+  /* Hover nhẹ */
 }

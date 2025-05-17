@@ -4,19 +4,23 @@ body {
   width: 100%;
   height: auto;
   touch-action: none;
-  background-color: #f0f3f7; /* nền chung */
+  background-color: #f0f3f7;
+  /* nền chung */
 }
 
 /*header */
 .header {
   display: flex;
   flex-direction: column;
-  background-color: #bde5f2; /* nền nhạt */
+  background-color: #bde5f2;
+  /* nền nhạt */
 }
+
 .top {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Căn giữa theo chiều dọc */
+  align-items: center;
+  /* Căn giữa theo chiều dọc */
   width: 100%;
   padding: 13px 25px;
 }
@@ -34,10 +38,12 @@ h1 {
   font-size: 24px;
   font-weight: bold;
 }
+
 .header img {
   height: 80px;
   width: 80px;
 }
+
 .header .title {
   font-size: 30px;
   font-weight: bold;
@@ -47,7 +53,8 @@ h1 {
 /*button*/
 .header .buttons {
   display: flex;
-  align-items: center; /* Căn giữa các nút và icon */
+  align-items: center;
+  /* Căn giữa các nút và icon */
 }
 
 .header .buttons button {
@@ -74,6 +81,10 @@ h1 {
 /*Content*/
 .main {
   width: 100%;
+  max-width: 88%;
+  /* giới hạn chiều ngang tối đa */
+  margin: 0 auto;
+  /* căn giữa ngang */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -82,45 +93,103 @@ h1 {
 
 .container {
   width: 100%;
-  height: 1250px;
+  height: 1000px;
 }
+
 h2 {
   margin: 20px 0px;
   font-size: 32px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
 }
 
 .article {
-  margin-bottom: 20px;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+
+
+  /* Viền xám nhạt */
+  padding: 16px;
+  /* Khoảng cách giữa viền và nội dung */
+  border-radius: 8px;
+  /* Bo tròn góc viền */
+  background-color: #fff;
+  /* Nền trắng nếu muốn */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Bóng nhẹ cho nổi bật */
 }
+
 .article img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
+  width: 150px;
+  /* Chiều rộng ảnh, bạn có thể điều chỉnh */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  /* Bo góc nếu muốn */
+  flex-shrink: 0;
+  /* Không để ảnh bị co nhỏ */
 }
+
+.article h3 {
+  margin: 0 0 8px 0;
+}
+
+.article p {
+  margin: 0;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Nếu muốn cho phần text chiếm hết phần còn lại */
+.article>div {
+  flex: 1;
+}
+
 
 .pagination {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-}
-
-.pagination button,
-.pagination span button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 15px;
-  margin: 3px;
-  cursor: pointer;
-  border-radius: 5px;
+  align-items: center;
+  margin-top: 30px;
+  gap: 8px;
   font-size: 16px;
 }
 
-.pagination span .active {
-  background-color: #0056b3;
+.pagination button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination button:hover {
+  background-color: #2563eb;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+  transform: scale(1.05);
+}
+
+.pagination button:disabled {
+  background-color: #a5b4fc;
+  cursor: default;
+  opacity: 0.6;
+  transform: none;
+  box-shadow: none;
+}
+
+.pagination .page-info {
+  font-weight: bold;
+  color: #1e3a8a;
+  padding: 0 10px;
+  font-size: 18px;
 }
 
 /*gio hang*/
@@ -134,5 +203,20 @@ h2 {
 }
 
 .cart-icon:hover {
-  background-color: rgba(79, 195, 247, 0.2); /* Hover nhẹ */
+  background-color: rgba(79, 195, 247, 0.2);
+  /* Hover nhẹ */
+}
+
+#article-container {
+  max-height: 900px;
+  /* chiều cao bạn muốn, có thể chỉnh */
+  overflow-y: scroll;
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+
+#article-container::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
 }

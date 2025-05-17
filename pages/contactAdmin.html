@@ -1,104 +1,88 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thông Tin Liên Hệ</title>
-    <link rel="stylesheet" href="../assets/css/contactAdmin.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="top">
-        <div class="logo-title">
-          <img src="../assets/img/logo.png" alt="Book Store Logo" />
-          <span class="title">Book Store</span>
-        </div>
-        <div class="right">
-          <span class="username">Anh Hải</span>
-          <img src="../assets/img/avata.png" alt="Admin Avatar" class="avatar" />
-        </div>
-      </div>
-      <!-- Menu -->
-      <div id="menu"></div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="main">
-      <div class="container">
-        <h2>Thông tin liên hệ</h2>
-        <div class="search-bar">
-          <input type="text" placeholder="Nhập tên, số điện thoại cần tìm..." />
-          <button class="btn btn-blue">Tìm kiếm</button>
-          <button
-            class="btn btn-green"
-            onclick="window.location.href='../pages/addContact.html'"
-          >
-            Thêm liên hệ
-          </button>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Mã</th>
-              <th>Tên</th>
-              <th>Số Điện Thoại</th>
-              <th>Địa Chỉ</th>
-              <th>Chức Năng</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>LH001</td>
-              <td>Chi Nhánh 1</td>
-              <td>0934567812</td>
-              <td>123 Nguyễn Văn Bảo, Quận Gò Vấp, TP.HCM</td>
-              <td>
-                <button
-                  class="btn btn-blue"
-                  onclick="window.location.href='../pages/updateContact.html'"
-                >
-                  Cập nhật
-                </button>
-                <button class="btn btn-red">Xóa</button>
-              </td>
-            </tr>
-            <tr>
-              <td>LH002</td>
-              <td>Chi Nhánh 2</td>
-              <td>0936458721</td>
-              <td>456 Nguyễn Văn Bảo, Quận Gò Vấp, TP.HCM</td>
-              <td>
-                <button
-                  class="btn btn-blue"
-                  onclick="window.location.href='../pages/updateContact.html'"
-                >
-                  Cập nhật
-                </button>
-                <button class="btn btn-red">Xóa</button>
-              </td>
-            </tr>
-            <tr>
-              <td>LH003</td>
-              <td>Shop</td>
-              <td>0934567812</td>
-              <td>123 Nguyễn Văn Bảo, Quận Gò Vấp, TP.HCM</td>
-              <td>
-                <button
-                  class="btn btn-blue"
-                  onclick="window.location.href='../pages/updateContact.html'"
-                >
-                  Cập nhật
-                </button>
-                <button class="btn btn-red">Xóa</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </main>
-    <!-- Footer -->
-    <footer id="footer"></footer>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thông Tin Liên Hệ</title>
+  <link rel="stylesheet" href="../assets/css/contactAdmin.css" />
+</head>
 
-    <script src="../assets/js/homeAdmin.js"></script>
-  </body>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="top" id="top">
+
+    </div>
+    <!-- Menu -->
+    <div id="menu"></div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container">
+      <h2>Thông tin liên hệ</h2>
+      <div class="search-bar">
+        <input type="text" placeholder="Nhập tên, số điện thoại cần tìm..." />
+        <button class="btn btn-blue">Tìm kiếm</button>
+        <button class="btn btn-green" onclick="window.location.href='../pages/addContact.html'">
+          Thêm liên hệ
+        </button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Mã</th>
+            <th>Tên</th>
+            <th>Số Điện Thoại</th>
+            <th>Địa Chỉ</th>
+            <th>Chức Năng</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>LH001</td>
+            <td>Chi Nhánh 1</td>
+            <td>0934567812</td>
+            <td>123 Nguyễn Văn Bảo, Quận Gò Vấp, TP.HCM</td>
+            <td>
+              <button class="btn btn-blue" onclick="window.location.href='../pages/updateContact.html'">
+                Cập nhật
+              </button>
+              <button class="btn btn-red">Xóa</button>
+            </td>
+          </tr>
+          <tr>
+            <td>LH002</td>
+            <td>Chi Nhánh 2</td>
+            <td>0936458721</td>
+            <td>456 Nguyễn Văn Bảo, Quận Gò Vấp, TP.HCM</td>
+            <td>
+              <button class="btn btn-blue" onclick="window.location.href='../pages/updateContact.html'">
+                Cập nhật
+              </button>
+              <button class="btn btn-red">Xóa</button>
+            </td>
+          </tr>
+          <tr>
+            <td>LH003</td>
+            <td>Shop</td>
+            <td>0934567812</td>
+            <td>123 Nguyễn Văn Bảo, Quận Gò Vấp, TP.HCM</td>
+            <td>
+              <button class="btn btn-blue" onclick="window.location.href='../pages/updateContact.html'">
+                Cập nhật
+              </button>
+              <button class="btn btn-red">Xóa</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script src="../assets/js/homeAdmin.js"></script>
+</body>
+
 </html>

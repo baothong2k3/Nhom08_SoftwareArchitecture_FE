@@ -1,0 +1,66 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store</title>
+    <link rel="stylesheet" href="../assets//css/articleCustomerDetails.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="top">
+        <div class="logo-title">
+          <img src="../assets/img/logo.png" alt="Book Store Logo" />
+          <span class="title">Book Store</span>
+        </div>
+        <div class="right">
+          <span class="username">Anh Hải</span>
+          <a href="../pages/accountCustomer.html">
+            <img
+            src="../assets/img/avata.png"
+            alt="Admin Avatar"
+            class="avatar"
+          />
+          <a href="../pages/cartCustomer.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="total-quantity"></span>
+            <!-- Thêm số lượng sản phẩm ở đây -->
+          </a>
+        </div>
+      </div>
+      </div>
+      <!-- Menu -->
+      <div id="menu"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+
+        <div class="article">
+          <h2>Giới thiệu và sản phẩm sách vừa ra mắt</h2>
+          <img
+            src="../assets/img/bookstoreHome.jpg"
+            alt="Bìa sách The New Dawn"
+          />
+          <p>
+            Chúng tôi vui mừng giới thiệu đến bạn đọc cuốn sách mới nhất
+            <strong>"The New Dawn"</strong> của tác giả nổi tiếng John Doe...
+          </p>
+        </div>
+
+        <a href="../pages/articleCustomer.html" class="back">Quay Lại</a>
+
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script src="../service/totalCart.js"></script>
+    <script src="../assets/js/homeCustomer.js"></script>
+  </body>
+</html>

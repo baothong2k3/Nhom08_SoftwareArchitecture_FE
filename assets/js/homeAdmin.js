@@ -26,39 +26,39 @@ function goBack() {
   window.history.back();
 }
 
-fetch("../components/footer.html")
-  .then((response) => response.text())
-  .then((data) => {
-    document.getElementById("footer").innerHTML = data;
-  })
-  .catch((error) => console.error("Error loading footer:", error));
 
-fetch("../components/menuAdmin.html")
-  .then((response) => response.text())
-  .then((data) => {
-    document.getElementById("menu").innerHTML = data;
-  })
-  .catch((error) => console.error("Error loading footer:", error));
+//GẮN GIAO DIỆN
+document.addEventListener("DOMContentLoaded", () => {
+  // Đợi đến khi header/menu được load xong
+  fetch("../components/headerAdmin.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("top").innerHTML = data;
+      const username = localStorage.getItem("userName");
+      document.getElementById("username").textContent = username || "Guest";
+    });
+
+  fetch("../components/footer.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("footer").innerHTML = data;
+    })
+    .catch((error) => console.error("Error loading footer:", error));
+
+  fetch("../components/menuAdmin.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("menu").innerHTML = data;
+    })
+    .catch((error) => console.error("Error loading footer:", error));
+});
+
+
+
 
 //phan trang
-function changePage(step) {
-  const totalPages = Math.ceil(books.length / itemsPerPage);
-  currentPage = Math.min(Math.max(1, currentPage + step), totalPages);
-  displayBooks();
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  var swiper = new Swiper(".swiper-container", {
-    loop: true,
-    slidesPerView: 1,
-    centeredSlides: false,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
-});
+// function changePage(step) {
+//   const totalPages = Math.ceil(books.length / itemsPerPage);
+//   currentPage = Math.min(Math.max(1, currentPage + step), totalPages);
+//   displayBooks();
+// }

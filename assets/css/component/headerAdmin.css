@@ -1,0 +1,37 @@
+/*logo*/
+.logo-title {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header img {
+    height: 80px;
+    width: 80px;
+}
+
+.header .title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/*right*/
+.right {
+    display: flex;
+    align-items: center;
+}
+
+.username {
+    margin-right: 8px;
+    font-size: 20px;
+    color: #555;
+    font-weight: bold;
+}
+
+.avatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}

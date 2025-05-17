@@ -33,12 +33,34 @@
                     <td>${product.category}</td>
                     <td>${product.status ? 'Đang bán' : 'Ngừng bán'}</td>
                     <td>
-                        <button class="btn btn-blue" onclick="updateProduct(${product.id})">Cập nhật</button>
+                        <button class="btn btn-blue" onclick='redirectToUpdatePage(${JSON.stringify(product)})'>Cập nhật</button>
                     </td>
                 `;
             productList.appendChild(productRow);
         });
     };
+
+    window.redirectToUpdatePage = (product) => {
+
+        const params = new URLSearchParams({
+            id: product.id,
+            title: product.title,
+            price: product.price,
+            discount: product.discountPercent || 0,
+            priceAfterDiscount: product.discountedPrice || 0,
+            stockQuantity: product.stockQuantity,
+            category: product.category || '',
+            status: product.status,
+            publicId: product.publicId || '',
+            author: product.author || '',
+            description: product.description || '',
+            status: product.status,
+            imageUrl: product.imageUrl || ''
+        });
+
+        window.location.href = `updateProduct.html?${params.toString()}`;
+    };
+
 
     // Hàm hiển thị phân trang
     const displayPagination = (page, totalPages) => {

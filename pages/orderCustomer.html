@@ -1,83 +1,37 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Book Store</title>
-    <link rel="stylesheet" href="../assets//css/orderCustomer.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="top">
-        <div class="logo-title">
-          <img src="../assets/img/logo.png" alt="Book Store Logo" />
-          <span class="title">Book Store</span>
-        </div>
-        <div class="right">
-          <span class="username">Anh Hải</span>
-          <img
-            src="../assets/img/avata.png"
-            alt="Admin Avatar"
-            class="avatar"
-          />
-          <a href="../pages/cartCustomer.html" class="cart-icon">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-count" id="total-quantity"></span>
-            <!-- Thêm số lượng sản phẩm ở đây -->
-          </a>
-        </div>
-      </div>
-      <!-- Menu -->
-      <div id="menu"></div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="main">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Store</title>
+  <link rel="stylesheet" href="../assets//css/orderCustomer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="top" id="top"></div>
+    <!-- Menu -->
+    <div id="menu"></div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <h2>Đơn hàng của bạn</h2>
+    <div class="container">
       <div class="container">
-        <h2>Đơn hàng của bạn</h2>
-
-        <div class="order-item">
-          <div class="order-info">
-            <p class="order-title">Đơn hàng #12345</p>
-            <p class="order-status">Tình trạng đơn hàng: Đang xử lý</p>
-            <p class="order-status">
-              Tình trạng thanh toán: <strong>Chưa thanh toán</strong>
-            </p>
-          </div>
-          <button class="cancel-btn enabled">Hủy đơn</button>
-        </div>
-
-        <div class="order-item">
-          <div class="order-info">
-            <p class="order-title">Đơn hàng #12346</p>
-            <p class="order-status">Tình trạng đơn hàng: Đang vận chuyển</p>
-            <p class="order-status">
-              Tình trạng thanh toán: <strong>Đã thanh toán</strong>
-            </p>
-          </div>
-          <button class="cancel-btn disabled" disabled>Hủy đơn</button>
-        </div>
-
-        <div class="order-item">
-          <div class="order-info">
-            <p class="order-title">Đơn hàng #12347</p>
-            <p class="order-status">Tình trạng đơn hàng: Đã giao</p>
-            <p class="order-status">
-              Tình trạng thanh toán: <strong>Đã thanh toán</strong>
-            </p>
-          </div>
-          <button class="cancel-btn disabled" disabled>Hủy đơn</button>
-        </div>
+        <!-- Nội dung đơn hàng sẽ được JavaScript render vào đây -->
       </div>
-    </main>
-    <!-- Footer -->
-    <footer id="footer"></footer>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer id="footer"></footer>
 
-    <script src="../service/totalCart.js"></script>
-    <script src="../assets/js/homeCustomer.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.js" defer></script>
+  <script src="../service/totalCart.js"></script>
+  <script src="../assets/js/homeCustomer.js"></script>
+  <script src="../service/customer/orderCustomer.js"></script>
+</body>
+
 </html>

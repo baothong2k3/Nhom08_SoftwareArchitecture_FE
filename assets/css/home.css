@@ -4,19 +4,23 @@ body {
   width: 100%;
   height: auto;
   touch-action: none;
-  background-color: #f0f3f7; /* nền chung */
+  background-color: #f0f3f7;
+  /* nền chung */
 }
 
 /*header */
 .header {
   display: flex;
   flex-direction: column;
-  background-color: #bde5f2; /* nền nhạt */
+  background-color: #bde5f2;
+  /* nền nhạt */
 }
+
 .top {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Căn giữa theo chiều dọc */
+  align-items: center;
+  /* Căn giữa theo chiều dọc */
   width: 100%;
   padding: 13px 25px;
 }
@@ -34,10 +38,12 @@ h1 {
   font-size: 24px;
   font-weight: bold;
 }
+
 .header img {
   height: 80px;
   width: 80px;
 }
+
 .header .title {
   font-size: 30px;
   font-weight: bold;
@@ -47,7 +53,8 @@ h1 {
 /*button*/
 .header .buttons {
   display: flex;
-  align-items: center; /* Căn giữa các nút và icon */
+  align-items: center;
+  /* Căn giữa các nút và icon */
 }
 
 .header .buttons button {
@@ -74,12 +81,17 @@ h1 {
 /*Content*/
 .main {
   width: 100%;
-  height: 900px;
+  max-width: 88%;
+  /* giới hạn chiều ngang tối đa */
+  margin: 0 auto;
+  /* căn giữa ngang */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: flex-start;
   padding: 10px 50px;
+  height: 900px;
 }
+
 .swiper-slide img {
   width: 100%;
   height: 900px;
@@ -110,23 +122,28 @@ h1 {
   font-size: 30px;
   color: black;
   text-decoration: none;
-  padding: 12px; /* Căn đều với button */
+  padding: 12px;
+  /* Căn đều với button */
   border-radius: 50%;
   transition: background-color 0.3s;
 }
 
 .cart-icon:hover {
-  background-color: rgba(79, 195, 247, 0.2); /* Hover nhẹ */
+  background-color: rgba(79, 195, 247, 0.2);
+  /* Hover nhẹ */
 }
 
 .swiper-container {
   width: 100%;
-  max-width: 100%; /* Đảm bảo không tràn chiều ngang */
-  overflow: hidden; /* Ẩn phần ảnh bị tràn */
+  max-width: 100%;
+  /* Đảm bảo không tràn chiều ngang */
+  overflow: hidden;
+  /* Ẩn phần ảnh bị tràn */
 }
 
 .swiper-slide {
-  width: 100% !important; /* Đảm bảo slide chiếm toàn bộ chiều rộng container */
+  width: 100% !important;
+  /* Đảm bảo slide chiếm toàn bộ chiều rộng container */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,5 +151,6 @@ h1 {
 
 .swiper-slide img {
   width: 100%;
-  height: 900px; /* Chiều cao tùy chỉnh */
+  height: 900px;
+  /* Chiều cao tùy chỉnh */
 }

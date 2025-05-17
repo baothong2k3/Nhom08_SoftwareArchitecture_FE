@@ -1,0 +1,158 @@
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  touch-action: none;
+  background-color: #f0f3f7;
+  /* nền chung */
+}
+
+.main {
+  width: 100%;
+  max-width: 88%;
+  /* giới hạn chiều ngang tối đa */
+  margin: 0 auto;
+  /* căn giữa ngang */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px 50px;
+}
+
+.container {
+  width: 100%;
+  height: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  background-color: #bde5f2;
+  /* nền nhạt */
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 13px 25px;
+}
+
+.order-info {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 20px;
+  padding-right: 10px;
+  /* tránh che mất nội dung khi cuộn */
+}
+
+.order-details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.order-details-table th,
+.order-details-table td {
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.order-details-table th {
+  background-color: #f8f8f8;
+  color: #333;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.order-details-table td {
+  color: #555;
+  font-size: 20px;
+}
+
+.order-details-table img {
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.order-details-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.btn-back {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.btn-back:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: #d32f2f;
+  text-align: center;
+  margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+
+  .order-details-table th,
+  .order-details-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .order-details-table img {
+    width: 40px;
+  }
+
+  .btn-back {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.buttons {
+  margin-top: auto;
+  padding-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.confirm-btn01 {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+  /* giữ khoảng cách với đáy */
+}

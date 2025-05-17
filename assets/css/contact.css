@@ -4,19 +4,24 @@ body {
   width: 100%;
   height: auto;
   touch-action: none;
-  background-color: #f0f3f7; /* nền chung */
+  background-color: #f0f3f7;
+  /* nền chung */
 }
 
+/*header */
 /*header */
 .header {
   display: flex;
   flex-direction: column;
-  background-color: #bde5f2; /* nền nhạt */
+  background-color: #bde5f2;
+  /* nền nhạt */
 }
+
 .top {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Căn giữa theo chiều dọc */
+  align-items: center;
+  /* Căn giữa theo chiều dọc */
   width: 100%;
   padding: 13px 25px;
 }
@@ -34,10 +39,12 @@ h1 {
   font-size: 24px;
   font-weight: bold;
 }
+
 .header img {
   height: 80px;
   width: 80px;
 }
+
 .header .title {
   font-size: 30px;
   font-weight: bold;
@@ -47,7 +54,8 @@ h1 {
 /*button*/
 .header .buttons {
   display: flex;
-  align-items: center; /* Căn giữa các nút và icon */
+  align-items: center;
+  /* Căn giữa các nút và icon */
 }
 
 .header .buttons button {
@@ -71,9 +79,14 @@ h1 {
   background-color: #10b981;
 }
 
+
 /*Content*/
 .main {
   width: 100%;
+  max-width: 80%;
+  /* giới hạn chiều ngang tối đa */
+  margin: 0 auto;
+  /* căn giữa ngang */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -81,7 +94,8 @@ h1 {
 }
 
 .contact-container {
-  background-color: #f0f3f7; /* nền chung */
+  background-color: #f0f3f7;
+  /* nền chung */
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -147,16 +161,17 @@ p {
   cursor: pointer;
 }
 
-/*gio hang*/
 .cart-icon {
   font-size: 30px;
   color: black;
   text-decoration: none;
-  padding: 8px;
+  padding: 12px;
+  /* Căn đều với button */
   border-radius: 50%;
   transition: background-color 0.3s;
 }
 
 .cart-icon:hover {
-  background-color: rgba(79, 195, 247, 0.2); /* Hover nhẹ */
+  background-color: rgba(79, 195, 247, 0.2);
+  /* Hover nhẹ */
 }

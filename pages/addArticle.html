@@ -1,68 +1,49 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thêm Bài Viết</title>
-    <link rel="stylesheet" href="../assets/css/addArticle.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="top">
-        <div class="logo-title">
-          <img src="../assets/img/logo.png" alt="Book Store Logo" />
-          <span class="title">Book Store</span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thêm Bài Viết</title>
+  <link rel="stylesheet" href="../assets/css/addArticle.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="top" id="top">
+
+    </div>
+    <!-- Menu -->
+    <div id="menu"></div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container">
+      <h2>Thêm bài viết mới</h2>
+      <form class="formaddArticle">
+        <label>Mã bài viết</label>
+        <input type="text" placeholder="Mã bài viết sẽ được tự động tạo" disabled />
+
+        <label for="title">Tên bài viết</label>
+        <input type="text" id="title" placeholder="Nhập tên bài viết" required />
+
+        <label for="content">Nội dung</label>
+        <textarea id="content" rows="5" placeholder="Nhập nội dung" required class="describe"></textarea>
+
+        <div class="buttons">
+          <button type="submit" class="btn btn-green">Thêm sản phẩm</button>
+          <button type="reset" class="btn btn-blue" onclick="goBack()">
+            Hủy bỏ
+          </button>
         </div>
-        <div class="right">
-          <span class="username">Anh Hải</span>
-          <img src="../assets/img/avata.png" alt="Admin Avatar" class="avatar" />
-        </div>
-      </div>
-      <!-- Menu -->
-      <div id="menu"></div>
-    </header>
+      </form>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer id="footer"></footer>
 
-    <!-- Main Content -->
-    <main class="main">
-      <div class="container">
-        <h2>Thêm bài viết mới</h2>
-        <form class="formaddArticle">
-          <label>Mã bài viết</label>
-          <input
-            type="text"
-            placeholder="Mã bài viết sẽ được tự động tạo"
-            disabled
-          />
+  <script src="../assets/js/homeAdmin.js"></script>
+</body>
 
-          <label for="title">Tên bài viết</label>
-          <input
-            type="text"
-            id="title"
-            placeholder="Nhập tên bài viết"
-            required
-          />
-
-          <label for="content">Nội dung</label>
-          <textarea
-            id="content"
-            rows="5"
-            placeholder="Nhập nội dung"
-            required
-            class="describe"
-          ></textarea>
-
-          <div class="buttons">
-            <button type="submit" class="btn btn-green">Thêm sản phẩm</button>
-            <button type="reset" class="btn btn-blue" onclick="goBack()">
-              Hủy bỏ
-            </button>
-          </div>
-        </form>
-      </div>
-    </main>
-    <!-- Footer -->
-    <footer id="footer"></footer>
-
-    <script src="../assets/js/homeAdmin.js"></script>
-  </body>
 </html>

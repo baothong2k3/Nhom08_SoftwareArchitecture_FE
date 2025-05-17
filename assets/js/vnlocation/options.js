@@ -1,0 +1,20 @@
+var options = {
+    province: 'ls_province',
+    district: 'ls_district',
+    ward: 'ls_ward',
+    getValueBy: 'id',
+
+    provinceText: 'Chọn tỉnh / thành phố',
+    districtText: 'Chọn quận / huyện',
+    districtNoText: 'Địa phương này không có quận / huyện',
+    wardText: 'Chọn phường / xã',
+    wardNoText: 'Địa phương này không có phường / xã',
+    emptyValue: " ",
+    hideEmptyValueOption: true,
+    hidePlaceHolderOption: true,
+    provincePrefix: false,
+    districtPrefix: true,
+    wardPrefix: true,
+    levelAsAttribute: true,
+    levelAttributeName: "data-level",
+};

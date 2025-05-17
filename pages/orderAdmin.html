@@ -1,130 +1,60 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Danh Sách Đơn Hàng</title>
-    <link rel="stylesheet" href="../assets/css/orderAdmin.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="top">
-        <div class="logo-title">
-          <img src="../assets/img/logo.png" alt="Book Store Logo" />
-          <span class="title">Book Store</span>
-        </div>
-        <div class="right">
-          <span class="username">Anh Hải</span>
-          <img src="../assets/img/avata.png" alt="Admin Avatar" class="avatar" />
-        </div>
-      </div>
-      <!-- Menu -->
-      <div id="menu"></div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="main">
-      <div class="container">
-        <h2>Danh sách đơn hàng</h2>
-        <div class="search-bar">
-          <input type="text" placeholder="Nhập tên, mã đơn hàng cần tìm..." />
-          <button class="btn btn-blue">Tìm kiếm</button>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Mã</th>
-              <th>Tên Đơn Hàng</th>
-              <th>Tình Trạng Đơn Hàng</th>
-              <th>Tình Trạng Thanh Toán</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>DH001</td>
-              <td>Tên đơn hàng A</td>
-              <td>Đang xử lý</td>
-              <td>Chưa thanh toán</td>
-            </tr>
-            <tr>
-              <td>DH002</td>
-              <td>Tên đơn hàng B</td>
-              <td>Đang giao hàng</td>
-              <td>Đã thanh toán</td>
-            </tr>
-            <tr>
-              <td>DH003</td>
-              <td>Tên đơn hàng C</td>
-              <td>Đang giao</td>
-              <td>Đã thanh toán</td>
-            </tr>
-            <tr>
-              <td>DH004</td>
-              <td>Tên đơn hàng D</td>
-              <td>Đang xử lý</td>
-              <td>Chưa thanh toán</td>
-            </tr>
-            <tr>
-              <td>DH005</td>
-              <td>Tên đơn hàng E</td>
-              <td>Đang giao hàng</td>
-              <td>Đã thanh toán</td>
-            </tr>
-            <tr>
-              <td>DH006</td>
-              <td>Tên đơn hàng F</td>
-              <td>Đang giao</td>
-              <td>Đã thanh toán</td>
-            </tr>
-            <tr>
-              <td>DH007</td>
-              <td>Tên đơn hàng G</td>
-              <td>Đang xử lý</td>
-              <td>Chưa thanh toán</td>
-            </tr>
-            <tr>
-              <td>DH008</td>
-              <td>Tên đơn hàng H</td>
-              <td>Đang giao hàng</td>
-              <td>Đã thanh toán</td>
-            </tr>
-            <tr>
-              <td>DH009</td>
-              <td>Tên đơn hàng I</td>
-              <td>Đang giao</td>
-              <td>Đã thanh toán</td>
-            </tr>
-            <tr>
-              <td>DH010</td>
-              <td>Tên đơn hàng L</td>
-              <td>Đang xử lý</td>
-              <td>Chưa thanh toán</td>
-            </tr>
-            <tr>
-              <td>DH011</td>
-              <td>Tên đơn hàng M</td>
-              <td>Đang giao hàng</td>
-              <td>Đã thanh toán</td>
-            </tr>
-            <tr>
-              <td>DH012</td>
-              <td>Tên đơn hàng N</td>
-              <td>Đang giao</td>
-              <td>Đã thanh toán</td>
-            </tr>
-          </tbody>
-        </table>
-        <!-- Thanh phân trang -->
-        <div class="pagination" id="pagination">
-          <button onclick="changePage(-1)">Trước</button>
-          <span id="page-numbers"></span>
-          <button onclick="changePage(1)">Sau</button>
-        </div>
-      </div>
-    </main>
-    <!-- Footer -->
-    <footer id="footer"></footer>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danh Sách Đơn Hàng</title>
+  <link rel="stylesheet" href="../assets/css/admin/orderAdmin.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
 
-    <script src="../assets/js/homeAdmin.js"></script>
-  </body>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="top" id="top">
+
+    </div>
+    <!-- Menu -->
+    <div id="menu"></div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container">
+      <h2>Danh sách đơn hàng</h2>
+      <div class="search-bar">
+        <input type="text" placeholder="Nhập tên, mã đơn hàng cần tìm..." />
+        <button class="btn btn-blue">Tìm kiếm</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Mã</th>
+            <th>Tên Khách Hàng</th>
+            <th>Tình Trạng Đơn Hàng</th>
+            <th>Tình Trạng Thanh Toán</th>
+            <th>Cập Nhật Đơn Hàng</th>
+            <th>Chức năng</th>
+          </tr>
+        </thead>
+        <tbody id="orderTableBody">
+          <!-- Sẽ thêm dòng động bằng JS -->
+        </tbody>
+      </table>
+      <!-- Thanh phân trang -->
+      <div class="pagination">
+        <button>Trước</button>
+        <span id="page-numbers"></span>
+        <button>Sau</button>
+      </div>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+  <script src="../assets/js/homeAdmin.js"></script>
+  <script src="../service/admin/order.js"></script>
+</body>
+
 </html>

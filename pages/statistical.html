@@ -1,78 +1,67 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Danh Sách Đơn Hàng</title>
-    <link rel="stylesheet" href="../assets/css/statistical.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="top">
-        <div class="logo-title">
-          <img src="../assets/img/logo.png" alt="Book Store Logo" />
-          <span class="title">Book Store</span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danh Sách Đơn Hàng</title>
+  <link rel="stylesheet" href="../assets/css/statistical.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="top" id="top">
+
+    </div>
+    <!-- Menu -->
+    <div id="menu"></div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container">
+      <h2>Thống kê</h2>
+      <div class="filters">
+        <label for="date">Ngày:</label>
+        <input type="date" />
+        <label for="date">Tháng:</label>
+        <input type="month" placeholder="Chọn tháng" />
+        <label for="year">Năm:</label>
+        <input type="number" id="year" min="1900" max="2100" step="1" value="2025" />
+      </div>
+      <div class="stats">
+        <div class="stat-box blue">
+          <p>Tổng số sản phẩm</p>
+          <br /><strong>150</strong>
         </div>
-        <div class="right">
-          <span class="username">Anh Hải</span>
-          <img src="../assets/img/avata.png" alt="Admin Avatar" class="avatar" />
+        <div class="stat-box green">
+          <p>Tổng số khách hàng</p>
+          <br /><strong>75</strong>
+        </div>
+        <div class="stat-box red">
+          <p>Tổng số đơn hàng</p>
+          <br /><strong>120</strong>
+        </div>
+        <div class="stat-box yellow">
+          <p>Doanh thu tháng này</p>
+          <br /><strong>50,000,000 VND</strong>
+        </div>
+        <div class="stat-box purple">
+          <p>Sản phẩm bán chạy nhất</p>
+          <br /><strong>Muôn kiếp nhân sinh</strong>
+        </div>
+        <div class="stat-box indigo">
+          <p>Khách hàng thân thiết nhất</p>
+          <br /><strong>Anh Hải</strong>
         </div>
       </div>
-      <!-- Menu -->
-      <div id="menu"></div>
-    </header>
+      <div class="chart"></div>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer id="footer"></footer>
 
-    <!-- Main Content -->
-    <main class="main">
-      <div class="container">
-        <h2>Thống kê</h2>
-        <div class="filters">
-          <label for="date">Ngày:</label>
-          <input type="date" />
-          <label for="date">Tháng:</label>
-          <input type="month" placeholder="Chọn tháng" />
-          <label for="year">Năm:</label>
-          <input
-            type="number"
-            id="year"
-            min="1900"
-            max="2100"
-            step="1"
-            value="2025"
-          />
-        </div>
-        <div class="stats">
-          <div class="stat-box blue">
-            <p>Tổng số sản phẩm</p>
-            <br /><strong>150</strong>
-          </div>
-          <div class="stat-box green">
-            <p>Tổng số khách hàng</p>
-            <br /><strong>75</strong>
-          </div>
-          <div class="stat-box red">
-            <p>Tổng số đơn hàng</p>
-            <br /><strong>120</strong>
-          </div>
-          <div class="stat-box yellow">
-            <p>Doanh thu tháng này</p>
-            <br /><strong>50,000,000 VND</strong>
-          </div>
-          <div class="stat-box purple">
-            <p>Sản phẩm bán chạy nhất</p>
-            <br /><strong>Muôn kiếp nhân sinh</strong>
-          </div>
-          <div class="stat-box indigo">
-            <p>Khách hàng thân thiết nhất</p>
-            <br /><strong>Anh Hải</strong>
-          </div>
-        </div>
-        <div class="chart"></div>
-      </div>
-    </main>
-    <!-- Footer -->
-    <footer id="footer"></footer>
+  <script src="../assets/js/homeAdmin.js"></script>
+</body>
 
-    <script src="../assets/js/homeAdmin.js"></script>
-  </body>
 </html>

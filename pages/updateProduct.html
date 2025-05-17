@@ -1,83 +1,105 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Danh Sách Sản Phẩm</title>
-    <link rel="stylesheet" href="../assets//css/addproduct.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="top">
-        <div class="logo-title">
-          <img src="../assets/img/logo.png" alt="Book Store Logo" />
-          <span class="title">Book Store</span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danh Sách Sản Phẩm</title>
+  <link rel="stylesheet" href="../assets//css/updateProduct.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="top" id="top">
+
+    </div>
+    <!-- Menu -->
+    <div id="menu"></div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container">
+      <h2>Cập nhật sản phẩm</h2>
+      <form id="updateForm" enctype="multipart/form-data">
+        <input type="hidden" placeholder="Mã sản phẩm" id="id" />
+
+        <label>Tên sản phẩm</label>
+        <input type="text" placeholder="Nhập tên sản phẩm" id="productName" />
+        <label class="error" id="error-name"></label>
+
+        <label>Giá</label>
+        <input type="number" placeholder="Nhập giá sản phẩm" id="price" />
+        <label class="error" id="error-price"></label>
+
+        <label>Giảm giá (%)</label>
+        <input type="number" placeholder="Nhập phần trăm giảm giá" id="discountPercent" />
+        <label class="error" id="error-discountPer"></label>
+
+        <label>Giá sau giảm (%)</label>
+        <input type="number" placeholder="Nhập giá sau giảm" disabled />
+
+        <label>Số lượng tồn</label>
+        <input type="number" placeholder="Nhập số lượng tồn" id="quantity" />
+        <label class="error" id="error-quantity"></label>
+
+        <label for="category-select">Danh mục</label>
+        <select id="category-select">
+          <option value="Manga">Manga</option>
+          <option value="Văn Học Đương Đại">Văn Học Đương Đại</option>
+          <option value="Âm nhạc">Âm nhạc</option>
+          <option value="Kinh Tế">Kinh Tế</option>
+          <option value="Văn Học Tuổi Mới Lớn">Văn Học Tuổi Mới Lớn</option>
+          <option value="Tiểu thuyết">Tiểu thuyết</option>
+          <option value="Kinh dị">Kinh dị</option>
+        </select>
+
+
+
+        <label>Tác giả</label>
+        <input type="text" placeholder="Nhập tên tác giả" id="author" />
+        <label class="error" id="error-author"></label>
+
+        <label>Mô tả</label>
+        <textarea placeholder="Nhập mô tả sản phẩm" id="description"></textarea>
+
+
+        <label for="product-image" class="imgProduct">Ảnh sản phẩm</label>
+        <img id="product-preview" src="" alt="Ảnh sản phẩm"
+          style="width: 150px; height: 150px; display: block; margin-bottom: 10px;" />
+        <input type="file" id="product-image" />
+
+
+
+        <label>Trạng thái</label>
+        <div class="status-options">
+          <label class="radio">
+            <input type="radio" name="status" value="Đang bán" checked />
+            Đang kinh doanh
+          </label>
+          <label class="radio">
+            <input type="radio" name="status" value="Ngừng bán" />
+            Ngừng kinh doanh
+          </label>
         </div>
-        <div class="right">
-          <span class="username">Anh Hải</span>
-          <img src="../assets/img/avata.png" alt="Admin Avatar" class="avatar" />
+
+        <div class="buttons">
+          <button type="submit" class="btn btn-green">
+            Cập nhật sản phẩm
+          </button>
+          <button type="reset" class="btn btn-blue" onclick="goBack()">
+            Hủy bỏ
+          </button>
         </div>
-      </div>
-      <!-- Menu -->
-      <div id="menu"></div>
-    </header>
+      </form>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer id="footer"></footer>
 
-    <!-- Main Content -->
-    <main class="main">
-      <div class="container">
-        <h2>Cập nhật sản phẩm</h2>
-        <form>
-          <label>Mã sản phẩm</label>
-          <input
-            type="text"
-            placeholder="Mã sản phẩm sẽ được tự động tạo"
-            disabled
-          />
+  <script src="../assets/js/homeAdmin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.js" defer></script>
+  <script src="../service/admin/updateProduct.js"></script>
+</body>
 
-          <label>Tên sản phẩm</label>
-          <input type="text" placeholder="Nhập tên sản phẩm" />
-
-          <label>Giá</label>
-          <input type="number" placeholder="Nhập giá sản phẩm" />
-
-          <label>Giảm giá (%)</label>
-          <input type="number" placeholder="Nhập phần trăm giảm giá" />
-
-          <label>Số lượng tồn</label>
-          <input type="number" placeholder="Nhập số lượng tồn" />
-
-          <label>Nhà xuất bản</label>
-          <input type="text" placeholder="Nhập nhà xuất bản" />
-
-          <label>Tác giả</label>
-          <input type="text" placeholder="Nhập tên tác giả" />
-
-          <label>Mô tả</label>
-          <textarea placeholder="Nhập mô tả sản phẩm"></textarea>
-
-          <label>Ảnh sản phẩm</label>
-          <input type="file" />
-
-          <label>Trạng thái</label>
-          <select>
-            <option>Đang bán</option>
-            <option>Ngừng bán</option>
-          </select>
-
-          <div class="buttons">
-            <button type="submit" class="btn btn-green">
-              Cập nhật sản phẩm
-            </button>
-            <button type="reset" class="btn btn-blue" onclick="goBack()">
-              Hủy bỏ
-            </button>
-          </div>
-        </form>
-      </div>
-    </main>
-    <!-- Footer -->
-    <footer id="footer"></footer>
-
-    <script src="../assets/js/homeAdmin.js"></script>
-  </body>
 </html>

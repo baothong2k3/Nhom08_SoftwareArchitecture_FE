@@ -4,19 +4,23 @@ body {
   width: 100%;
   height: auto;
   touch-action: none;
-  background-color: #f0f3f7; /* nền chung */
+  background-color: #f0f3f7;
+  /* nền chung */
 }
 
 /*header */
 .header {
   display: flex;
   flex-direction: column;
-  background-color: #bde5f2; /* nền nhạt */
+  background-color: #bde5f2;
+  /* nền nhạt */
 }
+
 .top {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Căn giữa theo chiều dọc */
+  align-items: center;
+  /* Căn giữa theo chiều dọc */
   width: 100%;
   padding: 13px 25px;
 }
@@ -34,10 +38,12 @@ h1 {
   font-size: 24px;
   font-weight: bold;
 }
+
 .header img {
   height: 80px;
   width: 80px;
 }
+
 .header .title {
   font-size: 30px;
   font-weight: bold;
@@ -47,7 +53,8 @@ h1 {
 /*button*/
 .header .buttons {
   display: flex;
-  align-items: center; /* Căn giữa các nút và icon */
+  align-items: center;
+  /* Căn giữa các nút và icon */
 }
 
 .header .buttons button {
@@ -74,6 +81,10 @@ h1 {
 /*Content*/
 .main {
   width: 100%;
+  max-width: 80%;
+  /* giới hạn chiều ngang tối đa */
+  margin: 0 auto;
+  /* căn giữa ngang */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -87,14 +98,17 @@ h1 {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 15px;
-  background-color: #f0f3f7; /* nền chung */
+  background-color: #f0f3f7;
+  /* nền chung */
 }
+
 .chat-header {
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 25px;
   margin-top: 15px;
 }
+
 .chat-box {
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -102,14 +116,17 @@ h1 {
   background-color: #f1f1f1;
   font-size: 14px;
 }
+
 .chat-messages {
   min-height: 520px;
   font-size: 22px;
 }
+
 .chat-input {
   display: flex;
   margin-top: 10px;
 }
+
 .chat-input input {
   flex: 1;
   padding: 10px;
@@ -117,6 +134,7 @@ h1 {
   border-radius: 5px 0 0 5px;
   outline: none;
 }
+
 .chat-input button {
   padding: 15px;
   border: none;
@@ -125,6 +143,7 @@ h1 {
   border-radius: 0 5px 5px 0;
   cursor: pointer;
 }
+
 .chat-input button:hover {
   background: #0056b3;
 }
@@ -140,5 +159,6 @@ h1 {
 }
 
 .cart-icon:hover {
-  background-color: rgba(79, 195, 247, 0.2); /* Hover nhẹ */
+  background-color: rgba(79, 195, 247, 0.2);
+  /* Hover nhẹ */
 }

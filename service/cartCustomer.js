@@ -6,30 +6,58 @@ function updateCart() {
   cartContainer.innerHTML = "";
   let total = 0;
 
+
   cartItems.forEach(item => {
     const itemElement = document.createElement("div");
     itemElement.classList.add("cart-item");
+
+    console.log(item);
+
+    const isOutOfStock = item.stock < item.quantity || item.stock === 0 || item.status === false;
+    if (isOutOfStock) {
+      itemElement.classList.add("out-of-stock");
+    }
+
+    const hetHang = item.stock === 0 || item.status === false;
+    const khongDu = item.stock < item.quantity && item.stock > 0;
+
     itemElement.innerHTML = `
-      <input type="checkbox" data-id="${item.id}" onchange="toggleSelect(${item.id})" ${item.selected ? "checked" : ""} />
-      <img src="${item.image}" alt="${item.name}">
-      <div>
-        <h3>${item.name}</h3>
-        <p>Tác giả: ${item.author}</p>
-        <p>Giá: ${item.price.toLocaleString("vi-VN")} VND</p>
-      </div>
-      <div class="quantity-control">
-        <button onclick="updateQuantity(${item.bookId}, -1)">-</button>
-        <span>${item.quantity}</span>
-        <button onclick="updateQuantity(${item.bookId}, 1)">+</button>
-      </div>
-      <button class="remove" onclick="removeItem(${item.bookId})">Xóa</button>
-    `;
+    ${khongDu ? `
+      <div class="overlay">
+          Chỉ còn lại ${item.stock} sản phẩm trong kho. Bạn có muốn thêm tối đa có thể không?
+          <br/>
+          <a href="#" onclick="updateQuantity(${item.bookId}, 1)" style="color: blue; text-decoration: underline; margin-left: 5px;">
+                 Có, hãy thêm
+           </a>
+       </div>
+      ` : ""}
+    ${hetHang ? '<div class="overlay">Sản phẩm hiện không còn tồn tại.</div>' : ""}
+    <input type="checkbox" data-id="${item.id}" onchange="toggleSelect(${item.id})" ${item.selected ? "checked" : ""} />
+    <img src="${item.image}" alt="${item.name}">
+    <div>
+      <h3>${item.name}</h3>
+      <p>Tác giả: ${item.author}</p>
+      ${item.discountPrice != null && item.discountPrice > 0
+        ? `<p>Giá: <span style="color: red; font-weight: bold;">${item.discountPrice.toLocaleString("vi-VN")} VND</span></p>
+           <p>Giá gốc: <span style="text-decoration: line-through; color: gray;">${item.price.toLocaleString("vi-VN")} VND</span></p>`
+        : `<p style="color: red; font-weight: bold;">Giá: ${item.price.toLocaleString("vi-VN")} VND</p>`
+      }
+    </div>
+    <div class="quantity-control">
+      <button onclick="updateQuantity(${item.bookId}, -1)">-</button>
+      <span>${item.quantity}</span>
+      <button onclick="updateQuantity(${item.bookId}, 1)">+</button>
+    </div>
+    <button class="remove" onclick="removeItem(${item.bookId})">Xóa</button>
+  `;
+
     cartContainer.appendChild(itemElement);
 
-    if (item.selected) {
+    if (item.selected && !isOutOfStock) {
       total += item.price * item.quantity;
     }
   });
+
 
   document.getElementById("total-price").innerText = total.toLocaleString("vi-VN");
 }
@@ -208,6 +236,8 @@ function toggleSelect(id) {
       }
     });
     document.getElementById("total-price").innerText = total.toLocaleString("vi-VN");
+
+    updateCheckoutButtonState();
   }
 }
 
@@ -237,9 +267,13 @@ document.addEventListener("DOMContentLoaded", () => {
         name: item.bookTitle,
         author: item.bookAuthor,
         price: item.price,
+        discountPercent: item.discountPercent,
+        discountPrice: item.discountedPrice,
         quantity: item.quantity,
+        stock: item.stockQuantity,
         bookId: item.bookId,
         image: item.bookImageUrl,
+        status: item.bookStatus,
         selected: false
       }));
       updateCart();
@@ -344,5 +378,17 @@ function showConfirmDialog(message) {
       resolve(false);
     });
   });
+}
+
+
+function updateCheckoutButtonState() {
+  const checkoutBtn = document.getElementById("checkout-btn");
+  const hasSelected = cartItems.some(item => item.selected);
+  if (checkoutBtn) {
+    checkoutBtn.disabled = !hasSelected;
+    checkoutBtn.style.backgroundColor = hasSelected ? "#16a34a" : "#ccc";
+    checkoutBtn.style.color = hasSelected ? "#fff" : "#666";
+    checkoutBtn.style.cursor = hasSelected ? "pointer" : "not-allowed";
+  }
 }
 

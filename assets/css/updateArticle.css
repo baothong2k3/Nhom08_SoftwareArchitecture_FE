@@ -4,15 +4,18 @@ body {
   width: 100%;
   height: auto;
   touch-action: none;
-  background-color: #f0f3f7; /* nền chung */
+  background-color: #f0f3f7;
+  /* nền chung */
 }
 
 /*header */
 .header {
   display: flex;
   flex-direction: column;
-  background-color: #bde5f2; /* nền nhạt */
+  background-color: #bde5f2;
+  /* nền nhạt */
 }
+
 .top {
   display: flex;
   justify-content: space-between;
@@ -20,41 +23,7 @@ body {
   width: 100%;
   padding: 13px 25px;
 }
-/*logo*/
-.logo-title {
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  font-weight: bold;
-}
-.header img {
-  height: 80px;
-  width: 80px;
-}
-.header .title {
-  font-size: 30px;
-  font-weight: bold;
-  margin-left: 10px;
-}
 
-/*right*/
-.right {
-  display: flex;
-  align-items: center;
-}
-
-.username {
-  margin-right: 8px;
-  font-size: 20px;
-  color: #555;
-  font-weight: bold;
-}
-
-.avatar {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-}
 /*Content*/
 .main {
   width: 100%;
@@ -78,7 +47,8 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   height: 680px;
-  background-color: #f0f3f7; /* nền chung */
+  background-color: #f0f3f7;
+  /* nền chung */
 }
 
 .formaddArticle {

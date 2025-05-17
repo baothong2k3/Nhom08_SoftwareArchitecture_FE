@@ -1,167 +1,136 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Danh Sách Bài Viết</title>
-    <link rel="stylesheet" href="../assets/css/articleAdmin.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="top">
-        <div class="logo-title">
-          <img src="../assets/img/logo.png" alt="Book Store Logo" />
-          <span class="title">Book Store</span>
-        </div>
-        <div class="right">
-          <span class="username">Anh Hải</span>
-          <img src="../assets/img/avata.png" alt="Admin Avatar" class="avatar" />
-        </div>
-      </div>
-      <!-- Menu -->
-      <div id="menu"></div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="main">
-      <div class="container">
-        <h2>Danh sách bài viết</h2>
-        <div class="search-bar">
-          <input type="text" placeholder="Nhập tên, mã bài viết cần tìm..." />
-          <button class="btn btn-blue">Tìm kiếm</button>
-          <button
-            class="btn btn-green"
-            onclick="window.location.href='../pages/addArticle.html'"
-          >
-            Thêm bài viết
-          </button>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Mã Bài Viết</th>
-              <th>Tên Bài Viết</th>
-              <th>Chức Năng</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>BV001</td>
-              <td>Bài viết A</td>
-              <td>
-                <button
-                  class="btn btn-blue"
-                  onclick="window.location.href='../pages/updateArticle.html'"
-                >
-                  Cập nhật
-                </button>
-                <button class="btn btn-red">Xóa</button>
-              </td>
-            </tr>
-            <tr>
-              <td>BV002</td>
-              <td>Bài viết B</td>
-              <td>
-                <button
-                  class="btn btn-blue"
-                  onclick="window.location.href='../pages/updateArticle.html'"
-                >
-                  Cập nhật
-                </button>
-                <button class="btn btn-red">Xóa</button>
-              </td>
-            </tr>
-            <tr>
-              <td>BV003</td>
-              <td>Bài viết C</td>
-              <td>
-                <button
-                  class="btn btn-blue"
-                  onclick="window.location.href='../pages/updateArticle.html'"
-                >
-                  Cập nhật
-                </button>
-                <button class="btn btn-red">Xóa</button>
-              </td>
-            </tr>
-            <tr>
-              <td>BV004</td>
-              <td>Bài viết D</td>
-              <td>
-                <button
-                  class="btn btn-blue"
-                  onclick="window.location.href='../pages/updateArticle.html'"
-                >
-                  Cập nhật
-                </button>
-                <button class="btn btn-red">Xóa</button>
-              </td>
-            </tr>
-            <tr>
-              <td>BV005</td>
-              <td>Bài viết E</td>
-              <td>
-                <button
-                  class="btn btn-blue"
-                  onclick="window.location.href='../pages/updateArticle.html'"
-                >
-                  Cập nhật
-                </button>
-                <button class="btn btn-red">Xóa</button>
-              </td>
-            </tr>
-            <tr>
-              <td>BV006</td>
-              <td>Bài viết G</td>
-              <td>
-                <button
-                  class="btn btn-blue"
-                  onclick="window.location.href='../pages/updateArticle.html'"
-                >
-                  Cập nhật
-                </button>
-                <button class="btn btn-red">Xóa</button>
-              </td>
-            </tr>
-            <tr>
-              <td>BV007</td>
-              <td>Bài viết H</td>
-              <td>
-                <button
-                  class="btn btn-blue"
-                  onclick="window.location.href='../pages/updateArticle.html'"
-                >
-                  Cập nhật
-                </button>
-                <button class="btn btn-red">Xóa</button>
-              </td>
-            </tr>
-            <tr>
-              <td>BV008</td>
-              <td>Bài viết I</td>
-              <td>
-                <button
-                  class="btn btn-blue"
-                  onclick="window.location.href='../pages/updateArticle.html'"
-                >
-                  Cập nhật
-                </button>
-                <button class="btn btn-red">Xóa</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <!-- Thanh phân trang -->
-        <div class="pagination" id="pagination">
-          <button onclick="changePage(-1)">Trước</button>
-          <span id="page-numbers"></span>
-          <button onclick="changePage(1)">Sau</button>
-        </div>
-      </div>
-    </main>
-    <!-- Footer -->
-    <footer id="footer"></footer>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danh Sách Bài Viết</title>
+  <link rel="stylesheet" href="../assets/css/articleAdmin.css" />
+</head>
 
-    <script src="../assets/js/homeAdmin.js"></script>
-  </body>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="top" id="top">
+
+    </div>
+    <!-- Menu -->
+    <div id="menu"></div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container">
+      <h2>Danh sách bài viết</h2>
+      <div class="search-bar">
+        <input type="text" placeholder="Nhập tên, mã bài viết cần tìm..." />
+        <button class="btn btn-blue">Tìm kiếm</button>
+        <button class="btn btn-green" onclick="window.location.href='../pages/addArticle.html'">
+          Thêm bài viết
+        </button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Mã Bài Viết</th>
+            <th>Tên Bài Viết</th>
+            <th>Chức Năng</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>BV001</td>
+            <td>Bài viết A</td>
+            <td>
+              <button class="btn btn-blue" onclick="window.location.href='../pages/updateArticle.html'">
+                Cập nhật
+              </button>
+              <button class="btn btn-red">Xóa</button>
+            </td>
+          </tr>
+          <tr>
+            <td>BV002</td>
+            <td>Bài viết B</td>
+            <td>
+              <button class="btn btn-blue" onclick="window.location.href='../pages/updateArticle.html'">
+                Cập nhật
+              </button>
+              <button class="btn btn-red">Xóa</button>
+            </td>
+          </tr>
+          <tr>
+            <td>BV003</td>
+            <td>Bài viết C</td>
+            <td>
+              <button class="btn btn-blue" onclick="window.location.href='../pages/updateArticle.html'">
+                Cập nhật
+              </button>
+              <button class="btn btn-red">Xóa</button>
+            </td>
+          </tr>
+          <tr>
+            <td>BV004</td>
+            <td>Bài viết D</td>
+            <td>
+              <button class="btn btn-blue" onclick="window.location.href='../pages/updateArticle.html'">
+                Cập nhật
+              </button>
+              <button class="btn btn-red">Xóa</button>
+            </td>
+          </tr>
+          <tr>
+            <td>BV005</td>
+            <td>Bài viết E</td>
+            <td>
+              <button class="btn btn-blue" onclick="window.location.href='../pages/updateArticle.html'">
+                Cập nhật
+              </button>
+              <button class="btn btn-red">Xóa</button>
+            </td>
+          </tr>
+          <tr>
+            <td>BV006</td>
+            <td>Bài viết G</td>
+            <td>
+              <button class="btn btn-blue" onclick="window.location.href='../pages/updateArticle.html'">
+                Cập nhật
+              </button>
+              <button class="btn btn-red">Xóa</button>
+            </td>
+          </tr>
+          <tr>
+            <td>BV007</td>
+            <td>Bài viết H</td>
+            <td>
+              <button class="btn btn-blue" onclick="window.location.href='../pages/updateArticle.html'">
+                Cập nhật
+              </button>
+              <button class="btn btn-red">Xóa</button>
+            </td>
+          </tr>
+          <tr>
+            <td>BV008</td>
+            <td>Bài viết I</td>
+            <td>
+              <button class="btn btn-blue" onclick="window.location.href='../pages/updateArticle.html'">
+                Cập nhật
+              </button>
+              <button class="btn btn-red">Xóa</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Thanh phân trang -->
+      <div class="pagination" id="pagination">
+        <button onclick="changePage(-1)">Trước</button>
+        <span id="page-numbers"></span>
+        <button onclick="changePage(1)">Sau</button>
+      </div>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script src="../assets/js/homeAdmin.js"></script>
+</body>
+
 </html>

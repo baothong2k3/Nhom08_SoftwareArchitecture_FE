@@ -1,63 +1,35 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Book Store</title>
-    <link rel="stylesheet" href="../assets//css/articleCustomer.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="top">
-        <div class="logo-title">
-          <img src="../assets/img/logo.png" alt="Book Store Logo" />
-          <span class="title">Book Store</span>
-        </div>
-        <div class="right">
-          <span class="username">Anh Hải</span>
-          <img src="../assets/img/avata.png" alt="Admin Avatar" class="avatar" />
-          <a href="../pages/cartCustomer.html" class="cart-icon">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-count" id="total-quantity"></span>
-            <!-- Thêm số lượng sản phẩm ở đây -->
-          </a>
-        </div>
-      </div>
-      </div>
-      <!-- Menu -->
-      <div id="menu"></div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="main">
-      <div class="container">
-        <h2>Bài viết</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Store</title>
+  <link rel="stylesheet" href="../assets//css/article.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
 
-        <div class="article">
-          <h3>Giới thiệu và sản phẩm sách vừa ra mắt</h3>
-          <img src="../assets/img/bookstoreHome.jpg" alt="Bìa sách The New Dawn" />
-          <p>
-            Chúng tôi vui mừng giới thiệu đến bạn đọc cuốn sách mới nhất
-            <strong>"The New Dawn"</strong> của tác giả nổi tiếng John Doe...
-          </p>
-        </div>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="top" id="top"></div>
+    <!-- Menu -->
+    <div id="menu"></div>
+  </header>
 
-        <!-- Thanh phân trang -->
-        <div class="pagination" id="pagination">
-          <button onclick="changePage(-1)">Trước</button>
-          <span id="page-numbers"></span>
-          <button onclick="changePage(1)">Sau</button>
-        </div>
-      </div>
-    </main>
-    <!-- Footer -->
-    <footer id="footer"></footer>
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container">
+      <h2>Bài viết</h2>
 
-    <script src="../service/totalCart.js"></script>
-    <script src="../assets/js/homeCustomer.js"></script>
-  </body>
+      <div id="article-container"></div>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script src="../service/totalCart.js"></script>
+  <script src="../assets/js/homeCustomer.js"></script>
+  <script src="../service/article.js"></script>
+</body>
+
 </html>

@@ -1,0 +1,130 @@
+.cart-icon {
+  font-size: 30px;
+  color: black; /* Màu xanh sáng hiện đại */
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 50%;
+  position: relative; /* Để cho phần tử số lượng có thể được định vị */
+  transition: background-color 0.3s;
+}
+
+.cart-icon:hover {
+  background-color: green; /* Hover nhẹ */
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  left: 28px;
+  background-color: red;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/*===========================*/
+.cart-item {
+  position: relative;
+  background-color: #fff;
+  padding: 12px;
+  border: 1px solid #ffffff;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cart-item.out-of-stock {
+  filter: brightness(97%);
+  pointer-events: none;
+  position: relative;
+}
+
+.cart-item.out-of-stock .remove {
+  pointer-events: auto; 
+  z-index: 2; 
+  position: relative;
+  filter: brightness(100%); 
+}
+
+.cart-item.out-of-stock .overlay a {
+  pointer-events: auto; 
+  z-index: 2; 
+  position: relative;
+  filter: brightness(100%); 
+}
+
+.cart-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26, 25, 25, 0.6);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  font-size: 16px;
+}
+
+
+/*logo*/
+.logo-title {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header img {
+  height: 80px;
+  width: 80px;
+}
+.header .title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+
+/*right*/
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.username {
+  margin-right: 8px;
+  font-size: 20px;
+  color: #555;
+  font-weight: bold;
+}
+
+.avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+/*button*/
+.header .buttons button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.header .buttons button.register {
+  background-color: #10b981;
+}

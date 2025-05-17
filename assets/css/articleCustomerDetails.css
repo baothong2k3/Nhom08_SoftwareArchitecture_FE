@@ -1,0 +1,169 @@
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  touch-action: none;
+  background-color: #f0f3f7; /* nền chung */
+}
+
+/*header */
+.header {
+  display: flex;
+  flex-direction: column;
+  background-color: #bde5f2; /* nền nhạt */
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 13px 25px;
+}
+/*logo*/
+.logo-title {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+.header img {
+  height: 80px;
+  width: 80px;
+}
+.header .title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/*right*/
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.username {
+  margin-right: 8px;
+  font-size: 20px;
+  color: #555;
+  font-weight: bold;
+}
+
+.avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+/*button*/
+.header .buttons button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.header .buttons button.register {
+  background-color: #10b981;
+}
+
+/*Content*/
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px 50px;
+}
+
+.container {
+  width: 100%;
+  height: 1250px;
+}
+h2 {
+  margin: 20px 0px;
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.article p{
+  margin-top: 10px;
+}
+
+.back{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+
+.article {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.article img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button,
+.pagination span button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin: 3px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.pagination span .active {
+  background-color: #0056b3;
+}
+
+/*gio hang*/
+.cart-icon {
+  font-size: 30px;
+  color: black; /* Màu xanh sáng hiện đại */
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 50%;
+  position: relative; /* Để cho phần tử số lượng có thể được định vị */
+  transition: background-color 0.3s;
+}
+
+.cart-icon:hover {
+  background-color: rgba(79, 195, 247, 0.2); /* Hover nhẹ */
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  left: 28px;
+  background-color: red;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+}

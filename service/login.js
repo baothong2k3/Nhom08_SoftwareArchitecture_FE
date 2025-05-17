@@ -1,6 +1,5 @@
 async function handleLogin(event) {
   event.preventDefault();
-
   // Reset lỗi cũ
   document.getElementById("username-error").textContent = "";
   document.getElementById("password-error").textContent = "";
@@ -39,8 +38,10 @@ async function handleLogin(event) {
       localStorage.setItem("role", data.role);
       // Redirect dựa trên role
       if (data.role === "ROLE_USER") {
+        await getUserInfoById();
         window.location.href = "../pages/homeCustomer.html";
       } else {
+        await getUserInfoById();
         window.location.href = "../pages/homeAdmin.html";
       }
     } else {
@@ -63,5 +64,33 @@ async function handleLogin(event) {
     }
   } catch (error) {
     console.error("Lỗi kết nối đến BE:", error);
+  }
+}
+
+
+async function getUserInfoById() {
+  const token = localStorage.getItem("token");
+  try {
+    const response = await fetch("http://localhost:8080/api/user/get", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`,
+      }
+    });
+    const result = await response.json();
+    if (response.ok) {
+      const user = result.message;
+      if (user.fullName) {
+        localStorage.setItem("userName", user.fullName);
+      } else {
+        localStorage.setItem("userName", user.phoneNumber);
+      }
+
+    } else {
+      console.error("Lỗi khi lấy user:", result.message || result);
+    }
+  } catch (error) {
+    console.error("Lỗi kết nối đến server:", error);
   }
 }

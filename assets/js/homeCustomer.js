@@ -17,30 +17,43 @@ document.addEventListener(
   { passive: false }
 );
 
-function handleLogin(event) {
-  event.preventDefault(); // Ngăn chặn hành vi submit mặc định
-  window.location.href = '../pages/homeAdmin.html';
-}
+// function handleLogin(event) {
+//   event.preventDefault(); 
+//   window.location.href = '../pages/homeAdmin.html';
+// }
 
 function goBack() {
-    window.history.back();
+  window.history.back();
 }
 
-fetch("../components/footer.html")
-  .then((response) => response.text())
-  .then((data) => {
-    document.getElementById("footer").innerHTML = data;
-  })
-  .catch((error) => console.error("Error loading footer:", error));
+//GẮN GIAO DIỆN
+document.addEventListener("DOMContentLoaded", () => {
+  // Đợi đến khi header/menu được load xong
+  fetch("../components/headerCustomer.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("top").innerHTML = data;
+      const username = localStorage.getItem("userName");
+      document.getElementById("username").textContent = username || "Guest";
+    });
 
-fetch("../components/menuCustomer.html")
-  .then((response) => response.text())
-  .then((data) => {
-    document.getElementById("menu").innerHTML = data;
-  })
-  .catch((error) => console.error("Error loading footer:", error));
+  fetch("../components/menuCustomer.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("menu").innerHTML = data;
+    })
+    .catch((error) => console.error("Error loading footer:", error));
 
-  // Gio hang
+  fetch("../components/footer.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("footer").innerHTML = data;
+    })
+    .catch((error) => console.error("Error loading header:", error));
+});
+
+
+// Gio hang
 
 
 // chuyen khoan
@@ -53,19 +66,19 @@ function toggleBankField() {
 
 //Tong tien
 
-function calculateTotal() {
-  let quantity = parseInt(document.getElementById("quantity").value);
-  let productPrice = parseInt(document.getElementById("product-price").value);
-  let tax = parseInt(document.getElementById("tax").value);
-  let shipping = parseInt(document.getElementById("shipping").value);
-  
-  let total = (productPrice * quantity) + tax + shipping;
-  
-  document.getElementById("total-price").innerText = `Tổng tiền: ${total.toLocaleString()} VND`;
-}
+// function calculateTotal() {
+//   let quantity = parseInt(document.getElementById("quantity").value);
+//   let productPrice = parseInt(document.getElementById("product-price").value);
+//   let tax = parseInt(document.getElementById("tax").value);
+//   let shipping = parseInt(document.getElementById("shipping").value);
+
+//   let total = (productPrice * quantity) + tax + shipping;
+
+//   document.getElementById("total-price").innerText = `Tổng tiền: ${total.toLocaleString()} VND`;
+// }
 
 // Tính ngay khi trang tải xong
-window.onload = calculateTotal;
+// window.onload = calculateTotal;
 
 //phan trang
 function changePage(step) {
@@ -73,19 +86,3 @@ function changePage(step) {
   currentPage = Math.min(Math.max(1, currentPage + step), totalPages);
   displayBooks();
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-  var swiper = new Swiper(".swiper-container", {
-    loop: true,
-    slidesPerView: 1,
-    centeredSlides: false,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
-});

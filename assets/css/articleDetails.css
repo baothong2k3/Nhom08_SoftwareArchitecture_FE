@@ -1,0 +1,150 @@
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  touch-action: none;
+  background-color: #f0f3f7; /* nền chung */
+}
+
+/*header */
+.header {
+  display: flex;
+  flex-direction: column;
+  background-color: #bde5f2; /* nền nhạt */
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  width: 100%;
+  padding: 13px 25px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 450;
+  color: #1e3a8a;
+}
+
+/*logo*/
+.logo-title {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+.header img {
+  height: 80px;
+  width: 80px;
+}
+.header .title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/*button*/
+.header .buttons {
+  display: flex;
+  align-items: center; /* Căn giữa các nút và icon */
+}
+
+.header .buttons button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.buttons button:hover {
+  background-color: #0284c7;
+  box-shadow: 0 0 10px #7dd3fc;
+  transform: scale(1.05);
+}
+
+.header .buttons button.register {
+  background-color: #10b981;
+}
+
+/*Content*/
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px 50px;
+}
+
+.container {
+  width: 100%;
+  height: 1250px;
+}
+h2 {
+  margin-bottom: 15px;
+  font-size: 32px;
+}
+
+.article {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.article p{
+  margin-top: 10px;
+}
+
+.article img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.back{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button,
+.pagination span button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin: 3px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.pagination span .active {
+  background-color: #0056b3;
+}
+
+/*gio hang*/
+.cart-icon {
+  font-size: 30px;
+  color: black;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.cart-icon:hover {
+  background-color: rgba(79, 195, 247, 0.2); /* Hover nhẹ */
+}

@@ -22,20 +22,60 @@
   const displayBooks = (books) => {
     const productListElement = document.getElementById('product-list');
     productListElement.innerHTML = '';
+
+
     books.forEach((book) => {
+
+      if (book.stockQuantity <= 0 || book.status === false) {
+        return;
+      }
       const bookElement = document.createElement('div');
       bookElement.classList.add('product-item');
       bookElement.innerHTML = `
-        <img src="${book.imageUrl}" alt="${book.title}" class="product-image" />
-        <div class="product-details">
-          <h3 class="product-title"><span class="label">Tên sách: </span>${book.title}</h3>
-          <p class="product-author"><span class="label">Tác giả: </span> ${book.author}</p>
-          <p class="product-price"><span class="label">Giá: </span> ${book.price} VND</p>
-          <p class="product-category"><span class="label">Danh mục: </span> ${book.category}</p>
-          <button class="add-to-cart" data-id="${book.id}">Thêm vào giỏ hàng</button>
-          <button class="view-details" data-id="${book.id}">Xem chi tiết</button>
-        </div>
-      `;
+    <div style="position: relative; display: inline-block;">
+    <img src="${book.imageUrl}" alt="${book.title}" class="product-image" />
+    ${book.discountPercent != null && book.discountedPrice != null && book.discountedPrice !== book.price
+          ? `<div style="
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 4px;
+            z-index: 10;
+            font-size: 0.9rem;
+          ">
+            -${book.discountPercent}%
+          </div>`
+          : ''
+        }
+   </div>
+   <div class="product-details">
+    <h3 class="product-title"><span class="label">Tên sách: </span>${book.title}</h3>
+    <p class="product-author"><span class="label">Tác giả: </span> ${book.author}</p>
+    <p class="product-category"><span class="label">Danh mục: </span> ${book.category}</p>
+    ${book.discountPercent != null && book.discountedPrice != null && book.discountedPrice !== book.price
+          ? `
+          <p class="product-price">
+            <span class="label">Giá: </span> 
+            <span style="color: red; font-weight: bold;">
+              ${book.discountedPrice.toLocaleString("vi-VN")} VND
+            </span>
+            <span style="text-decoration: line-through; color: gray; margin-left: 8px;">
+              ${book.price.toLocaleString("vi-VN")} VND
+            </span>
+          </p>
+        `
+          : `<p class="product-price" style="color: red; font-weight: bold;">
+            <span class="label">Giá: </span> ${book.price.toLocaleString("vi-VN")} VND
+          </p>`
+        }
+    <button class="add-to-cart" data-id="${book.id}">Thêm vào giỏ hàng</button>
+    <button class="view-details" data-id="${book.id}">Xem chi tiết</button>
+   </div>
+    `;
       productListElement.appendChild(bookElement);
     });
 
@@ -63,7 +103,6 @@
               'Authorization': `Bearer ${token}`
             }
           });
-
           if (!res.ok) {
             throw new Error('Lỗi khi thêm vào giỏ hàng');
           }
@@ -80,8 +119,8 @@
           console.error(err);
           Swal.fire({
             icon: 'error',
-            title: 'Lỗi',
-            text: 'Không thể thêm vào giỏ hàng. Vui lòng thử lại.'
+            title: 'Không thể thêm vào giỏ hàng',
+            text: 'Số lượng sản phẩm này trong giỏ hàng đã đạt mức tối đa cho phép.'
           });
         }
       });
