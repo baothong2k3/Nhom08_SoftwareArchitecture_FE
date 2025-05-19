@@ -4,7 +4,8 @@ body {
   width: 100%;
   height: auto;
   touch-action: none;
-  background-color: #f0f3f7; /* nền chung */
+  background-color: #f0f3f7;
+  /* nền chung */
 }
 
 
@@ -12,8 +13,10 @@ body {
 .header {
   display: flex;
   flex-direction: column;
-  background-color: #bde5f2; /* nền nhạt */
+  background-color: #bde5f2;
+  /* nền nhạt */
 }
+
 .top {
   display: flex;
   justify-content: space-between;
@@ -37,7 +40,8 @@ body {
   background: white;
   padding: 20px;
   border-radius: 10px;
-  background-color: #f0f3f7; /* nền chung */
+  background-color: #f0f3f7;
+  /* nền chung */
 }
 
 select {
@@ -108,10 +112,21 @@ button:hover {
   margin-top: 20px;
 }
 
+
 .pagination button {
-  margin: 5px;
-  padding: 8px 12px;
-  border-radius: 5px;
+  padding: 8px 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: opacity 0.3s;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .pagination .active {
@@ -127,14 +142,22 @@ button:hover {
   display: block;
   border: 1px solid whitesmoke;
 }
+
 .product-list .product-title {
-  display: -webkit-box; /* Hiển thị phần tử dưới dạng box */
-  -webkit-box-orient: vertical; /* Xếp các phần tử theo chiều dọc */
-  -webkit-line-clamp: 2; /* Giới hạn tối đa 2 dòng */
-  overflow: hidden; /* Ẩn phần văn bản thừa */
-  text-overflow: ellipsis; /* Thêm "..." khi văn bản vượt quá */
-  height: 60px; /* Đảm bảo chiều cao cho 2 dòng */
-  line-height: 30px; /* Căn chỉnh chiều cao dòng */
+  display: -webkit-box;
+  /* Hiển thị phần tử dưới dạng box */
+  -webkit-box-orient: vertical;
+  /* Xếp các phần tử theo chiều dọc */
+  -webkit-line-clamp: 2;
+  /* Giới hạn tối đa 2 dòng */
+  overflow: hidden;
+  /* Ẩn phần văn bản thừa */
+  text-overflow: ellipsis;
+  /* Thêm "..." khi văn bản vượt quá */
+  height: 60px;
+  /* Đảm bảo chiều cao cho 2 dòng */
+  line-height: 30px;
+  /* Căn chỉnh chiều cao dòng */
 }
 
 .product-list .product-item {

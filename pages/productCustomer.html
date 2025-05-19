@@ -23,13 +23,17 @@
   <main class="main">
     <div class="container">
       <div class="search-bar">
-        <select>
-          <option>Tất cả</option>
-          <option>Sách Giáo Khoa</option>
-          <option>Truyện Cổ Tích</option>
+        <select id="categoryFilter" name="category" aria-label="Chọn danh mục sản phẩm">
+          <option value="all">Tất cả</option>
+          <option value="Manga">Manga</option>
+          <option value="Văn Học Đương Đại">Văn Học Đương Đại</option>
+          <option value="Âm nhạc">Âm nhạc</option>
+          <option value="Kinh Tế">Kinh Tế</option>
+          <option value="Văn Học Tuổi Mới Lớn">Văn Học Tuổi Mới Lớn</option>
+          <option value="Tiểu thuyết">Tiểu thuyết</option>
+          <option value="Kinh dị">Kinh dị</option>
         </select>
         <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..." onkeyup="searchBooks()" />
-        <button onclick="searchBooks()" class="btn-search">Tìm kiếm</button>
       </div>
 
       <div id="product-list" class="product-list"></div>

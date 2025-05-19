@@ -22,13 +22,17 @@
     <div class="container">
       <h2>Danh sách sản phẩm</h2>
       <div class="search-bar">
-        <select id="categoryFilter">
+        <select id="categoryFilter" name="category" aria-label="Chọn danh mục sản phẩm">
           <option value="all">Tất cả</option>
-          <option value="schoolBooks">Sách Giáo Khoa</option>
-          <option value="fairyTales">Truyện Cổ Tích</option>
+          <option value="Manga">Manga</option>
+          <option value="Văn Học Đương Đại">Văn Học Đương Đại</option>
+          <option value="Âm nhạc">Âm nhạc</option>
+          <option value="Kinh Tế">Kinh Tế</option>
+          <option value="Văn Học Tuổi Mới Lớn">Văn Học Tuổi Mới Lớn</option>
+          <option value="Tiểu thuyết">Tiểu thuyết</option>
+          <option value="Kinh dị">Kinh dị</option>
         </select>
-        <input type="text" placeholder="Nhập tên, mã sản phẩm cần tìm..." />
-        <button class="btn btn-blue">Tìm kiếm</button>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..." onkeyup="searchBooks()" />
         <button class="btn btn-green" onclick="window.location.href='../pages/addProduct.html'">
           Thêm sản phẩm
         </button>

@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let total = 0;
 
     selectedItems.forEach(item => {
-        console.log(item);
         const div = document.createElement("div");
         div.classList.add("product-item");
         div.innerHTML = `
@@ -214,6 +213,8 @@ document.getElementById("confirmPurchaseBtn").addEventListener("click", async fu
     };
 
 
+
+
     try {
         const response = await fetch("http://localhost:8080/api/orders/place", {
             method: "POST",
@@ -225,6 +226,7 @@ document.getElementById("confirmPurchaseBtn").addEventListener("click", async fu
         });
 
         const data = await response.json();
+
 
 
         if (response.ok && data.status === 200) {

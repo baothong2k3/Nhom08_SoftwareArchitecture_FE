@@ -4,13 +4,16 @@
   let totalElements = 0; // Tổng số sách
 
   // Hàm fetch dữ liệu sách với phân trang
-  const fetchPagedBooks = async (page = 0, size = 10) => {
+  const fetchPagedBooks = async (page = 0, size = pageSize, keyword = '') => {
     try {
-      const res = await apiClient.get('books/paged', { params: { page, size } });
-      totalElements = res.data.totalElements;  // Lưu tổng số sách
+      const res = await apiClient.get('books/paged', {
+        params: { page, size, keyword }
+      });
+      totalElements = res.data.totalElements; // Lưu tổng số sách
       return res.data;
     } catch (error) {
       console.error('Có lỗi xảy ra khi lấy dữ liệu sách:', error);
+      return { content: [], totalElements: 0 };
     }
   };
 
@@ -140,25 +143,30 @@
 
   // Hàm hiển thị phân trang
   const displayPagination = (page, totalPages) => {
-    const paginationElement = document.getElementById('pagination');
     const pageNumbersElement = document.getElementById('page-numbers');
+    const prevButton = document.querySelector('.pagination button:first-child');
+    const nextButton = document.querySelector('.pagination button:last-child');
 
-    pageNumbersElement.innerHTML = `Trang ${page + 1} / ${totalPages}`;
+    pageNumbersElement.innerHTML = `Trang ${page + 1} / ${totalPages || 1}`;
+
+    // Enable/disable buttons based on current page
+    prevButton.disabled = page <= 0;
+    nextButton.disabled = page >= totalPages - 1 || totalPages === 0;
   };
 
   // Hàm thay đổi trang
   const changePage = async (direction) => {
-    const totalPages = getTotalPages();  // Lấy tổng số trang
+    const totalPages = getTotalPages();
     currentPage += direction;
 
     if (currentPage < 0) currentPage = 0;
     if (currentPage >= totalPages) currentPage = totalPages - 1;
 
-    const books = await fetchPagedBooks(currentPage, pageSize);
-    displayBooks(books.content);  // Hiển thị sách
-    displayPagination(currentPage, totalPages);  // Cập nhật phân trang
+    const keyword = document.getElementById('searchInput').value.trim();
+    const books = await fetchPagedBooks(currentPage, pageSize, keyword);
+    displayBooks(books.content);
+    displayPagination(currentPage, totalPages);
   };
-
   // Hàm lấy tổng số trang
   const getTotalPages = () => {
     return Math.ceil(totalElements / pageSize);
@@ -172,6 +180,58 @@
     const totalPages = getTotalPages();  // Lấy tổng số trang
     displayPagination(currentPage, totalPages);  // Hiển thị phân trang
   };
+
+  window.searchBooks = async function () {
+    const keyword = document.getElementById('searchInput').value.trim();
+    currentPage = 0; // Reset to first page
+
+    document.getElementById('categoryFilter').value = "all";
+
+    try {
+      const res = await fetchPagedBooks(currentPage, pageSize, keyword);
+      totalElements = res.totalElements; // Update total elements
+      const totalPages = getTotalPages();
+
+      displayBooks(res.content);
+      displayPagination(currentPage, totalPages);
+    } catch (err) {
+      console.error("Lỗi khi tìm kiếm sách:", err);
+      displayBooks([]);
+      displayPagination(currentPage, 0);
+    }
+  };
+
+  document.getElementById("categoryFilter").addEventListener("change", async function () {
+    const selectedCategory = this.value;
+
+    if (selectedCategory === "all") {
+      initializePage(); // hiển thị tất cả sách
+      return;
+    }
+
+    try {
+      const res = await window.apiClient.get('books/category', {
+        params: {
+          category: selectedCategory,
+          page: 0,
+          size: 1000,
+        }
+      });
+
+      const result = res.data;
+      allBooks = result.content || [];
+      totalPages = Math.ceil(allBooks.length / pageSize);
+      currentPage = 0;
+
+      const initialBooks = allBooks.slice(0, pageSize);
+      displayBooks(initialBooks);
+      displayPagination(currentPage, totalPages);
+      updateButtonStates(currentPage, totalPages);
+    } catch (error) {
+      console.error("Lỗi khi lọc theo danh mục:", error);
+    }
+  });
+
 
   // Khi trang web load
   window.onload = initializePage;

@@ -1,5 +1,19 @@
 const imageInput = document.getElementById("imageProduct");
 const previewImage = document.getElementById("preview-image");
+const priceInput = document.getElementById("price");
+const discountInput = document.getElementById("discount");
+const priceAfterInput = document.getElementById("price_after");
+
+function updateDiscountedPrice() {
+    const price = parseFloat(priceInput.value) || 0;
+    const discount = parseFloat(discountInput.value) || 0;
+    if (price > 0 && discount >= 0 && discount <= 100) {
+        const discounted = price - (price * discount / 100);
+        priceAfterInput.value = Number.isInteger(discounted) ? discounted : discounted.toFixed(2);
+    } else {
+        priceAfterInput.value = "";
+    }
+}
 
 imageInput.addEventListener("change", function () {
     const file = this.files[0];
@@ -45,7 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
             error: document.getElementById("error-price"),
             validate: (val) => {
                 if (val === "") return "Giá sách là bắt buộc";
-                if (parseFloat(val) <= 15000) return "Giá phải lớn hơn 15.000 VND";
+                const price = parseFloat(val);
+                if (price <= 15000) return "Giá phải lớn hơn 15.000 VND";
                 return "";
             }
         },
@@ -54,7 +69,19 @@ document.addEventListener("DOMContentLoaded", function () {
             error: document.getElementById("error-discount"),
             validate: (val) => {
                 if (val === "") return "";
-                if (val < 0 || val > 100) return "Phần trăm giảm giá phải từ 0 đến 100";
+                const discount = parseFloat(val);
+                if (discount < 0 || discount > 100) return "Phần trăm giảm giá phải từ 0 đến 100";
+                return "";
+            }
+        },
+        priceAfter: {
+            element: document.getElementById("price_after"),
+            error: document.getElementById("error-price_after"),
+            validate: (val) => {
+                if (val === "") return "";
+                const priceAfter = parseFloat(val);
+                if (priceAfter < 0) return "Giá sau giảm không được âm";
+                if (priceAfter < 10000) return "Giá sau giảm phải lớn hơn hoặc bằng 10.000 VND";
                 return "";
             }
         },
@@ -93,9 +120,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
+    // Add event listeners for price and discount to update discounted price
+    priceInput.addEventListener("input", () => {
+        updateDiscountedPrice();
+        validateForm();
+    });
+    discountInput.addEventListener("input", () => {
+        updateDiscountedPrice();
+        validateForm();
+    });
+
+    // Add validation listeners for other fields
     Object.values(fields).forEach(({ element, validate, error }) => {
-        element.addEventListener("input", validateForm);
-        element.addEventListener("change", validateForm);
+        if (element !== priceInput && element !== discountInput) {
+            element.addEventListener("input", validateForm);
+            element.addEventListener("change", validateForm);
+        }
     });
 
     function validateForm() {
@@ -127,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const formData = new FormData();
         formData.append("title", fields.productName.element.value);
         formData.append("author", fields.author.element.value);
-        formData.append("discountPercent", fields.discount.element.value);
+        formData.append("discountPercent", fields.discount.element.value || 0);
         formData.append("price", fields.price.element.value);
         formData.append("stockQuantity", fields.quantity.element.value);
         formData.append("category", fields.category.element.value);
@@ -146,7 +186,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 const data = await response.json();
                 if (!response.ok) throw data;
                 window.location.href = "productAdmin.html";
-
             })
             .catch((error) => {
                 let messages = error.errors ? error.errors.join("<br>") : error.message;
@@ -158,4 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     });
 
+    // Initial validation
+    updateDiscountedPrice();
+    validateForm();
 });

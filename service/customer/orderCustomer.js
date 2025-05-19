@@ -34,7 +34,7 @@ async function getOrder() {
 
         orders.forEach(order => {
             const canCancel = order.status === "PLACED" || order.status === "CONFIRMED";
-            const isPaid = order.paymentMethod !== "COD";
+            const isPaid = order.status === "DELIVERED" || order.paymentMethod !== "COD";
             const orderHTML = `
         <div class="order-item">
           <div class="order-info">

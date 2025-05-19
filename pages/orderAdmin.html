@@ -23,8 +23,18 @@
     <div class="container">
       <h2>Danh sách đơn hàng</h2>
       <div class="search-bar">
-        <input type="text" placeholder="Nhập tên, mã đơn hàng cần tìm..." />
-        <button class="btn btn-blue">Tìm kiếm</button>
+        <select id="categoryFilter" aria-label="Chọn danh mục">
+          <option value="PLACED">Đơn đặt</option>
+          <option value="CONFIRMED">Đã xác nhận</option>
+          <option value="SHIPPING">Đang vận chuyển</option>
+          <option value="DELIVERED">Đã giao</option>
+          <option value="CANCELED">Đã hủy</option>
+          <option value="REJECTED">Bị từ chối</option>
+          <option value="all">Tất cả</option>
+        </select>
+        <input type="text" id="phoneSearchInput" placeholder="Nhập số điện thoại cần tìm..." />
+
+
       </div>
       <table>
         <thead>
@@ -33,6 +43,9 @@
             <th>Tên Khách Hàng</th>
             <th>Tình Trạng Đơn Hàng</th>
             <th>Tình Trạng Thanh Toán</th>
+            <th>Ngày đặt hàng</th>
+            <th>Ngày cập nhật</th>
+            <th>Số điện thoại</th>
             <th>Cập Nhật Đơn Hàng</th>
             <th>Chức năng</th>
           </tr>

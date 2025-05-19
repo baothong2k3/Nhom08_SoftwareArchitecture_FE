@@ -22,8 +22,8 @@
     <div class="container">
       <h2>Danh sách khách hàng</h2>
       <div class="search-bar">
-        <input type="text" placeholder="Nhập tên, mã, số điện thoại khách hàng cần tìm..." />
-        <button class="btn btn-blue">Tìm kiếm</button>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm khách hàng theo số điện thoại..."
+          onkeyup="searchCustomers()" />
       </div>
       <table>
         <thead>

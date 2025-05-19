@@ -175,6 +175,68 @@
     updateButtonStates(currentPage, totalPages);
   };
 
+  window.searchBooks = async function () {
+    const keyword = document.getElementById('searchInput').value.trim();
+    currentPage = 0; // Reset to first page
+
+    document.getElementById('categoryFilter').value = "all";
+
+    try {
+      const res = await window.apiClient.get('books/paged', {
+        params: {
+          page: 0,
+          size: 1000,
+          keyword: keyword || '',
+        }
+      });
+
+      const result = res.data;
+      allBooks = result.content || [];
+      totalPages = Math.ceil(allBooks.length / pageSize);
+      currentPage = 0;
+
+      const initialBooks = allBooks.slice(0, pageSize);
+      displayBooks(initialBooks);
+      displayPagination(currentPage, totalPages);
+      updateButtonStates(currentPage, totalPages);
+    } catch (err) {
+      console.error("Lỗi khi tìm kiếm sách:", err);
+    }
+  };
+
+  document.getElementById("categoryFilter").addEventListener("change", async function () {
+    const selectedCategory = this.value;
+
+    if (selectedCategory === "all") {
+      initializePage(); // hiển thị tất cả sách
+      return;
+    }
+
+    try {
+      const res = await window.apiClient.get('books/category', {
+        params: {
+          category: selectedCategory,
+          page: 0,
+          size: 1000,
+        }
+      });
+
+      const result = res.data;
+      allBooks = result.content || [];
+      totalPages = Math.ceil(allBooks.length / pageSize);
+      currentPage = 0;
+
+      const initialBooks = allBooks.slice(0, pageSize);
+      displayBooks(initialBooks);
+      displayPagination(currentPage, totalPages);
+      updateButtonStates(currentPage, totalPages);
+    } catch (error) {
+      console.error("Lỗi khi lọc theo danh mục:", error);
+    }
+  });
+
+
+
   window.onload = initializePage;
 
   document

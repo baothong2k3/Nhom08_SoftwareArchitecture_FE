@@ -27,7 +27,6 @@ async function getOrderDetails() {
         }
 
         const orderDetails = await response.json();
-        console.log("Order Details:", orderDetails);
 
         renderOrderDetails(orderDetails);
 

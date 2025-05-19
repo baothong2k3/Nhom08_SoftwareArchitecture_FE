@@ -145,6 +145,8 @@ th {
   background-color: #f1f1f1;
 }
 
+
+
 img {
   width: 75px;
   height: 75px;
@@ -157,6 +159,22 @@ img {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: opacity 0.3s;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .pagination button,

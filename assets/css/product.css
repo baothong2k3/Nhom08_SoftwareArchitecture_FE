@@ -163,10 +163,21 @@ button:hover {
   margin-top: 20px;
 }
 
+
 .pagination button {
-  margin: 5px;
-  padding: 8px 12px;
-  border-radius: 5px;
+  padding: 8px 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: opacity 0.3s;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .pagination .active {

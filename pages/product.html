@@ -1,91 +1,78 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Book Store</title>
-    <link rel="stylesheet" href="../assets/css/product.css" />
-    <!-- Thêm SweetAlert2 CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.css"
-    />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="top">
-        <div class="logo-title">
-          <img src="../assets/img/logo.png" alt="Book Store Logo" />
-          <span class="title">Book Store</span>
-        </div>
-        <div class="buttons">
-          <button onclick="window.location.href='../pages/login.html'">
-            Đăng nhập
-          </button>
-          <button
-            class="register"
-            onclick="window.location.href='../pages/login.html'"
-          >
-            Đăng ký
-          </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Store</title>
+  <link rel="stylesheet" href="../assets/css/product.css" />
+  <!-- Thêm SweetAlert2 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.css" />
 
-          <a href="../pages/cart.html" class="cart-icon">
-            <i class="fas fa-shopping-cart"></i>
-          </a>
-        </div>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="top">
+      <div class="logo-title">
+        <img src="../assets/img/logo.png" alt="Book Store Logo" />
+        <span class="title">Book Store</span>
       </div>
-      <!-- Menu -->
-      <div id="menu"></div>
-    </header>
+      <div class="buttons">
+        <button onclick="window.location.href='../pages/login.html'">
+          Đăng nhập
+        </button>
+        <button class="register" onclick="window.location.href='../pages/login.html'">
+          Đăng ký
+        </button>
 
-    <!-- Main Content -->
-    <main class="main">
-      <div class="container">
-        <div class="search-bar">
-          <select id="categoryFilter">
-            <option value="all">Tất cả</option>
-            <option value="schoolBooks">Sách Giáo Khoa</option>
-            <option value="fairyTales">Truyện Cổ Tích</option>
-          </select>
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Tìm kiếm sản phẩm..."
-            onkeyup="searchBooks()"
-          />
-          <button onclick="searchBooks()" class="btn-search">Tìm kiếm</button>
-        </div>
-
-        <div id="product-list" class="product-list"></div>
-
-        <!-- Thanh phân trang -->
-        <div class="pagination" id="pagination">
-          <button onclick="changePage(-1)">Trước</button>
-          <span id="page-numbers"></span>
-          <button onclick="changePage(1)">Sau</button>
-        </div>
+        <a href="../pages/cart.html" class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
       </div>
-    </main>
+    </div>
+    <!-- Menu -->
+    <div id="menu"></div>
+  </header>
 
-    <!-- Footer -->
-    <footer id="footer"></footer>
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container">
+      <div class="search-bar">
+        <select id="categoryFilter" name="category" aria-label="Chọn danh mục sản phẩm">
+          <option value="all">Tất cả</option>
+          <option value="Manga">Manga</option>
+          <option value="Văn Học Đương Đại">Văn Học Đương Đại</option>
+          <option value="Âm nhạc">Âm nhạc</option>
+          <option value="Kinh Tế">Kinh Tế</option>
+          <option value="Văn Học Tuổi Mới Lớn">Văn Học Tuổi Mới Lớn</option>
+          <option value="Tiểu thuyết">Tiểu thuyết</option>
+          <option value="Kinh dị">Kinh dị</option>
+        </select>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..." onkeyup="searchBooks()" />
+      </div>
 
-    <!-- Scripts -->
-    <script src="../assets/js/home.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
-      defer
-    ></script>
-    <script src="../service/api/apiClient.js" defer></script>
-    <script src="../service/product.js" defer></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.js"
-      defer
-    ></script>
-  </body>
+      <div id="product-list" class="product-list"></div>
+
+      <!-- Thanh phân trang -->
+      <div class="pagination" id="pagination">
+        <button onclick="changePage(-1)">Trước</button>
+        <span id="page-numbers"></span>
+        <button onclick="changePage(1)">Sau</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/home.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+  <script src="../service/api/apiClient.js" defer></script>
+  <script src="../service/product.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.js" defer></script>
+</body>
+
 </html>

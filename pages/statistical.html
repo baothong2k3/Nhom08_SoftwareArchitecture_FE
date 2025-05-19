@@ -1,67 +1,82 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Danh Sách Đơn Hàng</title>
-  <link rel="stylesheet" href="../assets/css/statistical.css" />
+  <title>Thống Kê Nhà Sách</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/admin/statistical.css" />
 </head>
 
 <body>
   <!-- Header -->
   <header class="header">
     <div class="top" id="top">
-
     </div>
     <!-- Menu -->
     <div id="menu"></div>
   </header>
-
   <!-- Main Content -->
   <main class="main">
     <div class="container">
-      <h2>Thống kê</h2>
+      <h1>Thống Kê Bán Sách</h1>
       <div class="filters">
-        <label for="date">Ngày:</label>
-        <input type="date" />
-        <label for="date">Tháng:</label>
-        <input type="month" placeholder="Chọn tháng" />
-        <label for="year">Năm:</label>
-        <input type="number" id="year" min="1900" max="2100" step="1" value="2025" />
+        <label for="from-date">Từ ngày:</label>
+        <input type="date" id="from-date" value="2025-05-01" />
+        <label for="to-date">Đến ngày:</label>
+        <input type="date" id="to-date" value="2025-05-19" />
+        <label for="time-filter">Lọc theo:</label>
+        <select id="time-filter">
+          <option value="today" selected>Hôm nay</option>
+          <option value="daily">Ngày</option>
+          <option value="monthly">Tháng</option>
+          <option value="yearly">Năm</option>
+          <option value="custom">Tùy chỉnh</option>
+        </select>
+        <button id="apply-btn" onclick="applyFilters()">Áp dụng</button>
       </div>
       <div class="stats">
-        <div class="stat-box blue">
-          <p>Tổng số sản phẩm</p>
-          <br /><strong>150</strong>
+        <div class="stat-card">
+          <div class="icon">📚</div>
+          <h3>Sách bán được</h3>
+          <div class="value">85</div>
         </div>
-        <div class="stat-box green">
-          <p>Tổng số khách hàng</p>
-          <br /><strong>75</strong>
+        <div class="stat-card">
+          <div class="icon">🛒</div>
+          <h3>Đơn hàng</h3>
+          <div class="value">25</div>
         </div>
-        <div class="stat-box red">
-          <p>Tổng số đơn hàng</p>
-          <br /><strong>120</strong>
+        <div class="stat-card">
+          <div class="icon">💰</div>
+          <h3>Doanh thu</h3>
+          <div class="value">8,500,000 VND</div>
         </div>
-        <div class="stat-box yellow">
-          <p>Doanh thu tháng này</p>
-          <br /><strong>50,000,000 VND</strong>
-        </div>
-        <div class="stat-box purple">
-          <p>Sản phẩm bán chạy nhất</p>
-          <br /><strong>Muôn kiếp nhân sinh</strong>
-        </div>
-        <div class="stat-box indigo">
-          <p>Khách hàng thân thiết nhất</p>
-          <br /><strong>Anh Hải</strong>
+        <div class="stat-card">
+          <div class="icon">👥</div>
+          <h3>Khách hàng</h3>
+          <div class="value">20</div>
         </div>
       </div>
-      <div class="chart"></div>
+      <div class="charts">
+        <div class="chart-container">
+          <div class="loading"></div>
+          <canvas id="revenueChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <div class="loading"></div>
+          <canvas id="topProductsChart"></canvas>
+        </div>
+      </div>
     </div>
   </main>
+
   <!-- Footer -->
   <footer id="footer"></footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.js" defer></script>
   <script src="../assets/js/homeAdmin.js"></script>
+  <script src="../service/admin/statistic.js"></script>
 </body>
 
 </html>
