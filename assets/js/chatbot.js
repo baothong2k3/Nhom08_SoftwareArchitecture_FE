@@ -56,32 +56,43 @@ async function sendMessage() {
     messageInput.style.height = "56px";
 
     try {
-      // Demo response without calling real API
-      setTimeout(async () => {
-        let response;
-        if (message.toLowerCase().includes("sách")) {
-          response =
-            "Cửa hàng chúng tôi có nhiều thể loại sách: tiểu thuyết, kỹ năng sống, sách học tập, sách thiếu nhi. Bạn quan tâm đến thể loại nào?";
-        } else if (message.toLowerCase().includes("tiểu thuyết")) {
-          response =
-            "Chúng tôi có các tiểu thuyết nổi tiếng như:\n1. Trăm Năm Cô Đơn\n2. Đắc Nhân Tâm\n3. Nhà Giả Kim\nBạn muốn biết thêm về cuốn nào?";
-        } else {
-          response =
-            "Cảm ơn bạn đã liên hệ. Chúng tôi sẽ giúp bạn tìm sách phù hợp nhất. Bạn có thể cho biết thêm về sở thích đọc sách của mình không?";
-        }
-        await appendAIMessage(response);
+      // Kết nối đến API chatbot-service
+      const response = await fetch("http://localhost:8990/api/chat/ask", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message }),
+      });
 
-        // Restore button state
-        sendBtn.disabled = false;
-        sendBtn.classList.remove("loading-btn");
-        sendBtn.innerHTML = "Gửi";
-        messageInput.disabled = false;
-        messageInput.focus();
-      }, 1000);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      await appendAIMessage(data.response);
     } catch (error) {
       console.error("Lỗi:", error);
-      appendErrorMessage("Có lỗi xảy ra khi gửi tin nhắn");
+      appendErrorMessage(
+        "Có lỗi xảy ra khi kết nối đến chatbot service. Vui lòng kiểm tra xem service đã được khởi động chưa."
+      );
 
+      // Nếu API không hoạt động, sử dụng phản hồi mặc định
+      setTimeout(async () => {
+        let backupResponse;
+        if (message.toLowerCase().includes("sách")) {
+          backupResponse =
+            "Cửa hàng chúng tôi có nhiều thể loại sách: tiểu thuyết, kỹ năng sống, sách học tập, sách thiếu nhi. Bạn quan tâm đến thể loại nào? (Đây là phản hồi mặc định do không thể kết nối đến chatbot service)";
+        } else if (message.toLowerCase().includes("tiểu thuyết")) {
+          backupResponse =
+            "Chúng tôi có các tiểu thuyết nổi tiếng như:\n1. Trăm Năm Cô Đơn\n2. Đắc Nhân Tâm\n3. Nhà Giả Kim\nBạn muốn biết thêm về cuốn nào? (Đây là phản hồi mặc định do không thể kết nối đến chatbot service)";
+        } else {
+          backupResponse =
+            "Cảm ơn bạn đã liên hệ. Chúng tôi sẽ giúp bạn tìm sách phù hợp nhất. Bạn có thể cho biết thêm về sở thích đọc sách của mình không? (Đây là phản hồi mặc định do không thể kết nối đến chatbot service)";
+        }
+        await appendAIMessage(backupResponse);
+      }, 1000);
+    } finally {
       // Restore button state
       sendBtn.disabled = false;
       sendBtn.classList.remove("loading-btn");
