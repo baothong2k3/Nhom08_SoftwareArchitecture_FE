@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Store</title>
+    <link rel="stylesheet" href="../assets/css/homeCustomer.css" />
     <link rel="stylesheet" href="../assets/css/chatbotCustomer.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,22 +30,28 @@
       <div id="menu"></div>
     </header>
 
-    <div id="chatbox">
-      <div class="chat-header">
-        <h2>AI Chatbot</h2>
+    <!-- Main Content -->
+    <main class="main">
+      <div class="chat-section">
+        <div class="chat-title">AI Chatbot</div>
+        <div id="chatbox">
+          <div id="messages" class="messages"></div>
+          <div class="input-area">
+            <textarea
+              id="userMessage"
+              placeholder="Hỏi bất kì điều gì?"
+            ></textarea>
+            <button id="sendBtn">Gửi</button>
+          </div>
+        </div>
       </div>
-      <div id="messages" class="messages"></div>
-      <div class="input-area">
-        <textarea id="userMessage" placeholder="Hỏi bất kì điều gì?"></textarea>
-        <button id="sendBtn">Gửi</button>
-      </div>
-    </div>
+    </main>
 
     <!-- Footer -->
     <footer id="footer"></footer>
 
     <!-- JavaScript imports -->
-    <script src="../assets/js/chatbotCustomer.js"></script>
     <script src="../assets/js/homeCustomer.js"></script>
+    <script src="../assets/js/chatbotCustomer.js"></script>
   </body>
 </html>
