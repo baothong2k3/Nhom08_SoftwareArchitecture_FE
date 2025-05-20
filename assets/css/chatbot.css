@@ -19,6 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1; /* Để footer luôn ở dưới cùng */
 }
 
 .main img {
@@ -239,6 +240,31 @@ body {
 /* Ghi đè style cho main trong home.css */
 .main .content {
   display: none; /* Ẩn content mặc định từ home.css */
+}
+
+/* Footer styling */
+#footer {
+  width: 100%;
+  margin-top: auto; /* Để footer luôn ở dưới cùng */
+}
+
+#footer .footer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 0;
+}
+
+#footer .footer-content {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 50px;
+}
+
+#footer .footer h3,
+#footer .footer p {
+  text-align: center;
 }
 
 /*header */
