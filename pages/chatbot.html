@@ -1,9 +1,17 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Store</title>
+    <link rel="stylesheet" href="../assets/css/home.css" />
     <link rel="stylesheet" href="../assets/css/chatbot.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Header -->
@@ -19,7 +27,7 @@
           </button>
           <button
             class="register"
-            onclick="window.location.href='../pages/login.html'"
+            onclick="window.location.href='../pages/register.html'"
           >
             Đăng ký
           </button>
@@ -31,24 +39,26 @@
 
     <!-- Main Content -->
     <main class="main">
-      <div class="chat-container">
-        <div class="chat-header">ChatBot</div>
-        <div class="chat-box">
-          <div class="chat-messages">
-            Chào Mừng Bạn Đến Với Cửa Hàng Của Chúng Tôi, Tôi Sẽ Giúp Bạn Đưa Ra
-            Sự Lựa Chọn Sản Phẩm Phù Hợp Nhất. Cho Tôi Biết Sở Thích Của Bạn Là
-            Gì?
+      <div class="chat-section">
+        <div class="chat-title">AI Chatbot</div>
+        <div id="chatbox">
+          <div id="messages" class="messages"></div>
+          <div class="input-area">
+            <textarea
+              id="userMessage"
+              placeholder="Hỏi bất kì điều gì?"
+            ></textarea>
+            <button id="sendBtn">Gửi</button>
           </div>
-        </div>
-        <div class="chat-input">
-          <input type="text" placeholder="Nhập tin nhắn..." />
-          <button>Gửi</button>
         </div>
       </div>
     </main>
+
     <!-- Footer -->
     <footer id="footer"></footer>
 
+    <!-- JavaScript imports -->
     <script src="../assets/js/home.js"></script>
+    <script src="../assets/js/chatbot.js"></script>
   </body>
 </html>

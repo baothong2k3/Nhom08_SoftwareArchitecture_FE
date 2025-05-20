@@ -1,9 +1,16 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Store</title>
     <link rel="stylesheet" href="../assets/css/chatbotCustomer.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Header -->
@@ -22,26 +29,22 @@
       <div id="menu"></div>
     </header>
 
-    <!-- Main Content -->
-    <main class="main">
-      <div class="chat-container">
-        <div class="chat-header">ChatBot</div>
-        <div class="chat-box">
-          <div class="chat-messages">
-            Chào Mừng Bạn Đến Với Cửa Hàng Của Chúng Tôi, Tôi Sẽ Giúp Bạn Đưa Ra
-            Sự Lựa Chọn Sản Phẩm Phù Hợp Nhất. Cho Tôi Biết Sở Thích Của Bạn Là
-            Gì?
-          </div>
-        </div>
-        <div class="chat-input">
-          <input type="text" placeholder="Nhập tin nhắn..." />
-          <button>Gửi</button>
-        </div>
+    <div id="chatbox">
+      <div class="chat-header">
+        <h2>AI Chatbot NGUYEN TEST</h2>
       </div>
-    </main>
+      <div id="messages" class="messages"></div>
+      <div class="input-area">
+        <textarea id="userMessage" placeholder="Hỏi bất kì điều gì?"></textarea>
+        <button id="sendBtn">Gửi</button>
+      </div>
+    </div>
+
     <!-- Footer -->
     <footer id="footer"></footer>
 
+    <!-- JavaScript imports -->
+    <script src="../assets/js/chatbotCustomer.js"></script>
     <script src="../assets/js/homeCustomer.js"></script>
   </body>
 </html>
