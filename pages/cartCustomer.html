@@ -1,49 +1,49 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giỏ Hàng - Book Store</title>
+    <link rel="stylesheet" href="../assets/css/cartCustomer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book Store</title>
-  <link rel="stylesheet" href="../assets/css/customer/cartCustomer.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-</head>
+  <body>
+    <!-- Header -->
+    <div id="header-container"></div>
 
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="top" id="top"></div>
-    <!-- Menu -->
-    <div id="menu"></div>
-  </header>
-  <!-- Main Content -->
-  <main class="main">
-    <div class="container">
-      <h2>Giỏ hàng của bạn</h2>
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <h2>Giỏ hàng của bạn</h2>
 
-      <!-- Danh sách sản phẩm -->
-      <div id="cart-items"></div>
+        <!-- Danh sách sản phẩm -->
+        <div id="cart-items"></div>
 
-      <!-- Phần thanh toán -->
-      <div class="checkout">
-        <p>
-          <strong>Tổng cộng: <span id="total-price">0</span> VND</strong>
-        </p>
-        <button id="checkout-btn" onclick="saveSelectedItemsToLocalStorage()" disabled
-          style="background-color: #ccc; color: #666; cursor: not-allowed;">
-          Thanh toán
-        </button>
+        <!-- Phần thanh toán -->
+        <div class="checkout">
+          <p>
+            <strong>Tổng cộng: <span id="total-price">0</span> VND</strong>
+          </p>
+          <button
+            id="checkout-btn"
+            onclick="saveSelectedItemsToLocalStorage()"
+            disabled
+            style="background-color: #ccc; color: #666; cursor: not-allowed"
+          >
+            Thanh toán
+          </button>
+        </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <!-- Footer -->
-  <footer id="footer"></footer>
+    <!-- Footer -->
+    <footer id="footer"></footer>
 
-  <!-- Scripts -->
-  <script src="../assets/js/homeCustomer.js"></script>
-  <script src="../service/totalCart.js"></script>
-  <script src="../service/cartCustomer.js"></script>
-</body>
-
+    <script src="../assets/js/loadHeader.js"></script>
+    <script src="../assets/js/cartCustomer.js"></script>
+  </body>
 </html>

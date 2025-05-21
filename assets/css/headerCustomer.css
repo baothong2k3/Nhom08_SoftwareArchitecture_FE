@@ -1,0 +1,144 @@
+.header {
+  width: 100%;
+  background-color: #c6eefc;
+  box-shadow: none;
+  font-family: "Poppins", sans-serif;
+  border-radius: 0 0 10px 10px;
+}
+
+.header .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem 1.5rem 2rem;
+  background-color: #c6eefc;
+  border-bottom: none;
+  border-radius: 0 0 10px 10px;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo-title img {
+  height: 80px;
+  width: auto;
+}
+
+.logo-title .title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a237e;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.buttons button {
+  padding: 0.7rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.buttons button:first-child {
+  background-color: #42a5f5;
+  color: #fff;
+}
+
+.buttons button.register {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.buttons button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.cart-icon {
+  color: #111;
+  font-size: 2rem;
+  text-decoration: none;
+  margin-left: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  background: none;
+}
+
+.cart-icon:hover {
+  color: #42a5f5;
+  background-color: rgba(66, 165, 245, 0.1);
+}
+
+/* Menu styles */
+.nav {
+  background-color: #a7c7f9;
+  padding: 1.2rem 2rem 1.2rem 2rem;
+  border-radius: 0 0 10px 10px;
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #1a237e;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  background: none;
+}
+
+.menu ul li a:hover {
+  background-color: rgba(66, 165, 245, 0.15);
+  color: #1565c0;
+  transform: translateY(-2px);
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .header .top {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .logo-title img {
+    height: 50px;
+  }
+  .logo-title .title {
+    font-size: 1.3rem;
+  }
+  .nav {
+    padding: 0.7rem 1rem;
+  }
+  .menu ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .menu ul li a {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .buttons button {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+}

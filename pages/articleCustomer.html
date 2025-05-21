@@ -1,35 +1,32 @@
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài Viết - Book Store</title>
+    <link rel="stylesheet" href="../assets/css/articleCustomer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book Store</title>
-  <link rel="stylesheet" href="../assets//css/article.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-</head>
+  <body>
+    <!-- Header -->
+    <div id="header-container"></div>
 
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="top" id="top"></div>
-    <!-- Menu -->
-    <div id="menu"></div>
-  </header>
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <h2>Bài viết</h2>
 
-  <!-- Main Content -->
-  <main class="main">
-    <div class="container">
-      <h2>Bài viết</h2>
+        <div id="article-container"></div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer id="footer"></footer>
 
-      <div id="article-container"></div>
-    </div>
-  </main>
-  <!-- Footer -->
-  <footer id="footer"></footer>
-
-  <script src="../service/totalCart.js"></script>
-  <script src="../assets/js/homeCustomer.js"></script>
-  <script src="../service/article.js"></script>
-</body>
-
+    <script src="../assets/js/loadHeader.js"></script>
+    <script src="../assets/js/articleCustomer.js"></script>
+  </body>
 </html>

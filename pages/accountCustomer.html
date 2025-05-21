@@ -1,69 +1,83 @@
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tài Khoản - Book Store</title>
+    <link rel="stylesheet" href="../assets/css/accountCustomer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thêm Liên Hệ</title>
-  <link rel="stylesheet" href="../assets//css/accountCustomer.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-</head>
+  <body>
+    <!-- Header -->
+    <div id="header-container"></div>
 
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="top" id="top"></div>
-    <!-- Menu -->
-    <div id="menu"></div>
-  </header>
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <h2>Thông tin tài khoản</h2>
+        <form autocomplete="off">
+          <label for="receiverName">Tên tài khoản</label>
+          <input type="text" id="receiverName" autocomplete="off" />
+          <label class="error" id="err_name"></label>
+          <br />
 
-  <!-- Main Content -->
-  <main class="main">
-    <div class="container">
-      <h2>Thông tin tài khoản</h2>
-      <form autocomplete="off">
-        <label for="receiverName">Tên tài khoản</label>
-        <input type="text" id="receiverName" autocomplete="off" />
-        <label class="error" id="err_name"></label>
-        <br />
+          <label for="phone">Số điện thoại</label>
+          <input type="text" id="phone" autocomplete="off" readonly />
 
-        <label for="phone">Số điện thoại</label>
-        <input type="text" id="phone" autocomplete="off" readonly />
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" autocomplete="off" />
+          <label class="error" id="err_email"></label>
+          <br />
 
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email" autocomplete="off" />
-        <label class="error" id="err_email"></label>
-        <br />
+          <h5>
+            ----------------------------- Đặt lại mật khẩu (nếu muốn)
+            -----------------------------
+          </h5>
+          <br />
+          <label>Nhập mật khẩu cũ</label>
+          <input
+            type="password"
+            placeholder="Nhập mật khẩu cũ"
+            autocomplete="old-password"
+          />
 
-        <h5>----------------------------- Đặt lại mật khẩu (nếu muốn) -----------------------------</h5><br />
-        <label>Nhập mật khẩu cũ</label>
-        <input type="password" placeholder="Nhập mật khẩu cũ" autocomplete="old-password" />
+          <label>Nhập mật khẩu mới</label>
+          <input
+            type="password"
+            placeholder="Nhập mật khẩu"
+            autocomplete="new-password"
+          />
+          <label class="error" id="err_pass"></label>
+          <br />
 
-        <label>Nhập mật khẩu mới</label>
-        <input type="password" placeholder="Nhập mật khẩu" autocomplete="new-password" />
-        <label class="error" id="err_pass"></label>
-        <br />
+          <label>Nhập lại mật khẩu</label>
+          <input
+            type="password"
+            placeholder="Nhập lại mật khẩu"
+            autocomplete="new-password"
+          />
+          <label class="error" id="err_pass_r"></label>
+          <br />
 
-        <label>Nhập lại mật khẩu</label>
-        <input type="password" placeholder="Nhập lại mật khẩu" autocomplete="new-password" />
-        <label class="error" id="err_pass_r"></label>
-        <br />
+          <div class="buttons">
+            <button type="submit" class="btn btn-green" id="saveBtn">
+              Lưu
+            </button>
+            <button type="reset" class="btn btn-blue" onclick="goBack()">
+              Hủy bỏ
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer id="footer"></footer>
 
-        <div class="buttons">
-          <button type="submit" class="btn btn-green" id="saveBtn">Lưu</button>
-          <button type="reset" class="btn btn-blue" onclick="goBack()">
-            Hủy bỏ
-          </button>
-        </div>
-      </form>
-    </div>
-  </main>
-  <!-- Footer -->
-  <footer id="footer"></footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.js" defer></script>
-  <script src="../service/totalCart.js"></script>
-  <script src="../assets/js/homeCustomer.js"></script>
-  <script src="../service/customer/accountCustomer.js"></script>
-</body>
-
+    <script src="../assets/js/loadHeader.js"></script>
+    <script src="../assets/js/accountCustomer.js"></script>
+  </body>
 </html>
