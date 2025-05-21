@@ -38,6 +38,11 @@ body {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  /* quan trọng */
+  justify-content: space-between;
+  /* đẩy các phần ra xa */
   background: white;
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -45,10 +50,8 @@ body {
   width: 100%;
   height: 700px;
   overflow-y: auto;
-  overflow-y: auto;
   scrollbar-width: none;
   background-color: #f0f3f7;
-  /* nền chung */
 }
 
 .container::-webkit-scrollbar {
@@ -144,8 +147,11 @@ h2 {
 
 /* ===== CHECKOUT ===== */
 .checkout {
-  margin-top: 180px;
+  margin-top: auto;
+  /* đẩy phần này xuống cuối */
   text-align: right;
+  align-self: flex-end;
+  /* đảm bảo nằm bên phải */
 }
 
 .checkout button {

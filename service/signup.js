@@ -65,3 +65,44 @@ document.getElementById("register-btn").addEventListener("click", async function
     alert("Không thể kết nối đến máy chủ.");
   }
 });
+
+
+const passwordInput_1 = document.getElementById("password");
+const confirmPasswordInput_1 = document.getElementById("confirm-password");
+const registerBtn = document.getElementById("register-btn");
+
+function validatePasswordStrength(password) {
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+  return regex.test(password);
+}
+
+function validatePasswords() {
+  const password = passwordInput_1.value;
+  const confirmPassword = confirmPasswordInput_1.value;
+
+  let isValid = true;
+
+  // Reset lỗi
+  document.getElementById("password-error").textContent = "";
+  document.getElementById("confirm-password-error").textContent = "";
+
+  // Kiểm tra độ mạnh mật khẩu
+  if (!validatePasswordStrength(password)) {
+    document.getElementById("password-error").textContent =
+      "Mật khẩu phải có ít nhất 8 ký tự, gồm chữ hoa, chữ thường, số và ký tự đặc biệt.";
+    isValid = false;
+  }
+
+  // Kiểm tra mật khẩu khớp
+  if (password !== confirmPassword) {
+    document.getElementById("confirm-password-error").textContent =
+      "Mật khẩu nhập lại không khớp!";
+    isValid = false;
+  }
+
+  // Bật/tắt nút đăng ký
+  registerBtn.disabled = !isValid;
+}
+
+passwordInput_1.addEventListener("input", validatePasswords);
+confirmPasswordInput_1.addEventListener("input", validatePasswords);

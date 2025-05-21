@@ -89,6 +89,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   padding: 10px 50px;
+
 }
 
 .container {
@@ -97,6 +98,9 @@ body {
   margin: 0 auto;
   width: 100%;
   background-color: #f0f3f7;
+  border: 2px solid #ccc;
+  padding: 40px;
+  border-radius: 10px;
   /* nền chung */
 }
 
@@ -109,13 +113,23 @@ h2 {
 input,
 select {
   width: 100%;
-  height: 40px;
-  padding: 8px;
-  margin: 5px 0;
+  height: 45px;
+  padding: 10px 12px;
+  margin: 10px 0;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 5px;
-  font-size: px;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+input:focus,
+select:focus {
+  border-color: #6366f1;
+  /* indigo-500 */
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
 }
 
 .hidden {
@@ -124,40 +138,18 @@ select {
 
 #bank-field:not(.hidden) label {
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   display: inline-block;
 }
 
-
 label {
-  font-size: 20px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.confirm-btn {
-  background: green;
-  color: white;
-  cursor: pointer;
-}
-
-.buttons {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 20px;
-}
-
-button:hover {
-  background-color: #10b981;
-}
-
-.confirm-btn01 {
-  background-color: red;
-}
-
-.confirm-btn {
-  background-color: blueviolet;
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+  /* gray-700 */
+  margin-top: 10px;
+  margin-bottom: 5px;
+  display: block;
 }
 
 strong {
@@ -165,17 +157,49 @@ strong {
   font-weight: bold;
   margin-top: 20px;
   margin-bottom: 20px;
+  color: #111827;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 25px;
+  gap: 10px;
 }
 
 button {
   color: white;
-  padding: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
   border: none;
-  margin-left: 10px;
-  font-size: 22px;
-  border-radius: 5px;
-  height: 45px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+/* Nút xác nhận chính màu tím */
+.confirm-btn {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  /* violet */
+}
+
+/* Nút phụ - đỏ */
+.confirm-btn01 {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  /* red */
+}
+
+.confirm-btn:hover,
+.confirm-btn01:hover {
+  filter: brightness(1.1);
+}
+
 
 /*gio hang*/
 .cart-icon {
@@ -214,9 +238,9 @@ button {
   display: flex;
   flex-direction: row;
   overflow-x: auto;
-  gap: 20px;
-  padding: 16px 0;
-  margin-bottom: 24px;
+  gap: 24px;
+  padding: 20px 0;
+  margin-bottom: 32px;
   scroll-behavior: smooth;
 
   cursor: grab;
@@ -237,49 +261,52 @@ button {
 }
 
 .product-item {
-  width: 220px;
+  width: 240px;
   flex-shrink: 0;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 12px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 8px;
+  gap: 10px;
+}
+
+.product-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 .product-item img {
   width: 100%;
-  height: 140px;
+  height: 150px;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 .product-item strong {
-  margin: 0;
-  font-size: 15px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 600;
   line-height: 1.4;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
+  color: #212121;
 
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   min-height: 2.8em;
-  /* Đảm bảo luôn cao như 2 dòng */
+  white-space: normal;
 }
 
 .product-item p {
   margin: 0;
   font-size: 14px;
-  line-height: 1.3;
-  color: #333;
+  line-height: 1.5;
+  color: #555;
 }
 
 /* DIALOG  */

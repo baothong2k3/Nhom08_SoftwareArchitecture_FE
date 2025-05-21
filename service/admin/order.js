@@ -53,11 +53,12 @@
 
         orders.forEach(order => {
             const row = document.createElement("tr");
+
             row.innerHTML = `
                 <td>DH${order.id.toString().padStart(3, "0")}</td>
                 <td>${order.userName}</td>
                 <td>${convertOrderStatus(order.status)}</td>
-                <td>${convertPayment(order.paymentMethod)}</td>
+                <td>${convertPayment(order.paymentMethod, order.status)}</td>
                 <td>${new Date(order.createdAt).toLocaleDateString("vi-VN")}</td>
                 <td>${new Date(order.updatedAt).toLocaleDateString("vi-VN")}</td>
                 <td>${order.phoneNumber}</td>
@@ -217,7 +218,11 @@
         }
     };
 
-    const convertPayment = (method) => method === "COD" ? "Chưa thanh toán" : "Đã thanh toán";
+    const convertPayment = (method, status) => {
+        if (status === "DELIVERED") return "Đã thanh toán";
+        return method === "COD" ? "Chưa thanh toán" : "Đã thanh toán";
+    };
+
 
     const getValidStatusOptions = (currentStatus) => {
         const optionsMap = {

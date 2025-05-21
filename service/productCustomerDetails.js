@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         <p><strong>Số lượng tồn kho:</strong> ${book.stockQuantity}</p>
         <p><strong>Mô tả sản phẩm:</strong> ${book.description.replace(/\n/g, "<br/>")}</p>
         ${book.discountPercent != null && book.discountedPrice != null ? `
-             <p class="product-discount"><span class="label">Giảm giá: </span> ${book.discountPercent}</p>
-             <p class="product-discounted-price">Giá sau giảm: ${book.discountedPrice} VND</p>
+             <p class="product-discount"><strong>Giảm giá:</strong> ${book.discountPercent}%</p>
+             <p class="product-discounted-price"><strong>Giá sau giảm:</strong> ${book.discountedPrice.toLocaleString()} VND</p>
           ` : ''}
         <div class="buttons">
           <button class="add-to-cart" data-id="${book.id}">Thêm vào giỏ hàng</button>

@@ -1,68 +1,63 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Book Store</title>
-    <link rel="stylesheet" href="../assets/css/chatbot.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.all.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="top">
-        <div class="logo-title">
-          <img src="../assets/img/logo.png" alt="Book Store Logo" />
-          <span class="title">Book Store</span>
-        </div>
-        <div class="buttons">
-          <button onclick="window.location.href='../pages/login.html'">
-            Đăng nhập
-          </button>
-          <button
-            class="register"
-            onclick="window.location.href='../pages/login.html'"
-          >
-            Đăng ký
-          </button>
 
-          <a href="../pages/cart.html" class="cart-icon">
-            <i class="fas fa-shopping-cart"></i>
-          </a>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Store</title>
+  <link rel="stylesheet" href="../assets/css/chatbot.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="top">
+      <div class="logo-title">
+        <img src="../assets/img/logo.png" alt="Book Store Logo" />
+        <span class="title">Book Store</span>
       </div>
-      <!-- Menu -->
-      <div id="menu"></div>
-    </header>
+      <div class="buttons">
+        <button onclick="window.location.href='../pages/login.html'">Đăng nhập</button>
+        <button class="register" onclick="window.location.href='../pages/login.html'">Đăng ký</button>
+        <a href="../pages/cart.html" class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      </div>
+    </div>
+    <div id="menu"></div>
+  </header>
 
-    <!-- Main Content -->
-    <main class="main">
-      <div class="chat-container">
-        <div class="chat-header">ChatBot</div>
-        <div class="chat-box">
-          <div class="chat-messages">
-            Chào Mừng Bạn Đến Với Cửa Hàng Của Chúng Tôi, Tôi Sẽ Giúp Bạn Đưa Ra
-            Sự Lựa Chọn Sản Phẩm Phù Hợp Nhất. Cho Tôi Biết Sở Thích Của Bạn Là
-            Gì?
+  <!-- Main Content -->
+  <main class="main">
+    <div class="chat-container">
+      <div class="chat-header">BookBot - Trợ Lý Sách</div>
+      <div class="chat-box" id="chatBox">
+        <div class="chat-messages">
+          <div class="message received" data-time="Vừa xong">
+            Chào mừng bạn đến với Book Store! Tôi là BookBot, sẵn sàng giúp bạn tìm cuốn sách hoàn hảo. Bạn thích thể
+            loại sách nào? Ví dụ: tiểu thuyết, khoa học viễn tưởng, sách self-help...
           </div>
         </div>
-        <div class="chat-input">
-          <input type="text" placeholder="Nhập tin nhắn..." />
-          <button>Gửi</button>
-        </div>
       </div>
-    </main>
-    <!-- Footer -->
-    <footer id="footer"></footer>
+      <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Nhập tin nhắn..." />
+        <button onclick="sendMessage()">
+          <i class="fas fa-paper-plane"></i> Gửi
+        </button>
+      </div>
+    </div>
+  </main>
 
-    <script src="../assets/js/home.js"></script>
-    <script src="../service/chatbot.js"></script>
-  </body>
+  <!-- Footer -->
+  <footer id="footer"></footer>
+
+  <script src="../assets/js/home.js"></script>
+  <script src="../service/chatbot.js"></script>
+
+</body>
+
 </html>

@@ -18,25 +18,29 @@
   <!-- Main Content -->
   <main class="main">
     <div class="chat-container">
-      <div class="chat-header">ChatBot</div>
-      <div class="chat-box">
+      <div class="chat-header">BookBot - Trợ Lý Sách</div>
+      <div class="chat-box" id="chatBox">
         <div class="chat-messages">
-          Chào Mừng Bạn Đến Với Cửa Hàng Của Chúng Tôi, Tôi Sẽ Giúp Bạn Đưa Ra
-          Sự Lựa Chọn Sản Phẩm Phù Hợp Nhất. Cho Tôi Biết Sở Thích Của Bạn Là
-          Gì?
+          <div class="message received" data-time="Vừa xong">
+            Chào mừng bạn đến với Book Store! Tôi là BookBot, sẵn sàng giúp bạn tìm cuốn sách hoàn hảo. Bạn thích thể
+            loại sách nào? Ví dụ: tiểu thuyết, khoa học viễn tưởng, sách self-help...
+          </div>
         </div>
       </div>
       <div class="chat-input">
-        <input type="text" placeholder="Nhập tin nhắn..." />
-        <button>Gửi</button>
+        <input type="text" id="userInput" placeholder="Nhập tin nhắn..." />
+        <button onclick="sendMessage()">
+          <i class="fas fa-paper-plane"></i> Gửi
+        </button>
       </div>
     </div>
   </main>
+
   <!-- Footer -->
   <footer id="footer"></footer>
-
   <script src="../service/totalCart.js"></script>
   <script src="../assets/js/homeCustomer.js"></script>
+  <script src="../service/chatbot.js"></script>
 </body>
 
 </html>

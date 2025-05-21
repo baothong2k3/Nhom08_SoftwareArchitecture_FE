@@ -156,15 +156,19 @@ function updateRevenueChartType(filterType, labels, dataPoints) {
 }
 
 async function applyFilters() {
+    const now = new Date();
+    const parts = now.toLocaleDateString('vi-VN').split('/');
+    const localDate = `${parts[2]}-${parts[1].padStart(2, '0')}-${parts[0].padStart(2, '0')}`;
+
+
     const timeFilter = document.getElementById('time-filter').value;
-    const fromDate = new Date().toISOString().slice(0, 10);
-    const toDate = new Date().toISOString().slice(0, 10);
-    const today = new Date().toISOString().slice(0, 10); // e.g., 2025-05-19
+    const fromDate = document.getElementById('from-date').value;
+    const toDate = document.getElementById('from-date').value;
+    const today = localDate;
     const token = localStorage.getItem('token');
     const applyBtn = document.getElementById('apply-btn');
     const revenueChartContainer = document.querySelector('#revenueChart').parentElement;
     const topProductsChartContainer = document.querySelector('#topProductsChart').parentElement;
-
 
 
     // Validation
@@ -189,8 +193,8 @@ async function applyFilters() {
 
     // Update date inputs based on time filter
     if (timeFilter === 'today' || timeFilter === 'daily') {
-        document.getElementById('from-date').value = new Date().toISOString().slice(0, 10);
-        document.getElementById('to-date').value = new Date().toISOString().slice(0, 10);
+        document.getElementById('from-date').value = today;
+        document.getElementById('to-date').value = today;
     } else if (timeFilter === 'monthly') {
         const yearMonth = fromDate ? fromDate.slice(0, 7) : '2025-05';
         document.getElementById('from-date').value = `${yearMonth}-01`;
@@ -207,7 +211,7 @@ async function applyFilters() {
     // Construct API URL
     let url;
     if (timeFilter === 'today' || timeFilter === 'daily') {
-        url = `http://localhost:8080/api/statistic/daily?date=${today}`;
+        url = `http://localhost:8080/api/statistic/daily?date=${fromDate || today}`;
     } else if (timeFilter === 'monthly') {
         const year = fromDate.split('-')[0];
         const month = parseInt(fromDate.split('-')[1], 10);
@@ -220,6 +224,8 @@ async function applyFilters() {
     }
 
     try {
+
+
         const response = await fetch(url, {
             headers: {
                 'Authorization': `Bearer ${token || ''}`
@@ -228,6 +234,7 @@ async function applyFilters() {
 
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
         const data = await response.json();
+
 
 
 
@@ -279,8 +286,13 @@ async function applyFilters() {
 
 // Initialize with today's data
 window.addEventListener('DOMContentLoaded', () => {
+    const now = new Date();
+    const parts = now.toLocaleDateString('vi-VN').split('/');
+    const localDate = `${parts[2]}-${parts[1].padStart(2, '0')}-${parts[0].padStart(2, '0')}`;
+
+
     document.getElementById('time-filter').value = 'today';
-    document.getElementById('from-date').value = new Date().toISOString().slice(0, 10);
-    document.getElementById('to-date').value = new Date().toISOString().slice(0, 10);
+    document.getElementById('from-date').value = localDate;
+    document.getElementById('to-date').value = localDate;
     applyFilters();
 });

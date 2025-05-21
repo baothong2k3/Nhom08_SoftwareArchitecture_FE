@@ -4,15 +4,18 @@ body {
   width: 100%;
   height: auto;
   touch-action: none;
-  background-color: #f0f3f7; /* nền chung */
+  background-color: #f0f3f7;
+  /* nền chung */
 }
 
 /*header */
 .header {
   display: flex;
   flex-direction: column;
-  background-color: #bde5f2; /* nền nhạt */
+  background-color: #bde5f2;
+  /* nền nhạt */
 }
+
 .top {
   display: flex;
   justify-content: space-between;
@@ -20,6 +23,7 @@ body {
   width: 100%;
   padding: 13px 25px;
 }
+
 /*logo*/
 .logo-title {
   display: flex;
@@ -27,10 +31,12 @@ body {
   font-size: 24px;
   font-weight: bold;
 }
+
 .header img {
   height: 80px;
   width: 80px;
 }
+
 .header .title {
   font-size: 30px;
   font-weight: bold;
@@ -71,7 +77,8 @@ body {
   height: 780px;
   text-align: left;
   margin: 40px;
-  background-color: #f0f3f7; /* nền chung */
+  background-color: #f0f3f7;
+  /* nền chung */
 }
 
 h2 {
@@ -96,19 +103,58 @@ input {
   border-radius: 5px;
 }
 
+
 .register-btn {
   width: 100%;
-  background-color: rgb(16, 185, 129);
-  color: white;
-  padding: 12px;
+  padding: 14px 28px;
+  font-size: 17px;
+  font-weight: 600;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 18px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #34d399, #059669);
+  color: #ffffff;
 }
 
 .register-btn:hover {
-  background-color: #2563eb;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.buy-now:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.register-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+  pointer-events: none;
+}
+
+.register-btn:hover::after {
+  width: 200px;
+  height: 200px;
+  opacity: 0;
+}
+
+/* Kiểu dáng cho trạng thái disabled của register-btn */
+.register-btn:disabled {
+  background: linear-gradient(90deg, #a3e4d7, #82e0aa);
+  /* Màu nhạt hơn để chỉ trạng thái vô hiệu hóa */
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 .register-with {
@@ -200,5 +246,6 @@ label {
 }
 
 .cart-icon:hover {
-  background-color: rgba(79, 195, 247, 0.2); /* Hover nhẹ */
+  background-color: rgba(79, 195, 247, 0.2);
+  /* Hover nhẹ */
 }

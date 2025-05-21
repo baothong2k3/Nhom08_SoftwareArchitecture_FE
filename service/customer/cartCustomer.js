@@ -11,7 +11,7 @@ function updateCart() {
     const itemElement = document.createElement("div");
     itemElement.classList.add("cart-item");
 
-    console.log(item);
+
 
     const isOutOfStock = item.stock < item.quantity || item.stock === 0 || item.status === false;
     if (isOutOfStock) {
@@ -232,7 +232,12 @@ function toggleSelect(id) {
     let total = 0;
     cartItems.forEach(item => {
       if (item.selected) {
-        total += item.price * item.quantity;
+        if (item.discountPrice != null && item.discountPrice > 0) {
+          total += item.discountPrice * item.quantity;
+        } else {
+          total += item.price * item.quantity;
+        }
+
       }
     });
     document.getElementById("total-price").innerText = total.toLocaleString("vi-VN");

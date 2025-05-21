@@ -18,21 +18,11 @@
         <li><a href="../pages/articleCustomer.html">Bài Viết</a></li>
         <li><a href="../pages/orderCustomer.html">Đơn Hàng</a></li>
         <li><a href="../pages/contactCustomer.html">Liên Hệ</a></li>
-        <li><a href="../pages/home.html" id="logout-link">Đăng Xuất</a></li>
+        <li><a href="../index.html" id="logout-link">Đăng Xuất</a></li>
       </ul>
     </div>
   </nav>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const logoutLink = document.getElementById("logout-link");
-      if (logoutLink) {
-        logoutLink.addEventListener("click", function (e) {
-          localStorage.removeItem("token");
-          localStorage.removeItem("role");
-        });
-      }
-    });
-  </script>
 </body>
+
 
 </html>

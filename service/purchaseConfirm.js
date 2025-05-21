@@ -232,11 +232,23 @@ document.getElementById("confirmPurchaseBtn").addEventListener("click", async fu
         if (response.ok && data.status === 200) {
             window.location.href = "../pages/successPurchase.html";
         } else {
-            alert("Lỗi đặt hàng: " + (data.message || "Không xác định"));
+            Swal.fire({
+                icon: 'error',
+                title: 'Lỗi đặt hàng',
+                text: 'Vui lòng thử lại sau',
+                confirmButtonText: 'OK'
+            });
+
         }
     } catch (error) {
         console.error("Lỗi gọi API đặt hàng:", error);
-        alert("Lỗi hệ thống, vui lòng thử lại sau.");
+        Swal.fire({
+            icon: 'error',
+            title: 'Lỗi hệ thống',
+            text: 'Vui lòng thử lại sau.',
+            confirmButtonText: 'OK'
+        });
+
     }
 });
 
