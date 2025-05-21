@@ -26,12 +26,15 @@ function goBack() {
   window.history.back();
 }
 
-fetch("../components/footer.html")
-  .then((response) => response.text())
-  .then((data) => {
-    document.getElementById("footer").innerHTML = data;
-  })
-  .catch((error) => console.error("Error loading footer:", error));
+document.addEventListener("DOMContentLoaded", function () {
+  // Load footer
+  fetch("../components/footer.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("footer").innerHTML = data;
+    })
+    .catch((error) => console.error("Error loading footer:", error));
+});
 
 fetch("../components/menuCustomer.html")
   .then((response) => response.text())

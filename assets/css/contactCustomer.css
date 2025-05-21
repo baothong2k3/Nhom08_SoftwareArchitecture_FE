@@ -1,11 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/* Chat Styling */
+.main {
   width: 100%;
-  height: auto;
-  touch-action: none;
-  background-color: #f0f3f7;
-  /* nền chung */
+  max-width: 88%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px 50px;
+  flex: 1;
 }
 
 /*header */
@@ -27,14 +43,18 @@ body {
 /*Content*/
 .main {
   width: 100%;
-  max-width: 80%;
-  /* giới hạn chiều ngang tối đa */
+  max-width: 1200px;
   margin: 0 auto;
-  /* căn giữa ngang */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 10px 50px;
+  padding: 24px 16px;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-container {

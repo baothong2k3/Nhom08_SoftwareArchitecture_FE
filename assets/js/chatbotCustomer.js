@@ -25,6 +25,14 @@ document.addEventListener("DOMContentLoaded", function () {
     this.style.height =
       this.scrollHeight < 150 ? this.scrollHeight + "px" : "150px";
   });
+
+  // Load footer
+  fetch("../components/footer.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("footer").innerHTML = data;
+    })
+    .catch((error) => console.error("Error loading footer:", error));
 });
 
 async function sendMessage() {

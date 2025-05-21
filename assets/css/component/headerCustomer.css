@@ -1,81 +1,21 @@
-.cart-icon {
-  font-size: 30px;
-  color: black; /* Màu xanh sáng hiện đại */
-  text-decoration: none;
-  padding: 8px;
-  border-radius: 50%;
-  position: relative; /* Để cho phần tử số lượng có thể được định vị */
-  transition: background-color 0.3s;
+.header {
+  width: 100%;
+  background-color: #c6eefc;
+  box-shadow: none;
+  font-family: "Poppins", sans-serif;
+  border-radius: 0 0 10px 10px;
 }
 
-.cart-icon:hover {
-  background-color: green; /* Hover nhẹ */
-}
-
-.cart-count {
-  position: absolute;
-  top: -5px;
-  left: 28px;
-  background-color: red;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 2px 6px;
-  border-radius: 50%;
-}
-
-/*===========================*/
-.cart-item {
-  position: relative;
-  background-color: #fff;
-  padding: 12px;
-  border: 1px solid #ffffff;
-  margin-bottom: 12px;
+.header .top {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 12px;
-}
-
-.cart-item.out-of-stock {
-  filter: brightness(97%);
-  pointer-events: none;
-  position: relative;
-}
-
-.cart-item.out-of-stock .remove {
-  pointer-events: auto; 
-  z-index: 2; 
-  position: relative;
-  filter: brightness(100%); 
-}
-
-.cart-item.out-of-stock .overlay a {
-  pointer-events: auto; 
-  z-index: 2; 
-  position: relative;
-  filter: brightness(100%); 
-}
-
-.cart-item .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(26, 25, 25, 0.6);
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  z-index: 1;
-  font-size: 16px;
+  padding: 1.5rem 2rem 1.5rem 2rem;
+  background-color: #c6eefc;
+  border-bottom: none;
+  border-radius: 0 0 10px 10px;
 }
 
-
-/*logo*/
 .logo-title {
   display: flex;
   align-items: center;
@@ -83,48 +23,123 @@
   font-weight: bold;
 }
 
-.header img {
+.logo-title img {
   height: 80px;
-  width: 80px;
-}
-.header .title {
-  font-size: 30px;
-  font-weight: bold;
-  margin-left: 10px;
+  width: auto;
 }
 
+.logo-title .title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a237e;
+}
 
-/*right*/
-.right {
+.buttons {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
-.username {
-  margin-right: 8px;
-  font-size: 20px;
-  color: #555;
-  font-weight: bold;
-}
-
-.avatar {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-}
-
-/*button*/
-.header .buttons button {
-  background-color: #3b82f6;
-  color: white;
-  padding: 12px 20px;
+.buttons button {
+  padding: 0.7rem 2rem;
   border: none;
-  border-radius: 5px;
-  margin-left: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-.header .buttons button.register {
-  background-color: #10b981;
+.buttons button:first-child {
+  background-color: #42a5f5;
+  color: #fff;
+}
+
+.buttons button.register {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.buttons button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.cart-icon {
+  color: #111;
+  font-size: 2rem;
+  text-decoration: none;
+  margin-left: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  background: none;
+}
+
+.cart-icon:hover {
+  color: #42a5f5;
+  background-color: rgba(66, 165, 245, 0.1);
+}
+
+/* Menu styles */
+.nav {
+  background-color: #a7c7f9;
+  padding: 1.2rem 2rem 1.2rem 2rem;
+  border-radius: 0 0 10px 10px;
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #1a237e;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  background: none;
+}
+
+.menu ul li a:hover {
+  background-color: rgba(66, 165, 245, 0.15);
+  color: #1565c0;
+  transform: translateY(-2px);
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .header .top {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .logo-title img {
+    height: 50px;
+  }
+  .logo-title .title {
+    font-size: 1.3rem;
+  }
+  .nav {
+    padding: 0.7rem 1rem;
+  }
+  .menu ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .menu ul li a {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .buttons button {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
 }

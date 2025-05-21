@@ -1,19 +1,18 @@
+/*header */
 .header {
-  width: 100%;
-  background-color: #c6eefc;
-  box-shadow: none;
-  font-family: "Poppins", sans-serif;
-  border-radius: 0 0 10px 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #bde5f2;
+  /* nền nhạt */
 }
 
-.header .top {
+.top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem 1.5rem 2rem;
-  background-color: #c6eefc;
-  border-bottom: none;
-  border-radius: 0 0 10px 10px;
+  /* Căn giữa theo chiều dọc */
+  width: 100%;
+  padding: 13px 25px;
 }
 
 .logo-title {

@@ -367,3 +367,8 @@ body {
 .main .content {
   display: none; /* Ẩn content mặc định từ homeCustomer.css */
 }
+
+.container {
+  width: 100%;
+  box-sizing: border-box;
+}

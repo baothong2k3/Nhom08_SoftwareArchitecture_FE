@@ -1,5 +1,7 @@
 .footer {
   display: flex;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(135deg, #1f2937 0%, #3b4a63 100%);
   color: white;
   padding: 20px 0;
@@ -10,26 +12,24 @@
 }
 .footer-content {
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
   width: 100%;
-  margin: 0 50px;
+  gap: 80px;
+  margin: 0;
 }
-
+.branch-info,
 .contact-info {
-  margin-left: 350px;
-}
-.footer .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
+  text-align: center;
 }
 .footer h3 {
   font-size: 23px;
   font-weight: bold;
   margin-bottom: 20px;
+  text-align: center;
 }
 .footer p {
   margin: 10px 0;
   font-size: 17px;
+  text-align: center;
 }
