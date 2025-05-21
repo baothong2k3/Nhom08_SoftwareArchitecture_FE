@@ -26,7 +26,6 @@ function goBack() {
   window.history.back();
 }
 
-//Gắn footer
 fetch("../components/footer.html")
   .then((response) => response.text())
   .then((data) => {
@@ -34,13 +33,12 @@ fetch("../components/footer.html")
   })
   .catch((error) => console.error("Error loading footer:", error));
 
-//Gắn menu
 fetch("../components/menu.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("menu").innerHTML = data;
   })
-  .catch((error) => console.error("Error loading menu:", error));
+  .catch((error) => console.error("Error loading footer:", error));
 
 //phan trang
 function changePage(step) {
@@ -49,4 +47,8 @@ function changePage(step) {
   displayBooks();
 }
 
-
+// //lay lai mat khau
+// function handleLogin(event) {
+//   event.preventDefault(); // Ngăn chặn form submit mặc định
+//   window.location.href = "../pages/homeCustomer.html"; // Chuyển hướng về trang login
+// }

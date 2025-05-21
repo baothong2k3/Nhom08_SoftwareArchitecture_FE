@@ -37,6 +37,15 @@ fetch("../components/menuCustomer.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("menu").innerHTML = data;
+    // Gắn lại sự kiện logout
+    const logoutLink = document.getElementById("logout-link");
+    if (logoutLink) {
+      logoutLink.addEventListener("click", function (e) {
+        localStorage.removeItem("token");
+        localStorage.removeItem("role");
+        location.reload();
+      });
+    }
   })
   .catch((error) => console.error("Error loading footer:", error));
 

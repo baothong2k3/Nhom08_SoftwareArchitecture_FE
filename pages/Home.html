@@ -1,73 +1,92 @@
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store</title>
+    <link rel="stylesheet" href="../assets//css/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Font đẹp hơn -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book Store</title>
-  <link rel="stylesheet" href="../assets//css/home.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <!-- Font đẹp hơn -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+  </head>
 
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-</head>
-
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="top">
-      <div class="logo-title">
-        <img src="../assets/img/logo.png" alt="Book Store Logo" />
-        <span class="title">Book Store</span>
-      </div>
-      <div class="buttons">
-        <button onclick="window.location.href='../pages/login.html'">
-          Đăng nhập
-        </button>
-        <button class="register" onclick="window.location.href='../pages/register.html'">
-          Đăng ký
-        </button>
-
-        <a href="../pages/cart.html" class="cart-icon">
-          <i class="fas fa-shopping-cart"></i>
-        </a>
-      </div>
-    </div>
-    <!-- Menu -->
-    <div id="menu"></div>
-  </header>
-
-  <!-- Main Content -->
-  <main class="main">
-    <div class="content">
-      <h1>Chào mừng đến với Book Store</h1>
-      <p>
-        Đây là trang chủ của cửa hàng sách. Tại đây bạn có thể tìm thấy những
-        cuốn sách yêu thích và nhiều thông tin hữu ích khác.
-      </p>
-    </div>
-
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="../assets/img/bookstoreHome.jpg" alt="Bookshelf with various books" />
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="top">
+        <div class="logo-title">
+          <img src="../assets/img/logo.png" alt="Book Store Logo" />
+          <span class="title">Book Store</span>
         </div>
-        <div class="swiper-slide">
-          <img src="../assets/img/bookstoreHome02.png" alt="Bookshelf with various books" />
-        </div>
-        <div class="swiper-slide">
-          <img src="../assets/img/bookstoreHome03.jpg" alt="Bookshelf with various books" />
+        <div class="buttons">
+          <button onclick="window.location.href='../pages/login.html'">
+            Đăng nhập
+          </button>
+          <button
+            class="register"
+            onclick="window.location.href='../pages/register.html'"
+          >
+            Đăng ký
+          </button>
+
+          <a href="../pages/cart.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
         </div>
       </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </main>
-  <!-- Footer -->
-  <footer id="footer"></footer>
+      <!-- Menu -->
+      <div id="menu"></div>
+    </header>
 
-  <script src="../assets/js/home.js"></script>
-  <script src="../assets/js/swiper.js"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-</body>
+    <!-- Main Content -->
+    <main class="main">
+      <div class="content">
+        <h1>Chào mừng đến với Book Store</h1>
+        <p>
+          Đây là trang chủ của cửa hàng sách. Tại đây bạn có thể tìm thấy những
+          cuốn sách yêu thích và nhiều thông tin hữu ích khác.
+        </p>
+      </div>
 
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="../assets/img/bookstoreHome.jpg"
+              alt="Bookshelf with various books"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="../assets/img/bookstoreHome02.png"
+              alt="Bookshelf with various books"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="../assets/img/bookstoreHome03.jpg"
+              alt="Bookshelf with various books"
+            />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <script src="../assets/js/home.js"></script>
+    <script src="../assets/js/swiper.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  </body>
 </html>
