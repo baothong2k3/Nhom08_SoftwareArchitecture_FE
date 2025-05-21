@@ -1,35 +1,40 @@
 * {
   margin: 0;
-  padding: 1px;
+  padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Nunito", Arial, sans-serif;
 }
 
 .nav {
   background-color: #a9c4f2; /* Xanh rất nhạt - hiện đại, dễ nhìn */
-  padding: 12px 0;
-  border-radius: 5px;
+  padding: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(30, 64, 175, 0.04);
 }
 
 .nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  align-items: center;
+  gap: 32px;
 }
 
 .nav ul li a {
-  font-size: 25px;
-  font-weight: 650;
-  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
   color: #1e40af;
   text-decoration: none;
-  padding: 10px 35px;
+  padding: 8px 22px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  display: block;
 }
 
 .nav ul li a:hover {
-  background-color: #bbdefb; /* Hover nhẹ hơn, đồng bộ */
-  border-radius: 5px;
+  background-color: #e3f0ff;
+  color: #2563eb;
+  box-shadow: 0 2px 8px rgba(30, 64, 175, 0.08);
 }
 
 /* 
